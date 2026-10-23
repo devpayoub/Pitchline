@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pitchline — AI football predictions</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="brand">
+      <span class="mark">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/><path d="M12 7.2l3.4 2.5-1.3 4h-4.2l-1.3-4z"/>
+          <path d="M12 3v4.2M4.2 9.6l3.4 1.4M19.8 9.6l-3.4 1.4M7.4 19.4l1.6-4M16.6 19.4l-1.6-4"/>
+        </svg>
+      </span>
+      <div class="brand-text">
+        <strong>Pitchline</strong>
+        <span>AI football predictions</span>
+      </div>
+    </div>
+    <nav class="nav" id="nav">
+      <button class="navlink active" data-nav="home">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 11l8-7 8 7"/><path d="M6 10v9h12v-9"/>
+        </svg>
+        Home
+      </button>
+      <button class="navlink" data-nav="live">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="2.4"/><path d="M7.8 7.8a6 6 0 000 8.4M16.2 16.2a6 6 0 000-8.4"/>
+          <path d="M4.9 4.9a10 10 0 000 14.2M19.1 19.1a10 10 0 000-14.2"/>
+        </svg>
+        Live
+      </button>
+      <button class="navlink" data-nav="accuracy">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 18V9M10 18V5M16 18v-6M22 18H2"/>
+        </svg>
+        Accuracy
+      </button>
+    </nav>
+  </div>
+  <div class="topbar-right">
+    <span class="status" id="status"><i></i><span>Idle</span></span>
+    <span class="stamp" id="stamp">—</span>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <h1>Four buttons.<br>Model → data → result.</h1>
+      <p>Every step runs the real pipeline in this folder: downloads ten leagues, retrains the
+         ensemble, pulls live odds and scores the model against the market.</p>
+    </div>
+    <div class="hero-stats" id="heroStats"></div>
+  </section>
+
+  <section class="actions" id="actions">
+    <article class="action" data-job="download">
+      <div class="action-top">
+        <span class="action-icon icon-download">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/>
+          </svg>
+        </span>
+        <span class="action-step">01</span>
+      </div>
+      <h3>Download data</h3>
+      <p>Ten leagues of results from football-data.co.uk, then fixtures from football-data.org and the Europa League from Wikipedia.</p>
+      <div class="action-foot">
+        <span class="meta">8 steps · ~6 min · retrain after</span>
+        <button class="btn" data-run="download">Run</button>
+      </div>
+    </article>
+
+    <article class="action" data-job="train">
+      <div class="action-top">
+        <span class="action-icon icon-train">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 17V9M9 17V5M14 17v-6M19 17v-9"/><path d="M3 20h18"/>
+          </svg>
+        </span>
+        <span class="action-step">02</span>
+      </div>
+      <h3>Train models</h3>
+      <p>Six classifiers per league with hyper-parameter search and a soft voting ensemble — O/U 2.5, 1X2, BTTS, O/U 1.5 and O/U 3.5.</p>
+      <div class="action-foot">
+        <span class="meta">3 steps · ~35 min</span>
+        <button class="btn" data-run="train">Run</button>
+      </div>
+    </article>
+
+    <article class="action" data-job="predict">
+      <div class="action-top">
+        <span class="action-icon icon-predict">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 15l5-5 4 3 7-7"/><path d="M20 6v5h-5"/>
+          </svg>
+        </span>
+        <span class="action-step">03</span>
+      </div>
+      <h3>Predict &amp; compare</h3>
+      <p>Scores every upcoming fixture, fetches live 1X2 / O-U 2.5 / BTTS prices and turns the gap into an edge per market.</p>
+      <div class="action-foot">
+        <span class="meta">6 steps · ~3 min</span>
+        <button class="btn btn-accent" data-run="predict">Run</button>
+      </div>
+    </article>
+
+    <article class="action" data-job="grade">
+      <div class="action-top">
+        <span class="action-icon icon-grade">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h11l5 5v11H4z"/><path d="M8 13l3 3 5-5"/>
+          </svg>
+        </span>
+        <span class="action-step">04</span>
+      </div>
+      <h3>Grade results</h3>
+      <p>Every run is archived. This pulls the finished scores and scores each pick — 1X2, goals, BTTS and every value bet.</p>
+      <div class="action-foot">
+        <span class="meta">1 step · ~30 s</span>
+        <button class="btn" data-run="grade">Run</button>
+      </div>
+    </article>
+  </section>
+
+  <section class="console" id="console" hidden>
+    <div class="console-head">
+      <div class="console-title">
+        <span class="dot-live"></span>
+        <strong id="consoleJob">Running</strong>
+        <span class="console-step" id="consoleStep">0 / 0</span>
+      </div>
+      <div class="console-actions">
+        <button class="btn ghost" id="btnStop">Stop</button>
+        <button class="btn ghost" id="btnFold">Hide</button>
+      </div>
+    </div>
+    <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+    <pre class="console-body" id="consoleBody"></pre>
+  </section>
+
+  <section class="results" id="results">
+    <div class="results-head">
+      <div>
+        <h2>Results</h2>
+        <p class="results-sub" id="resultsSub">No run yet — hit “Predict &amp; compare”.</p>
+      </div>
+      <div class="results-tools">
+        <a class="btn ghost" id="btnReport" href="/report" target="_blank" hidden>Shareable report</a>
+        <button class="btn ghost" id="btnReload">Refresh</button>
+      </div>
+    </div>
+
+    <div class="kpis" id="kpis"></div>
+
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-tab="1x2">1X2</button>
+      <button class="tab" data-tab="goals">Goals</button>
+      <button class="tab" data-tab="btts">BTTS</button>
+      <button class="tab" data-tab="value">Value bets</button>
+      <button class="tab" data-tab="live">Live</button>
+      <button class="tab" data-tab="accuracy">Accuracy</button>
+    </div>
+
+    <div class="filters" id="filters"></div>
+    <div class="days" id="dayFilters"></div>
+
+    <div class="sortbar">
+      <span class="sortlabel">Sort</span>
+      <button class="chip sort active" data-sort="edge">Biggest edge</button>
+      <button class="chip sort" data-sort="league">League</button>
+      <button class="chip sort" data-sort="kickoff">Kick-off</button>
+    </div>
+
+    <p class="tabnote" id="tabNote" hidden></p>
+
+    <div class="table-wrap" id="tableWrap">
+      <div class="empty" id="empty">
+        <div class="empty-art">
+          <svg viewBox="0 0 64 64" width="56" height="56" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <rect x="7" y="14" width="50" height="36" rx="4"/><path d="M7 26h50"/><path d="M17 36h12M17 42h20"/>
+          </svg>
+        </div>
+        <h3>Nothing to show yet</h3>
+        <p>Run <b>Predict &amp; compare</b> and the match cards will land here.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>Local only · nothing leaves this machine except the public data sources.</span>
+    <span>Predictions are research output, not betting advice.</span>
+  </footer>
+</main>
+
+<script src="/app.js"></script>
+</body>
+</html>
