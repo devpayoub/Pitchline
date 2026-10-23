@@ -1,0 +1,2182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Football Predictions — model vs market</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f4f7;color:#0d1017;line-height:1.55;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Inter","PingFang SC","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:44px 24px 80px}
+.eyebrow{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#878e9b;font-weight:700}
+h1{font-size:34px;line-height:1.15;margin:10px 0 12px;letter-spacing:-.03em}
+.meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:12.5px;color:#4b5563}
+.dot{width:4px;height:4px;border-radius:50%;background:#c4c8d0}
+.pill{background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:3px 11px;font-size:11.5px;color:#374151}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0 30px}
+.kpi{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:15px 17px}
+.kpi span{font-size:11px;color:#878e9b;font-weight:700;text-transform:uppercase;letter-spacing:.07em}
+.kpi b{display:block;font-size:26px;letter-spacing:-.03em;margin:4px 0 2px;font-variant-numeric:tabular-nums}
+.kpi small{font-size:11.5px;color:#9aa0aa}
+section{margin:34px 0}
+h2{font-size:20px;margin:0 0 4px;letter-spacing:-.02em}
+.h2sub{font-size:12.5px;color:#878e9b;margin-bottom:14px}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:16px;overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:#878e9b;
+   font-weight:700;padding:11px 16px;background:#fafafb;border-bottom:1px solid #eef0f3;white-space:nowrap}
+td{padding:12px 16px;border-bottom:1px solid #f2f4f6;vertical-align:middle}
+tr:last-child td{border-bottom:none}
+.tm{display:flex;flex-direction:column;gap:1px;min-width:170px}
+.tm b{font-weight:600}
+.tm span{font-size:11.5px;color:#878e9b}
+.lg{font-size:10.5px;color:#a9afb9;margin-top:2px}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.seg{display:flex;height:24px;border-radius:6px;overflow:hidden;min-width:210px;background:#f1f2f5}
+.seg div{display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;white-space:nowrap}
+.seg .s1{background:#4f46e5} .seg .sx{background:#c7cbd4;color:#3f4652} .seg .s2{background:#0f766e}
+.badge{display:inline-block;padding:3px 8px;border-radius:6px;font-size:11px;font-weight:700;
+  background:#eef0ff;color:#3730a3;white-space:nowrap}
+.badge.away{background:#e8f5f2;color:#0f5f59} .badge.draw{background:#f1f2f5;color:#4b5563}
+em{font-style:normal;color:#878e9b;font-weight:600;font-variant-numeric:tabular-nums;font-size:11.5px}
+.mk{font-size:11.5px;color:#3f4652;font-variant-numeric:tabular-nums;white-space:nowrap}
+.edge{font-weight:700;font-variant-numeric:tabular-nums}
+.edge.pos{color:#0f766e} .edge.hot{color:#b45309} .edge.neg{color:#9aa0aa}
+.dash{color:#c2c7d0}
+.price{display:inline-block;margin-left:4px;font-size:10.5px;font-weight:600;color:#3f4652;
+  background:#f1f2f5;border-radius:5px;padding:1px 5px;font-variant-numeric:tabular-nums}
+.callout{background:#fff8ed;border:1px solid #fcd9a4;border-radius:14px;padding:15px 17px;font-size:13px}
+.callout b{color:#92400e}
+details{background:#fff;border:1px solid #e5e7eb;border-radius:14px;margin-bottom:10px;overflow:hidden}
+summary{cursor:pointer;padding:13px 17px;display:flex;justify-content:space-between;align-items:center;
+  font-weight:600;font-size:14px;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸";color:#9aa0aa;margin-right:9px;font-size:11px}
+details[open] summary::before{content:"▾"}
+.lname{flex:1} .lcount{font-size:11.5px;color:#878e9b;font-weight:500}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:11px;padding:0 17px 17px}
+.mcard{border:1px solid #eef0f3;border-radius:11px;padding:11px 13px;background:#fcfcfd}
+.mhead{margin-bottom:7px}
+.mname{font-weight:650;font-size:13px}
+.mname em{color:#9aa0aa;font-style:normal;font-weight:400;font-size:11px;padding:0 3px}
+.mline{display:flex;gap:9px;font-size:11.5px;padding:1.5px 0}
+.mline .k{color:#8b919c;min-width:52px;flex:none}
+.mline .v{color:#2f333a;font-variant-numeric:tabular-nums}
+footer{margin-top:44px;font-size:11.5px;color:#8b919c;border-top:1px solid #e5e7eb;padding-top:16px}
+@media(max-width:820px){.kpis{grid-template-columns:repeat(2,1fr)}h1{font-size:26px}
+  .mgrid{grid-template-columns:1fr}.card{overflow-x:auto}table{min-width:640px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">AIFootballPredictions · model vs market</div>
+  <h1>Predictions &amp; live-odds comparison</h1>
+  <div class="meta">
+    <span>Generated 2026-10-22 18:29</span><span class="dot"></span>
+    <span>1X2 · O/U 1.5 · O/U 2.5 · O/U 3.5 · BTTS · Double chance · DNB</span><span class="dot"></span>
+    <span class="pill">7 competitions</span>
+  </div>
+
+  <div class="kpis"><div class="kpi"><span>Fixtures scored</span><b>90</b><small>7 markets each</small></div><div class="kpi"><span>Live odds</span><b>72</b><small>1X2 · O/U 2.5 · BTTS</small></div><div class="kpi"><span>Edges above 5%</span><b>302</b><small>77 in the credible 5–15% band</small></div><div class="kpi"><span>Average edge</span><b>18.6%</b><small>absolute, all markets</small></div></div>
+
+  <section>
+    <h2>Read the edges with care</h2>
+    <div class="h2sub">Every “edge” below is model probability minus the de-vigged market probability.</div>
+    <div class="callout">
+      <b>Why the numbers still look extreme:</b> the pipeline no longer leaks the scoreline, so the
+      average edge fell from 25% to 18.6% — but the ensemble is still uncalibrated, and a
+      model that gets 1X2 right 54% of the time will happily print 69% on a match it has misread.
+      Treat the edge column as a <b>ranking of disagreement with the market</b>, not as expected value.
+      The rows worth a second look sit in the <b>5–15%</b> band with a model probability between
+      <b>40% and 85%</b> — 77 of 302 qualify.
+    </div>
+  </section>
+
+  
+  <section>
+    <h2>How good is the model, really?</h2>
+    <div class="h2sub">train on the first 80% of each league by date, score the last 20% · 2026-10-22 18:12</div>
+    <div class="card"><table>
+      <thead><tr><th>Market</th><th class="num">Out-of-time</th><th class="num">Always-pick</th>
+      <th class="num">Lift (pts)</th><th class="num">Graded live</th><th class="num">n</th></tr></thead>
+      <tbody><tr>
+              <td><b>1X2</b></td>
+              <td class="num">54.4%</td>
+              <td class="num">41.8%</td>
+              <td class="num"><span class="edge pos">+12.6</span></td>
+              <td class="num"><span class='dash'>—</span></td>
+              <td class="num sub">1929</td>
+            </tr><tr>
+              <td><b>O/U 2.5</b></td>
+              <td class="num">67.6%</td>
+              <td class="num">56.8%</td>
+              <td class="num"><span class="edge pos">+10.8</span></td>
+              <td class="num"><span class='dash'>—</span></td>
+              <td class="num sub">1929</td>
+            </tr><tr>
+              <td><b>O/U 1.5</b></td>
+              <td class="num">78.7%</td>
+              <td class="num">78.4%</td>
+              <td class="num"><span class="edge pos">+0.3</span></td>
+              <td class="num"><span class='dash'>—</span></td>
+              <td class="num sub">1929</td>
+            </tr><tr>
+              <td><b>O/U 3.5</b></td>
+              <td class="num">70.1%</td>
+              <td class="num">67.0%</td>
+              <td class="num"><span class="edge pos">+3.2</span></td>
+              <td class="num"><span class='dash'>—</span></td>
+              <td class="num sub">1929</td>
+            </tr><tr>
+              <td><b>BTTS</b></td>
+              <td class="num">67.1%</td>
+              <td class="num">57.5%</td>
+              <td class="num"><span class="edge pos">+9.6</span></td>
+              <td class="num"><span class='dash'>—</span></td>
+              <td class="num sub">1929</td>
+            </tr></tbody>
+    </table></div>
+    <div class="callout" style="margin-top:12px">
+      <b>Read it this way:</b> “always-pick” is the accuracy of blindly choosing the most common
+      outcome. A lift near zero means the market adds nothing — O/U 1.5 is exactly that case, since
+      over 1.5 already happens ~78% of the time. 1X2 and BTTS are where the signal actually is.
+    </div>
+  </section>
+
+  <section>
+    <h2>1X2 — model vs market</h2>
+    <div class="h2sub">Segmented bar is the model's home / draw / away split. Market column is the de-vigged consensus.</div>
+    <div class="card"><table>
+      <thead><tr><th>Match</th><th>Home · Draw · Away</th><th>Pick</th><th>Market</th><th class="num">Edge</th></tr></thead>
+      <tbody><tr>
+          <td><div class="tm"><b>Dortmund</b><span>Ein Frankfurt</span>
+              <div class="lg">Bundesliga</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:15.377987961390286%">15%</div>
+            <div class="sx" style="width:15.48008852661917%">15%</div>
+            <div class="s2" style="width:69.14192301528517%">69%</div>
+          </div></td>
+          <td><span class="badge away">Ein Frankfurt</span> <em>69%</em> <span class="price">@6.00</span></td>
+          <td class="mk">65% · 19% · 16%</td>
+          <td class="num"><span class="edge hot">+52.7%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Arsenal</b><span>Everton</span>
+              <div class="lg">Premier League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:8.818493374030183%"></div>
+            <div class="sx" style="width:35.31243321317511%">35%</div>
+            <div class="s2" style="width:55.869072916089344%">56%</div>
+          </div></td>
+          <td><span class="badge away">Everton</span> <em>56%</em> <span class="price">@8.00</span></td>
+          <td class="mk">68% · 20% · 12%</td>
+          <td class="num"><span class="edge hot">+43.6%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Monaco</b><span>Lille</span>
+              <div class="lg">Ligue 1</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:23.73345178545989%">24%</div>
+            <div class="sx" style="width:13.56653028730846%">14%</div>
+            <div class="s2" style="width:62.70001743052628%">63%</div>
+          </div></td>
+          <td><span class="badge away">Lille</span> <em>63%</em> <span class="price">@3.70</span></td>
+          <td class="mk">46% · 27% · 27%</td>
+          <td class="num"><span class="edge hot">+35.8%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Torino</b><span>Monza</span>
+              <div class="lg">Serie A</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:14.99911427663453%">15%</div>
+            <div class="sx" style="width:24.13675039838719%">24%</div>
+            <div class="s2" style="width:60.864135076625594%">61%</div>
+          </div></td>
+          <td><span class="badge away">Monza</span> <em>61%</em> <span class="price">@3.50</span></td>
+          <td class="mk">44% · 28% · 27%</td>
+          <td class="num"><span class="edge hot">+33.4%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Roma</b><span>Cagliari</span>
+              <div class="lg">Serie A</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:27.853179662882827%">28%</div>
+            <div class="sx" style="width:29.76685924889623%">30%</div>
+            <div class="s2" style="width:42.3799600948102%">42%</div>
+          </div></td>
+          <td><span class="badge away">Cagliari</span> <em>42%</em> <span class="price">@9.00</span></td>
+          <td class="mk">70% · 20% · 11%</td>
+          <td class="num"><span class="edge hot">+31.9%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>OFI</b><span>Leverkusen</span>
+              <div class="lg">Europa League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:40.0%">40%</div>
+            <div class="sx" style="width:26.0%">26%</div>
+            <div class="s2" style="width:34.0%">34%</div>
+          </div></td>
+          <td><span class="badge home">OFI</span> <em>40%</em> <span class="price">@11.00</span></td>
+          <td class="mk">9% · 13% · 79%</td>
+          <td class="num"><span class="edge hot">+31.4%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Bournemouth</b><span>Milan</span>
+              <div class="lg">Europa League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:23.262274578215976%">23%</div>
+            <div class="sx" style="width:22.37802837030233%">22%</div>
+            <div class="s2" style="width:54.35969605807093%">54%</div>
+          </div></td>
+          <td><span class="badge away">Milan</span> <em>54%</em> <span class="price">@4.00</span></td>
+          <td class="mk">51% · 25% · 24%</td>
+          <td class="num"><span class="edge hot">+30.1%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Omonia</b><span>Benfica</span>
+              <div class="lg">Europa League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:40.0%">40%</div>
+            <div class="sx" style="width:26.0%">26%</div>
+            <div class="s2" style="width:34.0%">34%</div>
+          </div></td>
+          <td><span class="badge home">Omonia</span> <em>40%</em> <span class="price">@8.75</span></td>
+          <td class="mk">11% · 16% · 73%</td>
+          <td class="num"><span class="edge hot">+29.0%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Ararat-Armenia</b><span>AZ Alkmaar</span>
+              <div class="lg">Europa League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:40.0%">40%</div>
+            <div class="sx" style="width:26.0%">26%</div>
+            <div class="s2" style="width:34.0%">34%</div>
+          </div></td>
+          <td><span class="badge home">Ararat-Armenia</span> <em>40%</em> <span class="price">@8.00</span></td>
+          <td class="mk">12% · 20% · 68%</td>
+          <td class="num"><span class="edge hot">+27.7%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Juventus</b><span>Rennes</span>
+              <div class="lg">Europa League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:28.770827547166718%">29%</div>
+            <div class="sx" style="width:29.67273598374201%">30%</div>
+            <div class="s2" style="width:41.556435972385906%">42%</div>
+          </div></td>
+          <td><span class="badge away">Rennes</span> <em>42%</em> <span class="price">@7.00</span></td>
+          <td class="mk">65% · 21% · 14%</td>
+          <td class="num"><span class="edge hot">+27.6%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Aston Villa</b><span>Man City</span>
+              <div class="lg">Premier League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:47.28018149571194%">47%</div>
+            <div class="sx" style="width:30.961261175824884%">31%</div>
+            <div class="s2" style="width:21.758557328463173%">22%</div>
+          </div></td>
+          <td><span class="badge home">Aston Villa</span> <em>47%</em> <span class="price">@5.25</span></td>
+          <td class="mk">20% · 23% · 57%</td>
+          <td class="num"><span class="edge hot">+27.4%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Coventry</b><span>Fulham</span>
+              <div class="lg">Premier League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:56.901386935538845%">57%</div>
+            <div class="sx" style="width:25.13907451941389%">25%</div>
+            <div class="s2" style="width:17.95953804834188%">18%</div>
+          </div></td>
+          <td><span class="badge home">Coventry</span> <em>57%</em> <span class="price">@3.20</span></td>
+          <td class="mk">30% · 28% · 43%</td>
+          <td class="num"><span class="edge hot">+27.1%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Napoli</b><span>Roma</span>
+              <div class="lg">Serie A</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:60.603846961142175%">61%</div>
+            <div class="sx" style="width:23.432773860510935%">23%</div>
+            <div class="s2" style="width:15.963379923404961%">16%</div>
+          </div></td>
+          <td><span class="badge home">Napoli</span> <em>61%</em> <span class="price">@2.88</span></td>
+          <td class="mk">34% · 29% · 38%</td>
+          <td class="num"><span class="edge hot">+27.0%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Parma</b><span>Udinese</span>
+              <div class="lg">Serie A</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:58.32262635453335%">58%</div>
+            <div class="sx" style="width:31.920590181468423%">32%</div>
+            <div class="s2" style="width:9.75678396070361%"></div>
+          </div></td>
+          <td><span class="badge home">Parma</span> <em>58%</em> <span class="price">@3.00</span></td>
+          <td class="mk">31% · 29% · 39%</td>
+          <td class="num"><span class="edge hot">+27.0%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Sevilla</b><span>Osasuna</span>
+              <div class="lg">La Liga</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:25.340255200012564%">25%</div>
+            <div class="sx" style="width:24.97462315411119%">25%</div>
+            <div class="s2" style="width:49.68512214258161%">50%</div>
+          </div></td>
+          <td><span class="badge away">Osasuna</span> <em>50%</em> <span class="price">@4.20</span></td>
+          <td class="mk">49% · 28% · 23%</td>
+          <td class="num"><span class="edge hot">+26.6%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Hull</b><span>Brentford</span>
+              <div class="lg">Premier League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:46.0371249556357%">46%</div>
+            <div class="sx" style="width:27.90276783210835%">28%</div>
+            <div class="s2" style="width:26.060107460608645%">26%</div>
+          </div></td>
+          <td><span class="badge home">Hull</span> <em>46%</em> <span class="price">@5.00</span></td>
+          <td class="mk">20% · 24% · 56%</td>
+          <td class="num"><span class="edge hot">+26.2%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Lens</b><span>Paris FC</span>
+              <div class="lg">Ligue 1</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:65.90702205606304%">66%</div>
+            <div class="sx" style="width:17.605903404466318%">18%</div>
+            <div class="s2" style="width:16.487074787823335%">16%</div>
+          </div></td>
+          <td><span class="badge home">Lens</span> <em>66%</em> <span class="price">@2.38</span></td>
+          <td class="mk">40% · 26% · 33%</td>
+          <td class="num"><span class="edge hot">+25.6%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Como</b><span>Sassuolo</span>
+              <div class="lg">Serie A</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:37.048877398465066%">37%</div>
+            <div class="sx" style="width:20.767385120461135%">21%</div>
+            <div class="s2" style="width:42.183737481073784%">42%</div>
+          </div></td>
+          <td><span class="badge away">Sassuolo</span> <em>42%</em> <span class="price">@6.00</span></td>
+          <td class="mk">63% · 20% · 17%</td>
+          <td class="num"><span class="edge hot">+25.6%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Lillestrøm</b><span>Sociedad</span>
+              <div class="lg">Europa League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:40.0%">40%</div>
+            <div class="sx" style="width:26.0%">26%</div>
+            <div class="s2" style="width:34.0%">34%</div>
+          </div></td>
+          <td><span class="badge home">Lillestrøm</span> <em>40%</em> <span class="price">@6.50</span></td>
+          <td class="mk">15% · 18% · 67%</td>
+          <td class="num"><span class="edge hot">+25.1%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Augsburg</b><span>Union Berlin</span>
+              <div class="lg">Bundesliga</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:75.432372862342%">75%</div>
+            <div class="sx" style="width:13.446811729553529%">13%</div>
+            <div class="s2" style="width:11.120814663046426%">11%</div>
+          </div></td>
+          <td><span class="badge home">Augsburg</span> <em>75%</em> <span class="price">@1.87</span></td>
+          <td class="mk">51% · 24% · 25%</td>
+          <td class="num"><span class="edge pos">+24.2%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Celje</b><span>Red Bull Salzburg</span>
+              <div class="lg">Europa League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:40.0%">40%</div>
+            <div class="sx" style="width:26.0%">26%</div>
+            <div class="s2" style="width:34.0%">34%</div>
+          </div></td>
+          <td><span class="badge home">Celje</span> <em>40%</em> <span class="price">@6.25</span></td>
+          <td class="mk">16% · 21% · 63%</td>
+          <td class="num"><span class="edge pos">+23.8%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Monza</b><span>Napoli</span>
+              <div class="lg">Serie A</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:12.105131308858908%">12%</div>
+            <div class="sx" style="width:14.72466505411631%">15%</div>
+            <div class="s2" style="width:73.17020388537748%">73%</div>
+          </div></td>
+          <td><span class="badge away">Napoli</span> <em>73%</em> <span class="price">@1.90</span></td>
+          <td class="mk">24% · 27% · 50%</td>
+          <td class="num"><span class="edge pos">+23.6%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Alaves</b><span>Malaga</span>
+              <div class="lg">La Liga</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:28.155517547438187%">28%</div>
+            <div class="sx" style="width:31.494188739995167%">31%</div>
+            <div class="s2" style="width:40.3502927191559%">40%</div>
+          </div></td>
+          <td><span class="badge away">Malaga</span> <em>40%</em> <span class="price">@5.50</span></td>
+          <td class="mk">56% · 26% · 18%</td>
+          <td class="num"><span class="edge pos">+22.5%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Torino</b><span>Como</span>
+              <div class="lg">Serie A</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:8.704046026617835%"></div>
+            <div class="sx" style="width:15.77136716674589%">16%</div>
+            <div class="s2" style="width:75.52458705498896%">76%</div>
+          </div></td>
+          <td><span class="badge away">Como</span> <em>76%</em> <span class="price">@1.75</span></td>
+          <td class="mk">21% · 26% · 53%</td>
+          <td class="num"><span class="edge pos">+22.2%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Milan</b><span>Bologna</span>
+              <div class="lg">Serie A</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:29.232296780964457%">29%</div>
+            <div class="sx" style="width:32.47792464492763%">32%</div>
+            <div class="s2" style="width:38.289778077402545%">38%</div>
+          </div></td>
+          <td><span class="badge away">Bologna</span> <em>38%</em> <span class="price">@5.50</span></td>
+          <td class="mk">58% · 25% · 17%</td>
+          <td class="num"><span class="edge pos">+21.3%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Paderborn</b><span>Hamburg</span>
+              <div class="lg">Bundesliga</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:61.85223034699283%">62%</div>
+            <div class="sx" style="width:23.639371662626626%">24%</div>
+            <div class="s2" style="width:14.50839823873324%">15%</div>
+          </div></td>
+          <td><span class="badge home">Paderborn</span> <em>62%</em> <span class="price">@2.30</span></td>
+          <td class="mk">42% · 26% · 32%</td>
+          <td class="num"><span class="edge pos">+19.5%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Rennes</b><span>Strasbourg</span>
+              <div class="lg">Ligue 1</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:34.4875183244888%">34%</div>
+            <div class="sx" style="width:40.01068016353401%">40%</div>
+            <div class="s2" style="width:25.501801015271802%">26%</div>
+          </div></td>
+          <td><span class="badge draw">Draw</span> <em>40%</em> <span class="price">@4.50</span></td>
+          <td class="mk">55% · 22% · 23%</td>
+          <td class="num"><span class="edge pos">+18.4%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Ipswich</b><span>Nott'm Forest</span>
+              <div class="lg">Premier League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:12.13657590439281%">12%</div>
+            <div class="sx" style="width:45.67251041877938%">46%</div>
+            <div class="s2" style="width:42.19091367682781%">42%</div>
+          </div></td>
+          <td><span class="badge draw">Draw</span> <em>46%</em> <span class="price">@3.60</span></td>
+          <td class="mk">30% · 27% · 43%</td>
+          <td class="num"><span class="edge pos">+18.4%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Man United</b><span>Bournemouth</span>
+              <div class="lg">Premier League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:64.09542370140966%">64%</div>
+            <div class="sx" style="width:20.662133724468575%">21%</div>
+            <div class="s2" style="width:15.242442574121759%">15%</div>
+          </div></td>
+          <td><span class="badge home">Man United</span> <em>64%</em> <span class="price">@2.00</span></td>
+          <td class="mk">48% · 26% · 27%</td>
+          <td class="num"><span class="edge pos">+16.3%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Lech Poznań</b><span>Sunderland</span>
+              <div class="lg">Europa League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:40.0%">40%</div>
+            <div class="sx" style="width:26.0%">26%</div>
+            <div class="s2" style="width:34.0%">34%</div>
+          </div></td>
+          <td><span class="badge home">Lech Poznań</span> <em>40%</em> <span class="price">@4.00</span></td>
+          <td class="mk">24% · 25% · 51%</td>
+          <td class="num"><span class="edge pos">+16.0%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Vallecano</b><span>Elche</span>
+              <div class="lg">La Liga</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:69.35018923962777%">69%</div>
+            <div class="sx" style="width:20.78070152173539%">21%</div>
+            <div class="s2" style="width:9.869109238636836%"></div>
+          </div></td>
+          <td><span class="badge home">Vallecano</span> <em>69%</em> <span class="price">@1.77</span></td>
+          <td class="mk">54% · 25% · 21%</td>
+          <td class="num"><span class="edge pos">+15.6%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Brest</b><span>Nice</span>
+              <div class="lg">Ligue 1</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:30.319844836766013%">30%</div>
+            <div class="sx" style="width:24.505766557571285%">25%</div>
+            <div class="s2" style="width:45.17438910236807%">45%</div>
+          </div></td>
+          <td><span class="badge away">Nice</span> <em>45%</em> <span class="price">@3.20</span></td>
+          <td class="mk">43% · 27% · 30%</td>
+          <td class="num"><span class="edge pos">+15.1%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Cagliari</b><span>Bologna</span>
+              <div class="lg">Serie A</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:45.368013220495214%">45%</div>
+            <div class="sx" style="width:27.430023179057%">27%</div>
+            <div class="s2" style="width:27.201963600447787%">27%</div>
+          </div></td>
+          <td><span class="badge home">Cagliari</span> <em>45%</em> <span class="price">@3.10</span></td>
+          <td class="mk">30% · 31% · 39%</td>
+          <td class="num"><span class="edge pos">+14.9%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Sunderland</b><span>Leeds</span>
+              <div class="lg">Premier League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:23.678338564590742%">24%</div>
+            <div class="sx" style="width:21.868581234478377%">22%</div>
+            <div class="s2" style="width:54.453079704225495%">54%</div>
+          </div></td>
+          <td><span class="badge away">Leeds</span> <em>54%</em> <span class="price">@2.40</span></td>
+          <td class="mk">31% · 30% · 40%</td>
+          <td class="num"><span class="edge pos">+14.8%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Ath Bilbao</b><span>Getafe</span>
+              <div class="lg">La Liga</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:73.41305410768668%">73%</div>
+            <div class="sx" style="width:17.675224060022472%">18%</div>
+            <div class="s2" style="width:8.911722080643553%"></div>
+          </div></td>
+          <td><span class="badge home">Ath Bilbao</span> <em>73%</em> <span class="price">@1.63</span></td>
+          <td class="mk">59% · 25% · 16%</td>
+          <td class="num"><span class="edge pos">+14.5%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Chelsea</b><span>Tottenham</span>
+              <div class="lg">Premier League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:70.50303232695148%">71%</div>
+            <div class="sx" style="width:19.766381698847688%">20%</div>
+            <div class="s2" style="width:9.730585229142786%"></div>
+          </div></td>
+          <td><span class="badge home">Chelsea</span> <em>71%</em> <span class="price">@1.71</span></td>
+          <td class="mk">56% · 23% · 21%</td>
+          <td class="num"><span class="edge pos">+14.3%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>FC Koln</b><span>Schalke 04</span>
+              <div class="lg">Bundesliga</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:58.66150545964568%">59%</div>
+            <div class="sx" style="width:23.803488291552963%">24%</div>
+            <div class="s2" style="width:17.535006000448668%">18%</div>
+          </div></td>
+          <td><span class="badge home">FC Koln</span> <em>59%</em> <span class="price">@2.10</span></td>
+          <td class="mk">46% · 25% · 29%</td>
+          <td class="num"><span class="edge pos">+12.9%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Atalanta</b><span>Frosinone</span>
+              <div class="lg">Serie A</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:66.3283460421357%">66%</div>
+            <div class="sx" style="width:17.603653159241315%">18%</div>
+            <div class="s2" style="width:16.06800129532835%">16%</div>
+          </div></td>
+          <td><span class="badge home">Atalanta</span> <em>66%</em> <span class="price">@1.77</span></td>
+          <td class="mk">53% · 23% · 24%</td>
+          <td class="num"><span class="edge pos">+12.9%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Auxerre</b><span>Le Mans</span>
+              <div class="lg">Ligue 1</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:30.573519709419383%">31%</div>
+            <div class="sx" style="width:38.88194394049761%">39%</div>
+            <div class="s2" style="width:30.544536350083014%">31%</div>
+          </div></td>
+          <td><span class="badge draw">Draw</span> <em>39%</em> <span class="price">@3.70</span></td>
+          <td class="mk">45% · 26% · 29%</td>
+          <td class="num"><span class="edge pos">+12.5%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Besiktas</b><span>Crystal Palace</span>
+              <div class="lg">Europa League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:56.13765611334449%">56%</div>
+            <div class="sx" style="width:32.39196217152913%">32%</div>
+            <div class="s2" style="width:11.47038227391992%">11%</div>
+          </div></td>
+          <td><span class="badge home">Besiktas</span> <em>56%</em> <span class="price">@2.15</span></td>
+          <td class="mk">44% · 26% · 30%</td>
+          <td class="num"><span class="edge pos">+12.2%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Angers</b><span>Lorient</span>
+              <div class="lg">Ligue 1</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:36.56437376949359%">37%</div>
+            <div class="sx" style="width:38.33761928700882%">38%</div>
+            <div class="s2" style="width:25.09800694349759%">25%</div>
+          </div></td>
+          <td><span class="badge draw">Draw</span> <em>38%</em> <span class="price">@3.40</span></td>
+          <td class="mk">32% · 28% · 40%</td>
+          <td class="num"><span class="edge pos">+10.1%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Barcelona</b><span>Real Madrid</span>
+              <div class="lg">La Liga</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:68.15402137677383%">68%</div>
+            <div class="sx" style="width:18.182169468773775%">18%</div>
+            <div class="s2" style="width:13.663808657747003%">14%</div>
+          </div></td>
+          <td><span class="badge home">Barcelona</span> <em>68%</em> <span class="price">@1.62</span></td>
+          <td class="mk">59% · 17% · 24%</td>
+          <td class="num"><span class="edge pos">+9.2%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Jagiellonia Białystok</b><span>Anderlecht</span>
+              <div class="lg">Europa League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:40.0%">40%</div>
+            <div class="sx" style="width:26.0%">26%</div>
+            <div class="s2" style="width:34.0%">34%</div>
+          </div></td>
+          <td><span class="badge home">Jagiellonia Białystok</span> <em>40%</em> <span class="price">@3.10</span></td>
+          <td class="mk">31% · 27% · 42%</td>
+          <td class="num"><span class="edge pos">+8.7%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Sturm Graz</b><span>Marseille</span>
+              <div class="lg">Europa League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:40.0%">40%</div>
+            <div class="sx" style="width:26.0%">26%</div>
+            <div class="s2" style="width:34.0%">34%</div>
+          </div></td>
+          <td><span class="badge home">Sturm Graz</span> <em>40%</em> <span class="price">@3.00</span></td>
+          <td class="mk">32% · 27% · 41%</td>
+          <td class="num"><span class="edge pos">+8.0%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Venezia</b><span>Inter</span>
+              <div class="lg">Serie A</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:8.810172695397911%"></div>
+            <div class="sx" style="width:13.06242431277271%">13%</div>
+            <div class="s2" style="width:78.12740324018206%">78%</div>
+          </div></td>
+          <td><span class="badge away">Inter</span> <em>78%</em> <span class="price">@1.33</span></td>
+          <td class="mk">11% · 19% · 70%</td>
+          <td class="num"><span class="edge pos">+7.8%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Sassuolo</b><span>Lazio</span>
+              <div class="lg">Serie A</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:41.001880191425144%">41%</div>
+            <div class="sx" style="width:33.73391186840375%">34%</div>
+            <div class="s2" style="width:25.26420843687648%">25%</div>
+          </div></td>
+          <td><span class="badge home">Sassuolo</span> <em>41%</em> <span class="price">@2.75</span></td>
+          <td class="mk">34% · 28% · 38%</td>
+          <td class="num"><span class="edge pos">+6.9%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Hoffenheim</b><span>Leverkusen</span>
+              <div class="lg">Bundesliga</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:31.512731646468367%">32%</div>
+            <div class="sx" style="width:23.011557238909027%">23%</div>
+            <div class="s2" style="width:45.475711114622605%">45%</div>
+          </div></td>
+          <td><span class="badge away">Leverkusen</span> <em>45%</em> <span class="price">@2.30</span></td>
+          <td class="mk">35% · 24% · 41%</td>
+          <td class="num"><span class="edge pos">+4.4%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Celta</b><span>Betis</span>
+              <div class="lg">La Liga</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:27.2527449317363%">27%</div>
+            <div class="sx" style="width:29.358077852311716%">29%</div>
+            <div class="s2" style="width:43.38917771265736%">43%</div>
+          </div></td>
+          <td><span class="badge away">Betis</span> <em>43%</em> <span class="price">@2.40</span></td>
+          <td class="mk">32% · 28% · 40%</td>
+          <td class="num"><span class="edge pos">+3.7%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Toulouse</b><span>Troyes</span>
+              <div class="lg">Ligue 1</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:62.140611884394694%">62%</div>
+            <div class="sx" style="width:24.752009376761254%">25%</div>
+            <div class="s2" style="width:13.107378242138685%">13%</div>
+          </div></td>
+          <td><span class="badge home">Toulouse</span> <em>62%</em> <span class="price">@1.63</span></td>
+          <td class="mk">59% · 23% · 19%</td>
+          <td class="num"><span class="edge pos">+3.4%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Genoa</b><span>Juventus</span>
+              <div class="lg">Serie A</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:20.5652310299529%">21%</div>
+            <div class="sx" style="width:22.59290580336833%">23%</div>
+            <div class="s2" style="width:56.84186266997341%">57%</div>
+          </div></td>
+          <td><span class="badge away">Juventus</span> <em>57%</em> <span class="price">@1.65</span></td>
+          <td class="mk">17% · 26% · 57%</td>
+          <td class="num"><span class="edge neg">-0.0%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Celtic</b><span>Celta</span>
+              <div class="lg">Europa League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:40.0%">40%</div>
+            <div class="sx" style="width:26.0%">26%</div>
+            <div class="s2" style="width:34.0%">34%</div>
+          </div></td>
+          <td><span class="badge home">Celtic</span> <em>40%</em> <span class="price">@2.37</span></td>
+          <td class="mk">40% · 26% · 33%</td>
+          <td class="num"><span class="edge neg">-0.2%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>RB Leipzig</b><span>Elversberg</span>
+              <div class="lg">Bundesliga</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:65.493376056255%">65%</div>
+            <div class="sx" style="width:21.367785734202684%">21%</div>
+            <div class="s2" style="width:13.13883746448425%">13%</div>
+          </div></td>
+          <td><span class="badge home">RB Leipzig</span> <em>65%</em> <span class="price">@1.44</span></td>
+          <td class="mk">67% · 18% · 15%</td>
+          <td class="num"><span class="edge neg">-1.1%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Crystal Palace</b><span>Newcastle</span>
+              <div class="lg">Premier League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:25.776167227004294%">26%</div>
+            <div class="sx" style="width:34.915925212690205%">35%</div>
+            <div class="s2" style="width:39.307907560305495%">39%</div>
+          </div></td>
+          <td><span class="badge away">Newcastle</span> <em>39%</em> <span class="price">@2.35</span></td>
+          <td class="mk">33% · 26% · 41%</td>
+          <td class="num"><span class="edge neg">-1.3%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Genoa</b><span>Venezia</span>
+              <div class="lg">Serie A</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:43.21321886297147%">43%</div>
+            <div class="sx" style="width:21.738374265215363%">22%</div>
+            <div class="s2" style="width:35.04840687181317%">35%</div>
+          </div></td>
+          <td><span class="badge home">Genoa</span> <em>43%</em> <span class="price">@2.10</span></td>
+          <td class="mk">45% · 28% · 27%</td>
+          <td class="num"><span class="edge neg">-1.7%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Liverpool</b><span>Brighton</span>
+              <div class="lg">Premier League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:40.610303845759766%">41%</div>
+            <div class="sx" style="width:27.1779618170929%">27%</div>
+            <div class="s2" style="width:32.21173433714734%">32%</div>
+          </div></td>
+          <td><span class="badge home">Liverpool</span> <em>41%</em> <span class="price">@2.15</span></td>
+          <td class="mk">45% · 26% · 30%</td>
+          <td class="num"><span class="edge neg">-3.9%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Paris SG</b><span>Lyon</span>
+              <div class="lg">Ligue 1</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:61.92877855975224%">62%</div>
+            <div class="sx" style="width:14.05295748540904%">14%</div>
+            <div class="s2" style="width:24.018264699896775%">24%</div>
+          </div></td>
+          <td><span class="badge home">Paris SG</span> <em>62%</em> <span class="price">@1.46</span></td>
+          <td class="mk">66% · 19% · 15%</td>
+          <td class="num"><span class="edge neg">-3.9%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Valencia</b><span>Villarreal</span>
+              <div class="lg">La Liga</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:37.514351260731964%">38%</div>
+            <div class="sx" style="width:23.54310024878233%">24%</div>
+            <div class="s2" style="width:38.94254948389646%">39%</div>
+          </div></td>
+          <td><span class="badge away">Villarreal</span> <em>39%</em> <span class="price">@2.15</span></td>
+          <td class="mk">29% · 27% · 44%</td>
+          <td class="num"><span class="edge neg">-5.5%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Hoffenheim</b><span>Lyon</span>
+              <div class="lg">Europa League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:39.531827642641055%">40%</div>
+            <div class="sx" style="width:28.562655726551906%">29%</div>
+            <div class="s2" style="width:31.905516630807046%">32%</div>
+          </div></td>
+          <td><span class="badge home">Hoffenheim</span> <em>40%</em> <span class="price">@2.00</span></td>
+          <td class="mk">48% · 24% · 29%</td>
+          <td class="num"><span class="edge neg">-8.3%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Marseille</b><span>Le Havre</span>
+              <div class="lg">Ligue 1</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:53.23358347773913%">53%</div>
+            <div class="sx" style="width:27.971552384427532%">28%</div>
+            <div class="s2" style="width:18.79486463453871%">19%</div>
+          </div></td>
+          <td><span class="badge home">Marseille</span> <em>53%</em> <span class="price">@1.58</span></td>
+          <td class="mk">62% · 21% · 18%</td>
+          <td class="num"><span class="edge neg">-8.5%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Udinese</b><span>Milan</span>
+              <div class="lg">Serie A</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:17.08481229684737%">17%</div>
+            <div class="sx" style="width:35.040180352919485%">35%</div>
+            <div class="s2" style="width:47.87500784693853%">48%</div>
+          </div></td>
+          <td><span class="badge away">Milan</span> <em>48%</em> <span class="price">@1.65</span></td>
+          <td class="mk">18% · 25% · 57%</td>
+          <td class="num"><span class="edge neg">-9.5%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Sociedad</b><span>Levante</span>
+              <div class="lg">La Liga</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:46.437912547511914%">46%</div>
+            <div class="sx" style="width:30.11138738319105%">30%</div>
+            <div class="s2" style="width:23.450700069297035%">23%</div>
+          </div></td>
+          <td><span class="badge home">Sociedad</span> <em>46%</em> <span class="price">@1.72</span></td>
+          <td class="mk">57% · 23% · 20%</td>
+          <td class="num"><span class="edge neg">-10.5%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Mainz</b><span>Werder Bremen</span>
+              <div class="lg">Bundesliga</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:44.15776990541189%">44%</div>
+            <div class="sx" style="width:28.58509889478837%">29%</div>
+            <div class="s2" style="width:27.25713169650512%">27%</div>
+          </div></td>
+          <td><span class="badge home">Mainz</span> <em>44%</em> <span class="price">@1.73</span></td>
+          <td class="mk">55% · 23% · 22%</td>
+          <td class="num"><span class="edge neg">-10.7%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Lazio</b><span>Parma</span>
+              <div class="lg">Serie A</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:55.531563821115284%">56%</div>
+            <div class="sx" style="width:28.34994203989989%">28%</div>
+            <div class="s2" style="width:16.118493393926773%">16%</div>
+          </div></td>
+          <td><span class="badge home">Lazio</span> <em>56%</em> <span class="price">@1.41</span></td>
+          <td class="mk">69% · 20% · 11%</td>
+          <td class="num"><span class="edge neg">-13.4%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Lecce</b><span>Juventus</span>
+              <div class="lg">Serie A</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:26.133112378870344%">26%</div>
+            <div class="sx" style="width:22.6298871645921%">23%</div>
+            <div class="s2" style="width:51.23700045653755%">51%</div>
+          </div></td>
+          <td><span class="badge away">Juventus</span> <em>51%</em> <span class="price">@1.46</span></td>
+          <td class="mk">13% · 22% · 66%</td>
+          <td class="num"><span class="edge neg">-14.5%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Viktoria Plzeň</b><span>Levski Sofia</span>
+              <div class="lg">Europa League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:40.0%">40%</div>
+            <div class="sx" style="width:26.0%">26%</div>
+            <div class="s2" style="width:34.0%">34%</div>
+          </div></td>
+          <td><span class="badge home">Viktoria Plzeň</span> <em>40%</em> <span class="price">@1.73</span></td>
+          <td class="mk">55% · 25% · 20%</td>
+          <td class="num"><span class="edge neg">-15.0%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Freiburg</b><span>Bayern Munich</span>
+              <div class="lg">Bundesliga</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:25.910244441491574%">26%</div>
+            <div class="sx" style="width:23.922421939340502%">24%</div>
+            <div class="s2" style="width:50.167333619167934%">50%</div>
+          </div></td>
+          <td><span class="badge away">Bayern Munich</span> <em>50%</em> <span class="price">@1.39</span></td>
+          <td class="mk">15% · 16% · 69%</td>
+          <td class="num"><span class="edge neg">-19.1%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Dinamo Zagreb</b><span>Nijmegen</span>
+              <div class="lg">Europa League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:40.0%">40%</div>
+            <div class="sx" style="width:26.0%">26%</div>
+            <div class="s2" style="width:34.0%">34%</div>
+          </div></td>
+          <td><span class="badge home">Dinamo Zagreb</span> <em>40%</em> <span class="price">@1.55</span></td>
+          <td class="mk">61% · 21% · 17%</td>
+          <td class="num"><span class="edge neg">-21.4%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Inter</b><span>Fiorentina</span>
+              <div class="lg">Serie A</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:48.85986960514278%">49%</div>
+            <div class="sx" style="width:31.946884136613523%">32%</div>
+            <div class="s2" style="width:19.19324551318564%">19%</div>
+          </div></td>
+          <td><span class="badge home">Inter</span> <em>49%</em> <span class="price">@1.37</span></td>
+          <td class="mk">71% · 18% · 12%</td>
+          <td class="num"><span class="edge neg">-21.8%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Olympiakos</b><span>Sparta Prague</span>
+              <div class="lg">Europa League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:40.0%">40%</div>
+            <div class="sx" style="width:26.0%">26%</div>
+            <div class="s2" style="width:34.0%">34%</div>
+          </div></td>
+          <td><span class="badge home">Olympiakos</span> <em>40%</em> <span class="price">@1.50</span></td>
+          <td class="mk">64% · 21% · 15%</td>
+          <td class="num"><span class="edge neg">-24.2%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>St. Gilloise</b><span>Hapoel Be'er Sheva</span>
+              <div class="lg">Europa League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:40.0%">40%</div>
+            <div class="sx" style="width:26.0%">26%</div>
+            <div class="s2" style="width:34.0%">34%</div>
+          </div></td>
+          <td><span class="badge home">St. Gilloise</span> <em>40%</em> <span class="price">@1.46</span></td>
+          <td class="mk">66% · 19% · 15%</td>
+          <td class="num"><span class="edge neg">-25.5%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Ferencváros</b><span>Torreense</span>
+              <div class="lg">Europa League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:40.0%">40%</div>
+            <div class="sx" style="width:26.0%">26%</div>
+            <div class="s2" style="width:34.0%">34%</div>
+          </div></td>
+          <td><span class="badge home">Ferencváros</span> <em>40%</em> <span class="price">@1.44</span></td>
+          <td class="mk">66% · 21% · 13%</td>
+          <td class="num"><span class="edge neg">-26.2%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Stuttgart</b><span>M'gladbach</span>
+              <div class="lg">Bundesliga</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:41.39160881987823%">41%</div>
+            <div class="sx" style="width:22.67110530233856%">23%</div>
+            <div class="s2" style="width:35.93728637448858%">36%</div>
+          </div></td>
+          <td><span class="badge home">Stuttgart</span> <em>41%</em> <span class="price">@1.38</span></td>
+          <td class="mk">69% · 18% · 13%</td>
+          <td class="num"><span class="edge neg">-27.4%</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>FK Shakhtar Donetsk</b><span>Sp Lisbon</span>
+              <div class="lg">Champions League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:44.0%">44%</div>
+            <div class="sx" style="width:25.0%">25%</div>
+            <div class="s2" style="width:31.0%">31%</div>
+          </div></td>
+          <td><span class="badge home">FK Shakhtar Donetsk</span> <em>44%</em></td>
+          <td class="mk"><span class="dash">no odds</span></td>
+          <td class="num"><span class="dash">—</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Galatasaray</b><span>Stuttgart</span>
+              <div class="lg">Champions League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:25.675223934933015%">26%</div>
+            <div class="sx" style="width:35.01962897588346%">35%</div>
+            <div class="s2" style="width:39.305146840830844%">39%</div>
+          </div></td>
+          <td><span class="badge away">Stuttgart</span> <em>39%</em></td>
+          <td class="mk"><span class="dash">no odds</span></td>
+          <td class="num"><span class="dash">—</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Feyenoord</b><span>Inter</span>
+              <div class="lg">Champions League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:73.81985992613627%">74%</div>
+            <div class="sx" style="width:14.546153216137162%">15%</div>
+            <div class="s2" style="width:11.633986857726562%">12%</div>
+          </div></td>
+          <td><span class="badge home">Feyenoord</span> <em>74%</em></td>
+          <td class="mk"><span class="dash">no odds</span></td>
+          <td class="num"><span class="dash">—</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Barcelona</b><span>Aston Villa</span>
+              <div class="lg">Champions League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:71.47908445038223%">71%</div>
+            <div class="sx" style="width:19.68024639248048%">20%</div>
+            <div class="s2" style="width:8.84066903296095%"></div>
+          </div></td>
+          <td><span class="badge home">Barcelona</span> <em>71%</em></td>
+          <td class="mk"><span class="dash">no odds</span></td>
+          <td class="num"><span class="dash">—</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Ath Madrid</b><span>Bayern Munich</span>
+              <div class="lg">Champions League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:13.931613940699414%">14%</div>
+            <div class="sx" style="width:19.46525537836996%">19%</div>
+            <div class="s2" style="width:66.60313068093062%">67%</div>
+          </div></td>
+          <td><span class="badge away">Bayern Munich</span> <em>67%</em></td>
+          <td class="mk"><span class="dash">no odds</span></td>
+          <td class="num"><span class="dash">—</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Villarreal</b><span>Paris SG</span>
+              <div class="lg">Champions League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:42.801664340593796%">43%</div>
+            <div class="sx" style="width:20.170039006983565%">20%</div>
+            <div class="s2" style="width:37.02829764583338%">37%</div>
+          </div></td>
+          <td><span class="badge home">Villarreal</span> <em>43%</em></td>
+          <td class="mk"><span class="dash">no odds</span></td>
+          <td class="num"><span class="dash">—</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Man United</b><span>Roma</span>
+              <div class="lg">Champions League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:69.61114236052715%">70%</div>
+            <div class="sx" style="width:19.449672060350988%">19%</div>
+            <div class="s2" style="width:10.939186572532613%"></div>
+          </div></td>
+          <td><span class="badge home">Man United</span> <em>70%</em></td>
+          <td class="mk"><span class="dash">no odds</span></td>
+          <td class="num"><span class="dash">—</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>FK Bodø/Glimt</b><span>Lille</span>
+              <div class="lg">Champions League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:44.0%">44%</div>
+            <div class="sx" style="width:25.0%">25%</div>
+            <div class="s2" style="width:31.0%">31%</div>
+          </div></td>
+          <td><span class="badge home">FK Bodø/Glimt</span> <em>44%</em></td>
+          <td class="mk"><span class="dash">no odds</span></td>
+          <td class="num"><span class="dash">—</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>LASK Linz</b><span>ŠK Slovan Bratislava</span>
+              <div class="lg">Champions League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:44.0%">44%</div>
+            <div class="sx" style="width:25.0%">25%</div>
+            <div class="s2" style="width:31.0%">31%</div>
+          </div></td>
+          <td><span class="badge home">LASK Linz</span> <em>44%</em></td>
+          <td class="mk"><span class="dash">no odds</span></td>
+          <td class="num"><span class="dash">—</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>AEK</b><span>Real Madrid</span>
+              <div class="lg">Champions League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:30.41387693984908%">30%</div>
+            <div class="sx" style="width:27.615698424207086%">28%</div>
+            <div class="s2" style="width:41.97042389088577%">42%</div>
+          </div></td>
+          <td><span class="badge away">Real Madrid</span> <em>42%</em></td>
+          <td class="mk"><span class="dash">no odds</span></td>
+          <td class="num"><span class="dash">—</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Fenerbahce</b><span>Liverpool</span>
+              <div class="lg">Champions League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:53.48814818606286%">53%</div>
+            <div class="sx" style="width:30.2231101354027%">30%</div>
+            <div class="s2" style="width:16.288741181829078%">16%</div>
+          </div></td>
+          <td><span class="badge home">Fenerbahce</span> <em>53%</em></td>
+          <td class="mk"><span class="dash">no odds</span></td>
+          <td class="num"><span class="dash">—</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>RB Leipzig</b><span>Man City</span>
+              <div class="lg">Champions League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:72.98088396726027%">73%</div>
+            <div class="sx" style="width:16.27877332725863%">16%</div>
+            <div class="s2" style="width:10.740342457128413%"></div>
+          </div></td>
+          <td><span class="badge home">RB Leipzig</span> <em>73%</em></td>
+          <td class="mk"><span class="dash">no odds</span></td>
+          <td class="num"><span class="dash">—</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>SK Slavia Praha</b><span>Arsenal</span>
+              <div class="lg">Champions League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:44.0%">44%</div>
+            <div class="sx" style="width:25.0%">25%</div>
+            <div class="s2" style="width:31.0%">31%</div>
+          </div></td>
+          <td><span class="badge home">SK Slavia Praha</span> <em>44%</em></td>
+          <td class="mk"><span class="dash">no odds</span></td>
+          <td class="num"><span class="dash">—</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>PSV Eindhoven</b><span>Club Brugge</span>
+              <div class="lg">Champions League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:72.44543841030104%">72%</div>
+            <div class="sx" style="width:16.996932637442434%">17%</div>
+            <div class="s2" style="width:10.557629324785573%"></div>
+          </div></td>
+          <td><span class="badge home">PSV Eindhoven</span> <em>72%</em></td>
+          <td class="mk"><span class="dash">no odds</span></td>
+          <td class="num"><span class="dash">—</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Dortmund</b><span>Betis</span>
+              <div class="lg">Champions League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:35.57361295442933%">36%</div>
+            <div class="sx" style="width:32.50549902556046%">33%</div>
+            <div class="s2" style="width:31.920888020010203%">32%</div>
+          </div></td>
+          <td><span class="badge home">Dortmund</span> <em>36%</em></td>
+          <td class="mk"><span class="dash">no odds</span></td>
+          <td class="num"><span class="dash">—</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Porto</b><span>Napoli</span>
+              <div class="lg">Champions League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:34.94790050284928%">35%</div>
+            <div class="sx" style="width:33.566844725178726%">34%</div>
+            <div class="s2" style="width:31.48525402691393%">31%</div>
+          </div></td>
+          <td><span class="badge home">Porto</span> <em>35%</em></td>
+          <td class="mk"><span class="dash">no odds</span></td>
+          <td class="num"><span class="dash">—</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Lens</b><span>Como</span>
+              <div class="lg">Champions League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:40.3137794475799%">40%</div>
+            <div class="sx" style="width:35.53432897612781%">36%</div>
+            <div class="s2" style="width:24.151891576292293%">24%</div>
+          </div></td>
+          <td><span class="badge home">Lens</span> <em>40%</em></td>
+          <td class="mk"><span class="dash">no odds</span></td>
+          <td class="num"><span class="dash">—</span></td>
+        </tr><tr>
+          <td><div class="tm"><b>Viking FK</b><span>Sabah FK</span>
+              <div class="lg">Champions League</div></div></td>
+          <td><div class="seg">
+            <div class="s1" style="width:44.0%">44%</div>
+            <div class="sx" style="width:25.0%">25%</div>
+            <div class="s2" style="width:31.0%">31%</div>
+          </div></td>
+          <td><span class="badge home">Viking FK</span> <em>44%</em></td>
+          <td class="mk"><span class="dash">no odds</span></td>
+          <td class="num"><span class="dash">—</span></td>
+        </tr></tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>Top edges across all markets</h2>
+    <div class="h2sub">Top 40 by edge. 1X2, O/U 2.5 and BTTS are compared against live Flashscore prices.</div>
+    <div class="card"><table>
+      <thead><tr><th>Match</th><th>Market</th><th>Selection</th><th class="num">Model</th>
+      <th class="num">Market</th><th class="num">Edge</th><th class="num">Price</th></tr></thead>
+      <tbody><tr>
+          <td><div class="tm"><b>Angers</b><span>Lorient</span>
+              <div class="lg">Ligue 1</div></div></td>
+          <td class="mk">ou15</td>
+          <td><span class="badge">Under</span></td>
+          <td class="num">90%</td>
+          <td class="num">28%</td>
+          <td class="num"><span class="edge hot">+61.3%</span></td>
+          <td class="num">3.40</td>
+        </tr><tr>
+          <td><div class="tm"><b>Cagliari</b><span>Bologna</span>
+              <div class="lg">Serie A</div></div></td>
+          <td class="mk">ou35</td>
+          <td><span class="badge">Over</span></td>
+          <td class="num">78%</td>
+          <td class="num">24%</td>
+          <td class="num"><span class="edge hot">+54.0%</span></td>
+          <td class="num">4.00</td>
+        </tr><tr>
+          <td><div class="tm"><b>Atalanta</b><span>Frosinone</span>
+              <div class="lg">Serie A</div></div></td>
+          <td class="mk">BTTS</td>
+          <td><span class="badge">No</span></td>
+          <td class="num">87%</td>
+          <td class="num">34%</td>
+          <td class="num"><span class="edge hot">+52.8%</span></td>
+          <td class="num">2.75</td>
+        </tr><tr>
+          <td><div class="tm"><b>Dortmund</b><span>Ein Frankfurt</span>
+              <div class="lg">Bundesliga</div></div></td>
+          <td class="mk">1X2</td>
+          <td><span class="badge">Away</span></td>
+          <td class="num">69%</td>
+          <td class="num">16%</td>
+          <td class="num"><span class="edge hot">+52.7%</span></td>
+          <td class="num">6.00</td>
+        </tr><tr>
+          <td><div class="tm"><b>Coventry</b><span>Fulham</span>
+              <div class="lg">Premier League</div></div></td>
+          <td class="mk">ou35</td>
+          <td><span class="badge">Over</span></td>
+          <td class="num">85%</td>
+          <td class="num">34%</td>
+          <td class="num"><span class="edge hot">+50.9%</span></td>
+          <td class="num">2.75</td>
+        </tr><tr>
+          <td><div class="tm"><b>Toulouse</b><span>Troyes</span>
+              <div class="lg">Ligue 1</div></div></td>
+          <td class="mk">ou15</td>
+          <td><span class="badge">Under</span></td>
+          <td class="num">71%</td>
+          <td class="num">21%</td>
+          <td class="num"><span class="edge hot">+49.9%</span></td>
+          <td class="num">4.60</td>
+        </tr><tr>
+          <td><div class="tm"><b>Toulouse</b><span>Troyes</span>
+              <div class="lg">Ligue 1</div></div></td>
+          <td class="mk">BTTS</td>
+          <td><span class="badge">No</span></td>
+          <td class="num">92%</td>
+          <td class="num">44%</td>
+          <td class="num"><span class="edge hot">+48.4%</span></td>
+          <td class="num">2.10</td>
+        </tr><tr>
+          <td><div class="tm"><b>Napoli</b><span>Roma</span>
+              <div class="lg">Serie A</div></div></td>
+          <td class="mk">BTTS</td>
+          <td><span class="badge">No</span></td>
+          <td class="num">91%</td>
+          <td class="num">45%</td>
+          <td class="num"><span class="edge hot">+46.4%</span></td>
+          <td class="num">2.10</td>
+        </tr><tr>
+          <td><div class="tm"><b>Venezia</b><span>Inter</span>
+              <div class="lg">Serie A</div></div></td>
+          <td class="mk">ou35</td>
+          <td><span class="badge">Under</span></td>
+          <td class="num">93%</td>
+          <td class="num">47%</td>
+          <td class="num"><span class="edge hot">+45.6%</span></td>
+          <td class="num">2.00</td>
+        </tr><tr>
+          <td><div class="tm"><b>Atalanta</b><span>Frosinone</span>
+              <div class="lg">Serie A</div></div></td>
+          <td class="mk">ou35</td>
+          <td><span class="badge">Under</span></td>
+          <td class="num">98%</td>
+          <td class="num">53%</td>
+          <td class="num"><span class="edge hot">+45.4%</span></td>
+          <td class="num">1.80</td>
+        </tr><tr>
+          <td><div class="tm"><b>Udinese</b><span>Milan</span>
+              <div class="lg">Serie A</div></div></td>
+          <td class="mk">BTTS</td>
+          <td><span class="badge">Yes</span></td>
+          <td class="num">96%</td>
+          <td class="num">51%</td>
+          <td class="num"><span class="edge hot">+45.1%</span></td>
+          <td class="num">1.82</td>
+        </tr><tr>
+          <td><div class="tm"><b>Arsenal</b><span>Everton</span>
+              <div class="lg">Premier League</div></div></td>
+          <td class="mk">1X2</td>
+          <td><span class="badge">Away</span></td>
+          <td class="num">56%</td>
+          <td class="num">12%</td>
+          <td class="num"><span class="edge hot">+43.6%</span></td>
+          <td class="num">8.00</td>
+        </tr><tr>
+          <td><div class="tm"><b>Venezia</b><span>Inter</span>
+              <div class="lg">Serie A</div></div></td>
+          <td class="mk">BTTS</td>
+          <td><span class="badge">No</span></td>
+          <td class="num">85%</td>
+          <td class="num">41%</td>
+          <td class="num"><span class="edge hot">+43.4%</span></td>
+          <td class="num">2.25</td>
+        </tr><tr>
+          <td><div class="tm"><b>Rennes</b><span>Strasbourg</span>
+              <div class="lg">Ligue 1</div></div></td>
+          <td class="mk">O/U 2.5</td>
+          <td><span class="badge">Under</span></td>
+          <td class="num">75%</td>
+          <td class="num">33%</td>
+          <td class="num"><span class="edge hot">+42.1%</span></td>
+          <td class="num">3.00</td>
+        </tr><tr>
+          <td><div class="tm"><b>Atalanta</b><span>Frosinone</span>
+              <div class="lg">Serie A</div></div></td>
+          <td class="mk">O/U 2.5</td>
+          <td><span class="badge">Under</span></td>
+          <td class="num">74%</td>
+          <td class="num">32%</td>
+          <td class="num"><span class="edge hot">+41.5%</span></td>
+          <td class="num">3.00</td>
+        </tr><tr>
+          <td><div class="tm"><b>Rennes</b><span>Strasbourg</span>
+              <div class="lg">Ligue 1</div></div></td>
+          <td class="mk">ou35</td>
+          <td><span class="badge">Under</span></td>
+          <td class="num">95%</td>
+          <td class="num">53%</td>
+          <td class="num"><span class="edge hot">+41.3%</span></td>
+          <td class="num">1.80</td>
+        </tr><tr>
+          <td><div class="tm"><b>Inter</b><span>Fiorentina</span>
+              <div class="lg">Serie A</div></div></td>
+          <td class="mk">ou35</td>
+          <td><span class="badge">Under</span></td>
+          <td class="num">93%</td>
+          <td class="num">53%</td>
+          <td class="num"><span class="edge hot">+39.8%</span></td>
+          <td class="num">1.80</td>
+        </tr><tr>
+          <td><div class="tm"><b>Juventus</b><span>Rennes</span>
+              <div class="lg">Europa League</div></div></td>
+          <td class="mk">BTTS</td>
+          <td><span class="badge">Yes</span></td>
+          <td class="num">90%</td>
+          <td class="num">52%</td>
+          <td class="num"><span class="edge hot">+38.2%</span></td>
+          <td class="num">1.80</td>
+        </tr><tr>
+          <td><div class="tm"><b>Cagliari</b><span>Bologna</span>
+              <div class="lg">Serie A</div></div></td>
+          <td class="mk">O/U 2.5</td>
+          <td><span class="badge">Over</span></td>
+          <td class="num">81%</td>
+          <td class="num">44%</td>
+          <td class="num"><span class="edge hot">+37.6%</span></td>
+          <td class="num">2.20</td>
+        </tr><tr>
+          <td><div class="tm"><b>Parma</b><span>Udinese</span>
+              <div class="lg">Serie A</div></div></td>
+          <td class="mk">BTTS</td>
+          <td><span class="badge">Yes</span></td>
+          <td class="num">86%</td>
+          <td class="num">50%</td>
+          <td class="num"><span class="edge hot">+36.0%</span></td>
+          <td class="num">1.91</td>
+        </tr><tr>
+          <td><div class="tm"><b>Monaco</b><span>Lille</span>
+              <div class="lg">Ligue 1</div></div></td>
+          <td class="mk">1X2</td>
+          <td><span class="badge">Away</span></td>
+          <td class="num">63%</td>
+          <td class="num">27%</td>
+          <td class="num"><span class="edge hot">+35.8%</span></td>
+          <td class="num">3.70</td>
+        </tr><tr>
+          <td><div class="tm"><b>Brest</b><span>Nice</span>
+              <div class="lg">Ligue 1</div></div></td>
+          <td class="mk">BTTS</td>
+          <td><span class="badge">Yes</span></td>
+          <td class="num">95%</td>
+          <td class="num">59%</td>
+          <td class="num"><span class="edge hot">+35.7%</span></td>
+          <td class="num">1.57</td>
+        </tr><tr>
+          <td><div class="tm"><b>Coventry</b><span>Fulham</span>
+              <div class="lg">Premier League</div></div></td>
+          <td class="mk">BTTS</td>
+          <td><span class="badge">Yes</span></td>
+          <td class="num">94%</td>
+          <td class="num">59%</td>
+          <td class="num"><span class="edge hot">+35.0%</span></td>
+          <td class="num">1.58</td>
+        </tr><tr>
+          <td><div class="tm"><b>Auxerre</b><span>Le Mans</span>
+              <div class="lg">Ligue 1</div></div></td>
+          <td class="mk">ou35</td>
+          <td><span class="badge">Under</span></td>
+          <td class="num">99%</td>
+          <td class="num">64%</td>
+          <td class="num"><span class="edge hot">+34.8%</span></td>
+          <td class="num">1.50</td>
+        </tr><tr>
+          <td><div class="tm"><b>Crystal Palace</b><span>Newcastle</span>
+              <div class="lg">Premier League</div></div></td>
+          <td class="mk">BTTS</td>
+          <td><span class="badge">Yes</span></td>
+          <td class="num">96%</td>
+          <td class="num">62%</td>
+          <td class="num"><span class="edge hot">+34.8%</span></td>
+          <td class="num">1.51</td>
+        </tr><tr>
+          <td><div class="tm"><b>Besiktas</b><span>Crystal Palace</span>
+              <div class="lg">Europa League</div></div></td>
+          <td class="mk">BTTS</td>
+          <td><span class="badge">No</span></td>
+          <td class="num">71%</td>
+          <td class="num">38%</td>
+          <td class="num"><span class="edge hot">+33.5%</span></td>
+          <td class="num">2.50</td>
+        </tr><tr>
+          <td><div class="tm"><b>Ath Bilbao</b><span>Getafe</span>
+              <div class="lg">La Liga</div></div></td>
+          <td class="mk">BTTS</td>
+          <td><span class="badge">No</span></td>
+          <td class="num">92%</td>
+          <td class="num">59%</td>
+          <td class="num"><span class="edge hot">+33.5%</span></td>
+          <td class="num">1.58</td>
+        </tr><tr>
+          <td><div class="tm"><b>Torino</b><span>Monza</span>
+              <div class="lg">Serie A</div></div></td>
+          <td class="mk">1X2</td>
+          <td><span class="badge">Away</span></td>
+          <td class="num">61%</td>
+          <td class="num">27%</td>
+          <td class="num"><span class="edge hot">+33.4%</span></td>
+          <td class="num">3.50</td>
+        </tr><tr>
+          <td><div class="tm"><b>Aston Villa</b><span>Man City</span>
+              <div class="lg">Premier League</div></div></td>
+          <td class="mk">ou35</td>
+          <td><span class="badge">Under</span></td>
+          <td class="num">92%</td>
+          <td class="num">59%</td>
+          <td class="num"><span class="edge hot">+33.3%</span></td>
+          <td class="num">1.62</td>
+        </tr><tr>
+          <td><div class="tm"><b>Arsenal</b><span>Everton</span>
+              <div class="lg">Premier League</div></div></td>
+          <td class="mk">ou15</td>
+          <td><span class="badge">Under</span></td>
+          <td class="num">59%</td>
+          <td class="num">25%</td>
+          <td class="num"><span class="edge hot">+33.3%</span></td>
+          <td class="num">3.75</td>
+        </tr><tr>
+          <td><div class="tm"><b>Auxerre</b><span>Le Mans</span>
+              <div class="lg">Ligue 1</div></div></td>
+          <td class="mk">O/U 2.5</td>
+          <td><span class="badge">Under</span></td>
+          <td class="num">78%</td>
+          <td class="num">45%</td>
+          <td class="num"><span class="edge hot">+33.0%</span></td>
+          <td class="num">2.10</td>
+        </tr><tr>
+          <td><div class="tm"><b>Marseille</b><span>Le Havre</span>
+              <div class="lg">Ligue 1</div></div></td>
+          <td class="mk">ou35</td>
+          <td><span class="badge">Under</span></td>
+          <td class="num">93%</td>
+          <td class="num">60%</td>
+          <td class="num"><span class="edge hot">+32.7%</span></td>
+          <td class="num">1.57</td>
+        </tr><tr>
+          <td><div class="tm"><b>Genoa</b><span>Venezia</span>
+              <div class="lg">Serie A</div></div></td>
+          <td class="mk">BTTS</td>
+          <td><span class="badge">Yes</span></td>
+          <td class="num">86%</td>
+          <td class="num">53%</td>
+          <td class="num"><span class="edge hot">+32.6%</span></td>
+          <td class="num">1.75</td>
+        </tr><tr>
+          <td><div class="tm"><b>Marseille</b><span>Le Havre</span>
+              <div class="lg">Ligue 1</div></div></td>
+          <td class="mk">ou15</td>
+          <td><span class="badge">Under</span></td>
+          <td class="num">51%</td>
+          <td class="num">19%</td>
+          <td class="num"><span class="edge hot">+32.3%</span></td>
+          <td class="num">5.00</td>
+        </tr><tr>
+          <td><div class="tm"><b>Valencia</b><span>Villarreal</span>
+              <div class="lg">La Liga</div></div></td>
+          <td class="mk">ou35</td>
+          <td><span class="badge">Under</span></td>
+          <td class="num">98%</td>
+          <td class="num">66%</td>
+          <td class="num"><span class="edge hot">+32.2%</span></td>
+          <td class="num">1.44</td>
+        </tr><tr>
+          <td><div class="tm"><b>Arsenal</b><span>Everton</span>
+              <div class="lg">Premier League</div></div></td>
+          <td class="mk">BTTS</td>
+          <td><span class="badge">No</span></td>
+          <td class="num">87%</td>
+          <td class="num">55%</td>
+          <td class="num"><span class="edge hot">+32.1%</span></td>
+          <td class="num">1.70</td>
+        </tr><tr>
+          <td><div class="tm"><b>Roma</b><span>Cagliari</span>
+              <div class="lg">Serie A</div></div></td>
+          <td class="mk">1X2</td>
+          <td><span class="badge">Away</span></td>
+          <td class="num">42%</td>
+          <td class="num">11%</td>
+          <td class="num"><span class="edge hot">+31.9%</span></td>
+          <td class="num">9.00</td>
+        </tr><tr>
+          <td><div class="tm"><b>Freiburg</b><span>Bayern Munich</span>
+              <div class="lg">Bundesliga</div></div></td>
+          <td class="mk">ou35</td>
+          <td><span class="badge">Over</span></td>
+          <td class="num">90%</td>
+          <td class="num">58%</td>
+          <td class="num"><span class="edge hot">+31.5%</span></td>
+          <td class="num">1.62</td>
+        </tr><tr>
+          <td><div class="tm"><b>OFI</b><span>Leverkusen</span>
+              <div class="lg">Europa League</div></div></td>
+          <td class="mk">1X2</td>
+          <td><span class="badge">Home</span></td>
+          <td class="num">40%</td>
+          <td class="num">9%</td>
+          <td class="num"><span class="edge hot">+31.4%</span></td>
+          <td class="num">11.00</td>
+        </tr><tr>
+          <td><div class="tm"><b>RB Leipzig</b><span>Elversberg</span>
+              <div class="lg">Bundesliga</div></div></td>
+          <td class="mk">ou35</td>
+          <td><span class="badge">Under</span></td>
+          <td class="num">76%</td>
+          <td class="num">45%</td>
+          <td class="num"><span class="edge hot">+31.4%</span></td>
+          <td class="num">2.10</td>
+        </tr></tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>Every fixture, every market</h2>
+    <div class="h2sub">Grouped by competition.</div>
+    <details open>
+          <summary><span class="lname">Champions League</span><span class="lcount">18 matches</span></summary>
+          <div class="mgrid"><div class="mcard">
+              <div class="mhead"><span class="mname">FK Shakhtar Donetsk <em>vs</em> Sp Lisbon</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">44% · X 25% · 31%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 86% · O2.5 73% · O3.5 48%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 62%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 69% · 12 75% · X2 56%</span></div>
+              
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Galatasaray <em>vs</em> Stuttgart</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">26% · X 35% · 39%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 79% · O2.5 75% · O3.5 24%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 55%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 61% · 12 65% · X2 74%</span></div>
+              
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Feyenoord <em>vs</em> Inter</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">74% · X 15% · 12%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 99% · O2.5 95% · O3.5 96%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 78%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 88% · 12 85% · X2 26%</span></div>
+              
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Barcelona <em>vs</em> Aston Villa</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">71% · X 20% · 9%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 94% · O2.5 87% · O3.5 46%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 59%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 91% · 12 80% · X2 29%</span></div>
+              
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Ath Madrid <em>vs</em> Bayern Munich</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">14% · X 19% · 67%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 90% · O2.5 90% · O3.5 55%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 89%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 33% · 12 81% · X2 86%</span></div>
+              
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Villarreal <em>vs</em> Paris SG</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">43% · X 20% · 37%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 99% · O2.5 94% · O3.5 72%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 83%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 63% · 12 80% · X2 57%</span></div>
+              
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Man United <em>vs</em> Roma</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">70% · X 19% · 11%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 92% · O2.5 76% · O3.5 26%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 55%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 89% · 12 81% · X2 30%</span></div>
+              
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">FK Bodø/Glimt <em>vs</em> Lille</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">44% · X 25% · 31%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 86% · O2.5 73% · O3.5 48%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 62%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 69% · 12 75% · X2 56%</span></div>
+              
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">LASK Linz <em>vs</em> ŠK Slovan Bratislava</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">44% · X 25% · 31%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 86% · O2.5 73% · O3.5 48%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 62%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 69% · 12 75% · X2 56%</span></div>
+              
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">AEK <em>vs</em> Real Madrid</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">30% · X 28% · 42%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 56% · O2.5 50% · O3.5 7%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 31%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 58% · 12 72% · X2 70%</span></div>
+              
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Fenerbahce <em>vs</em> Liverpool</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">53% · X 30% · 16%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 98% · O2.5 89% · O3.5 42%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 77%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 84% · 12 70% · X2 47%</span></div>
+              
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">RB Leipzig <em>vs</em> Man City</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">73% · X 16% · 11%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 98% · O2.5 91% · O3.5 61%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 68%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 89% · 12 84% · X2 27%</span></div>
+              
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">SK Slavia Praha <em>vs</em> Arsenal</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">44% · X 25% · 31%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 86% · O2.5 73% · O3.5 48%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 62%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 69% · 12 75% · X2 56%</span></div>
+              
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">PSV Eindhoven <em>vs</em> Club Brugge</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">72% · X 17% · 11%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 99% · O2.5 95% · O3.5 75%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 74%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 89% · 12 83% · X2 28%</span></div>
+              
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Dortmund <em>vs</em> Betis</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">36% · X 33% · 32%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 83% · O2.5 72% · O3.5 33%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 60%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 68% · 12 67% · X2 64%</span></div>
+              
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Porto <em>vs</em> Napoli</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">35% · X 34% · 31%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 99% · O2.5 94% · O3.5 85%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 91%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 69% · 12 66% · X2 65%</span></div>
+              
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Lens <em>vs</em> Como</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">40% · X 36% · 24%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 98% · O2.5 94% · O3.5 88%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 95%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 76% · 12 64% · X2 60%</span></div>
+              
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Viking FK <em>vs</em> Sabah FK</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">44% · X 25% · 31%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 86% · O2.5 73% · O3.5 48%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 62%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 69% · 12 75% · X2 56%</span></div>
+              
+            </div></div>
+        </details><details open>
+          <summary><span class="lname">Europa League</span><span class="lcount">18 matches</span></summary>
+          <div class="mgrid"><div class="mcard">
+              <div class="mhead"><span class="mname">Ararat-Armenia <em>vs</em> AZ Alkmaar</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">40% · X 26% · 34%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 80% · O2.5 64% · O3.5 38%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 55%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 66% · 12 74% · X2 60%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 58%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Ferencváros <em>vs</em> Torreense</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">40% · X 26% · 34%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 80% · O2.5 64% · O3.5 38%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 55%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 66% · 12 74% · X2 60%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 57%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Dinamo Zagreb <em>vs</em> Nijmegen</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">40% · X 26% · 34%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 80% · O2.5 64% · O3.5 38%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 55%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 66% · 12 74% · X2 60%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 60%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Juventus <em>vs</em> Rennes</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">29% · X 30% · 42%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 98% · O2.5 85% · O3.5 68%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 90%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 58% · 12 70% · X2 71%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 58%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Lech Poznań <em>vs</em> Sunderland</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">40% · X 26% · 34%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 80% · O2.5 64% · O3.5 38%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 55%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 66% · 12 74% · X2 60%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 56%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">OFI <em>vs</em> Leverkusen</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">40% · X 26% · 34%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 80% · O2.5 64% · O3.5 38%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 55%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 66% · 12 74% · X2 60%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 69%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">St. Gilloise <em>vs</em> Hapoel Be'er Sheva</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">40% · X 26% · 34%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 80% · O2.5 64% · O3.5 38%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 55%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 66% · 12 74% · X2 60%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 61%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Sturm Graz <em>vs</em> Marseille</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">40% · X 26% · 34%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 80% · O2.5 64% · O3.5 38%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 55%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 66% · 12 74% · X2 60%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 60%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Bournemouth <em>vs</em> Milan</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">23% · X 22% · 54%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 78% · O2.5 71% · O3.5 36%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 65%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 46% · 12 78% · X2 77%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 56%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Besiktas <em>vs</em> Crystal Palace</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">56% · X 32% · 11%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 50% · O2.5 49% · O3.5 15%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 29%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 89% · 12 68% · X2 44%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 60%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Celtic <em>vs</em> Celta</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">40% · X 26% · 34%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 80% · O2.5 64% · O3.5 38%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 55%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 66% · 12 74% · X2 60%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 57%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Viktoria Plzeň <em>vs</em> Levski Sofia</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">40% · X 26% · 34%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 80% · O2.5 64% · O3.5 38%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 55%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 66% · 12 74% · X2 60%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 53%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Jagiellonia Białystok <em>vs</em> Anderlecht</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">40% · X 26% · 34%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 80% · O2.5 64% · O3.5 38%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 55%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 66% · 12 74% · X2 60%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 54%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Lillestrøm <em>vs</em> Sociedad</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">40% · X 26% · 34%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 80% · O2.5 64% · O3.5 38%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 55%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 66% · 12 74% · X2 60%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 68%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Celje <em>vs</em> Red Bull Salzburg</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">40% · X 26% · 34%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 80% · O2.5 64% · O3.5 38%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 55%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 66% · 12 74% · X2 60%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 63%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Olympiakos <em>vs</em> Sparta Prague</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">40% · X 26% · 34%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 80% · O2.5 64% · O3.5 38%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 55%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 66% · 12 74% · X2 60%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 54%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Omonia <em>vs</em> Benfica</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">40% · X 26% · 34%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 80% · O2.5 64% · O3.5 38%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 55%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 66% · 12 74% · X2 60%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 63%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Hoffenheim <em>vs</em> Lyon</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">40% · X 29% · 32%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 93% · O2.5 79% · O3.5 49%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 79%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 68% · 12 71% · X2 60%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 64%</span></div>
+            </div></div>
+        </details><details >
+          <summary><span class="lname">Premier League</span><span class="lcount">10 matches</span></summary>
+          <div class="mgrid"><div class="mcard">
+              <div class="mhead"><span class="mname">Ipswich <em>vs</em> Nott'm Forest</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">12% · X 46% · 42%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 83% · O2.5 43% · O3.5 8%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 82%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 58% · 12 54% · X2 88%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 54%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Aston Villa <em>vs</em> Man City</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">47% · X 31% · 22%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 85% · O2.5 67% · O3.5 8%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 54%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 78% · 12 69% · X2 53%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 62%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Arsenal <em>vs</em> Everton</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">9% · X 35% · 56%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 41% · O2.5 57% · O3.5 23%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 13%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 44% · 12 65% · X2 91%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 52%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Coventry <em>vs</em> Fulham</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">57% · X 25% · 18%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 99% · O2.5 76% · O3.5 85%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 94%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 82% · 12 75% · X2 43%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 55%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Chelsea <em>vs</em> Tottenham</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">71% · X 20% · 10%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 99% · O2.5 73% · O3.5 16%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 56%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 90% · 12 80% · X2 29%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 63%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Liverpool <em>vs</em> Brighton</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">41% · X 27% · 32%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 82% · O2.5 49% · O3.5 16%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 37%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 68% · 12 73% · X2 59%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 61%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Crystal Palace <em>vs</em> Newcastle</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">26% · X 35% · 39%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 95% · O2.5 56% · O3.5 32%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 96%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 61% · 12 65% · X2 74%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 59%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Man United <em>vs</em> Bournemouth</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">64% · X 21% · 15%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 98% · O2.5 71% · O3.5 24%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 81%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 85% · 12 79% · X2 36%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 59%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Hull <em>vs</em> Brentford</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">46% · X 28% · 26%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 77% · O2.5 48% · O3.5 21%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 29%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 74% · 12 72% · X2 54%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 57%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Sunderland <em>vs</em> Leeds</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">24% · X 22% · 54%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 90% · O2.5 37% · O3.5 5%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 43%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 46% · 12 78% · X2 76%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 45%</span></div>
+            </div></div>
+        </details><details >
+          <summary><span class="lname">Serie A</span><span class="lcount">18 matches</span></summary>
+          <div class="mgrid"><div class="mcard">
+              <div class="mhead"><span class="mname">Torino <em>vs</em> Monza</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">15% · X 24% · 61%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 95% · O2.5 65% · O3.5 9%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 53%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 39% · 12 76% · X2 85%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 49%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Cagliari <em>vs</em> Bologna</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">45% · X 27% · 27%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 96% · O2.5 81% · O3.5 78%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 64%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 73% · 12 73% · X2 55%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 44%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Como <em>vs</em> Sassuolo</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">37% · X 21% · 42%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 96% · O2.5 82% · O3.5 28%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 80%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 58% · 12 79% · X2 63%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 65%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Napoli <em>vs</em> Roma</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">61% · X 23% · 16%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 67% · O2.5 48% · O3.5 12%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 9%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 84% · 12 77% · X2 39%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 51%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Lazio <em>vs</em> Parma</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">56% · X 28% · 16%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 89% · O2.5 65% · O3.5 24%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 53%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 84% · 12 72% · X2 44%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 51%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Inter <em>vs</em> Fiorentina</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">49% · X 32% · 19%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 93% · O2.5 36% · O3.5 7%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 76%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 81% · 12 68% · X2 51%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 66%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Atalanta <em>vs</em> Frosinone</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">66% · X 18% · 16%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 95% · O2.5 26% · O3.5 2%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 13%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 84% · 12 82% · X2 34%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 68%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Genoa <em>vs</em> Venezia</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">43% · X 22% · 35%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 95% · O2.5 68% · O3.5 44%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 86%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 65% · 12 78% · X2 57%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 49%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Lecce <em>vs</em> Juventus</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">26% · X 23% · 51%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 82% · O2.5 70% · O3.5 49%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 50%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 49% · 12 77% · X2 74%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 51%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Udinese <em>vs</em> Milan</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">17% · X 35% · 48%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 98% · O2.5 60% · O3.5 51%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 96%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 52% · 12 65% · X2 83%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 51%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Sassuolo <em>vs</em> Lazio</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">41% · X 34% · 25%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 64% · O2.5 31% · O3.5 11%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 40%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 75% · 12 66% · X2 59%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 55%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Roma <em>vs</em> Cagliari</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">28% · X 30% · 42%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 99% · O2.5 51% · O3.5 43%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 37%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 58% · 12 70% · X2 72%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 55%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Torino <em>vs</em> Como</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">9% · X 16% · 76%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 95% · O2.5 79% · O3.5 48%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 41%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 24% · 12 84% · X2 91%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 55%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Milan <em>vs</em> Bologna</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">29% · X 32% · 38%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 98% · O2.5 72% · O3.5 31%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 57%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 62% · 12 68% · X2 71%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 53%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Venezia <em>vs</em> Inter</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">9% · X 13% · 78%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 89% · O2.5 43% · O3.5 7%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 15%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 22% · 12 87% · X2 91%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 72%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Parma <em>vs</em> Udinese</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">58% · X 32% · 10%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 85% · O2.5 49% · O3.5 3%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 86%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 90% · 12 68% · X2 42%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 43%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Genoa <em>vs</em> Juventus</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">21% · X 23% · 57%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 97% · O2.5 74% · O3.5 45%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 72%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 43% · 12 77% · X2 79%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 47%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Monza <em>vs</em> Napoli</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">12% · X 15% · 73%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 98% · O2.5 58% · O3.5 52%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 71%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 27% · 12 85% · X2 88%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 55%</span></div>
+            </div></div>
+        </details><details >
+          <summary><span class="lname">Bundesliga</span><span class="lcount">9 matches</span></summary>
+          <div class="mgrid"><div class="mcard">
+              <div class="mhead"><span class="mname">Stuttgart <em>vs</em> M'gladbach</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">41% · X 23% · 36%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 98% · O2.5 80% · O3.5 41%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 78%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 64% · 12 77% · X2 59%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 73%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Mainz <em>vs</em> Werder Bremen</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">44% · X 29% · 27%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 89% · O2.5 61% · O3.5 38%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 85%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 73% · 12 71% · X2 56%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 61%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">FC Koln <em>vs</em> Schalke 04</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">59% · X 24% · 18%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 68% · O2.5 37% · O3.5 17%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 59%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 82% · 12 76% · X2 41%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 59%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">RB Leipzig <em>vs</em> Elversberg</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">65% · X 21% · 13%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 92% · O2.5 58% · O3.5 24%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 57%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 87% · 12 79% · X2 35%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 74%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Paderborn <em>vs</em> Hamburg</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">62% · X 24% · 15%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 96% · O2.5 75% · O3.5 21%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 46%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 85% · 12 76% · X2 38%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 60%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Augsburg <em>vs</em> Union Berlin</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">75% · X 13% · 11%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 99% · O2.5 76% · O3.5 28%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 39%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 89% · 12 87% · X2 25%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 63%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Dortmund <em>vs</em> Ein Frankfurt</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">15% · X 15% · 69%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 93% · O2.5 78% · O3.5 80%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 73%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 31% · 12 85% · X2 85%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 71%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Hoffenheim <em>vs</em> Leverkusen</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">32% · X 23% · 45%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 100% · O2.5 86% · O3.5 58%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 94%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 55% · 12 77% · X2 68%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 68%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Freiburg <em>vs</em> Bayern Munich</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">26% · X 24% · 50%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 100% · O2.5 95% · O3.5 90%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 72%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 50% · 12 76% · X2 74%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 76%</span></div>
+            </div></div>
+        </details><details >
+          <summary><span class="lname">La Liga</span><span class="lcount">8 matches</span></summary>
+          <div class="mgrid"><div class="mcard">
+              <div class="mhead"><span class="mname">Alaves <em>vs</em> Malaga</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">28% · X 31% · 40%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 87% · O2.5 34% · O3.5 9%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 71%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 60% · 12 69% · X2 72%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 46%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Vallecano <em>vs</em> Elche</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">69% · X 21% · 10%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 88% · O2.5 48% · O3.5 25%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 28%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 90% · 12 79% · X2 31%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 52%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Valencia <em>vs</em> Villarreal</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">38% · X 24% · 39%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 64% · O2.5 52% · O3.5 2%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 35%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 61% · 12 76% · X2 62%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 55%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Ath Bilbao <em>vs</em> Getafe</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">73% · X 18% · 9%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 56% · O2.5 42% · O3.5 6%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 8%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 91% · 12 82% · X2 27%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 41%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Celta <em>vs</em> Betis</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">27% · X 29% · 43%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 87% · O2.5 37% · O3.5 4%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 63%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 57% · 12 71% · X2 73%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 52%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Sociedad <em>vs</em> Levante</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">46% · X 30% · 23%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 76% · O2.5 54% · O3.5 20%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 76%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 77% · 12 70% · X2 54%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 59%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Barcelona <em>vs</em> Real Madrid</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">68% · X 18% · 14%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 99% · O2.5 81% · O3.5 91%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 93%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 86% · 12 82% · X2 32%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 79%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Sevilla <em>vs</em> Osasuna</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">25% · X 25% · 50%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 68% · O2.5 57% · O3.5 16%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 36%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 50% · 12 75% · X2 75%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 45%</span></div>
+            </div></div>
+        </details><details >
+          <summary><span class="lname">Ligue 1</span><span class="lcount">9 matches</span></summary>
+          <div class="mgrid"><div class="mcard">
+              <div class="mhead"><span class="mname">Brest <em>vs</em> Nice</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">30% · X 25% · 45%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 95% · O2.5 73% · O3.5 17%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 95%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 55% · 12 75% · X2 70%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 55%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Lens <em>vs</em> Paris FC</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">66% · X 18% · 16%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 97% · O2.5 76% · O3.5 54%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 63%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 84% · 12 82% · X2 34%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 57%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Monaco <em>vs</em> Lille</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">24% · X 14% · 63%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 98% · O2.5 74% · O3.5 30%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 46%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 37% · 12 86% · X2 76%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 52%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Marseille <em>vs</em> Le Havre</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">53% · X 28% · 19%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 49% · O2.5 47% · O3.5 7%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 78%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 81% · 12 72% · X2 47%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 61%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Rennes <em>vs</em> Strasbourg</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">34% · X 40% · 26%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 90% · O2.5 25% · O3.5 5%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 62%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 74% · 12 60% · X2 66%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 67%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Angers <em>vs</em> Lorient</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">37% · X 38% · 25%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 10% · O2.5 19% · O3.5 5%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 36%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 75% · 12 62% · X2 63%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 47%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Toulouse <em>vs</em> Troyes</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">62% · X 25% · 13%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 29% · O2.5 30% · O3.5 8%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 8%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 87% · 12 75% · X2 38%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 59%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Auxerre <em>vs</em> Le Mans</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">31% · X 39% · 31%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 85% · O2.5 22% · O3.5 1%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 37%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 69% · 12 61% · X2 69%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 55%</span></div>
+            </div><div class="mcard">
+              <div class="mhead"><span class="mname">Paris SG <em>vs</em> Lyon</span></div>
+              <div class="mline"><span class="k">1X2</span><span class="v">62% · X 14% · 24%</span></div>
+              <div class="mline"><span class="k">Goals</span><span class="v">O1.5 92% · O2.5 77% · O3.5 71%</span></div>
+              <div class="mline"><span class="k">BTTS</span><span class="v">Yes 77%</span></div>
+              <div class="mline"><span class="k">Derived</span><span class="v">DC 1X 76% · 12 86% · X2 38%</span></div>
+              <div class="mline"><span class="k">Market</span><span class="v">O2.5 68%</span></div>
+            </div></div>
+        </details>
+  </section>
+
+  <footer>
+    Sources: football-data.co.uk (results, features) · football-data.org (fixtures) ·
+    Flashscore (live odds) · Wikipedia (Europa League fixtures).<br>
+    Research output only — not betting advice. Probabilities are uncalibrated; past performance
+    does not predict future results.
+  </footer>
+</div>
+</body>
+</html>

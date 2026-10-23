@@ -1,0 +1,26 @@
+# In terminal 
+# conda env create -f aifootball_predictions.yaml
+# pip list --format=freeze > requirements.txt
+name: aifootball_predictions
+channels:
+  - anaconda
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - ipykernel
+  - cudatoolkit=11.2
+  - cudnn=8.1.0
+  - pip:
+    - pandas
+    - requests
+    - numpy==1.23.5
+    - mrmr_selection
+    - seaborn
+    - xgboost
+    - tensorflow==2.10
+    - scikit-optimize
+    - python-dotenv
+    - invoke
+

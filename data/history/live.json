@@ -1,0 +1,2503 @@
+{
+  "generated": "2026-10-23 23:30:58",
+  "archive": "20261022T1829",
+  "totals": {
+    "1x2": {
+      "decided": 15,
+      "won": 4
+    },
+    "ou15": {
+      "decided": 15,
+      "won": 14
+    },
+    "ou25": {
+      "decided": 15,
+      "won": 13
+    },
+    "ou35": {
+      "decided": 15,
+      "won": 9
+    },
+    "btts": {
+      "decided": 15,
+      "won": 9
+    },
+    "value": {
+      "decided": 56,
+      "won": 30
+    }
+  },
+  "matches": [
+    {
+      "league": "Bundesliga",
+      "home": "Stuttgart",
+      "away": "M'gladbach",
+      "source": "model",
+      "status": "finished",
+      "stage": "Finished",
+      "hg": 2,
+      "ag": 3,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.4139,
+          "state": "lost",
+          "price": 1.38
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.976,
+          "state": "won",
+          "price": 1.08
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.7989,
+          "state": "won",
+          "price": 1.3
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.5854,
+          "state": "lost",
+          "price": 2.1
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.7805,
+          "state": "won",
+          "price": 1.46
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "1x2",
+              "outcome": "away",
+              "edge": 0.2249,
+              "price": 7.5,
+              "state": "won"
+            },
+            {
+              "market": "btts",
+              "outcome": "yes",
+              "edge": 0.1395,
+              "price": 1.46,
+              "state": "won"
+            },
+            {
+              "market": "ou35",
+              "outcome": "under",
+              "edge": 0.1343,
+              "price": 2.1,
+              "state": "lost"
+            },
+            {
+              "market": "ou15",
+              "outcome": "over",
+              "edge": 0.0928,
+              "price": 1.08,
+              "state": "won"
+            },
+            {
+              "market": "ou25",
+              "outcome": "over",
+              "edge": 0.0675,
+              "price": 1.3,
+              "state": "won"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Europa League",
+      "home": "Besiktas",
+      "away": "Crystal Palace",
+      "source": "model",
+      "status": "finished",
+      "stage": "Finished",
+      "hg": 2,
+      "ag": 2,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.5614,
+          "state": "lost",
+          "price": 2.15
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.5048,
+          "state": "won",
+          "price": 1.17
+        },
+        "ou25": {
+          "pick": "under",
+          "prob": 0.5102,
+          "state": "lost",
+          "price": 2.38
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.8506,
+          "state": "lost",
+          "price": 1.57
+        },
+        "btts": {
+          "pick": "no",
+          "prob": 0.7143,
+          "state": "lost",
+          "price": 2.5
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "btts",
+              "outcome": "no",
+              "edge": 0.3353,
+              "price": 2.5,
+              "state": "lost"
+            },
+            {
+              "market": "ou15",
+              "outcome": "under",
+              "edge": 0.3022,
+              "price": 5.0,
+              "state": "lost"
+            },
+            {
+              "market": "ou35",
+              "outcome": "under",
+              "edge": 0.2447,
+              "price": 1.57,
+              "state": "lost"
+            },
+            {
+              "market": "1x2",
+              "outcome": "home",
+              "edge": 0.1219,
+              "price": 2.15,
+              "state": "lost"
+            },
+            {
+              "market": "ou25",
+              "outcome": "under",
+              "edge": 0.1101,
+              "price": 2.38,
+              "state": "lost"
+            },
+            {
+              "market": "1x2",
+              "outcome": "draw",
+              "edge": 0.0612,
+              "price": 3.7,
+              "state": "won"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Europa League",
+      "home": "Bournemouth",
+      "away": "Milan",
+      "source": "model",
+      "status": "finished",
+      "stage": "Finished",
+      "hg": 3,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "away",
+          "prob": 0.5436,
+          "state": "lost",
+          "price": 4.0
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.7849,
+          "state": "won",
+          "price": 1.21
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.706,
+          "state": "won",
+          "price": 1.68
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.6355,
+          "state": "won",
+          "price": 1.5
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.647,
+          "state": "lost",
+          "price": 1.67
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "1x2",
+              "outcome": "away",
+              "edge": 0.3012,
+              "price": 4.0,
+              "state": "lost"
+            },
+            {
+              "market": "ou25",
+              "outcome": "over",
+              "edge": 0.1469,
+              "price": 1.68,
+              "state": "won"
+            },
+            {
+              "market": "btts",
+              "outcome": "yes",
+              "edge": 0.087,
+              "price": 1.67,
+              "state": "lost"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Europa League",
+      "home": "Celje",
+      "away": "Red Bull Salzburg",
+      "source": "baseline",
+      "status": "finished",
+      "stage": "Finished",
+      "hg": 2,
+      "ag": 2,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.4,
+          "state": "lost",
+          "price": 6.25
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.8,
+          "state": "won",
+          "price": 1.15
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.639,
+          "state": "won",
+          "price": 1.5
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.62,
+          "state": "lost",
+          "price": 1.67
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.55,
+          "state": "won",
+          "price": 1.67
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "1x2",
+              "outcome": "home",
+              "edge": 0.2377,
+              "price": 6.25,
+              "state": "lost"
+            },
+            {
+              "market": "1x2",
+              "outcome": "draw",
+              "edge": 0.0512,
+              "price": 4.6,
+              "state": "won"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Europa League",
+      "home": "Celtic",
+      "away": "Celta",
+      "source": "baseline",
+      "status": "finished",
+      "stage": "Finished",
+      "hg": 1,
+      "ag": 2,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.4,
+          "state": "lost",
+          "price": 2.37
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.8,
+          "state": "won",
+          "price": 1.2
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.639,
+          "state": "won",
+          "price": 1.67
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.62,
+          "state": "won",
+          "price": 1.53
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.55,
+          "state": "won",
+          "price": 1.53
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "ou25",
+              "outcome": "over",
+              "edge": 0.0704,
+              "price": 1.67,
+              "state": "won"
+            },
+            {
+              "market": "btts",
+              "outcome": "no",
+              "edge": 0.058,
+              "price": 2.38,
+              "state": "lost"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Europa League",
+      "home": "Hoffenheim",
+      "away": "Lyon",
+      "source": "model",
+      "status": "finished",
+      "stage": "Finished",
+      "hg": 3,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.3953,
+          "state": "won",
+          "price": 2.0
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.9286,
+          "state": "won",
+          "price": 1.17
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.7931,
+          "state": "won",
+          "price": 1.5
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.5079,
+          "state": "won",
+          "price": 1.62
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.7928,
+          "state": "lost",
+          "price": 1.5
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "btts",
+              "outcome": "yes",
+              "edge": 0.1623,
+              "price": 1.5,
+              "state": "lost"
+            },
+            {
+              "market": "ou25",
+              "outcome": "over",
+              "edge": 0.1567,
+              "price": 1.5,
+              "state": "won"
+            },
+            {
+              "market": "ou15",
+              "outcome": "over",
+              "edge": 0.1086,
+              "price": 1.17,
+              "state": "won"
+            },
+            {
+              "market": "ou35",
+              "outcome": "over",
+              "edge": 0.0706,
+              "price": 2.3,
+              "state": "lost"
+            },
+            {
+              "market": "1x2",
+              "outcome": "draw",
+              "edge": 0.0505,
+              "price": 4.1,
+              "state": "lost"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Europa League",
+      "home": "Jagiellonia Białystok",
+      "away": "Anderlecht",
+      "source": "baseline",
+      "status": "finished",
+      "stage": "Finished",
+      "hg": 0,
+      "ag": 3,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.4,
+          "state": "lost",
+          "price": 3.1
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.8,
+          "state": "won",
+          "price": 1.22
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.639,
+          "state": "won",
+          "price": 1.73
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.62,
+          "state": "won",
+          "price": 1.44
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.55,
+          "state": "lost",
+          "price": 1.62
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "ou25",
+              "outcome": "over",
+              "edge": 0.0968,
+              "price": 1.73,
+              "state": "won"
+            },
+            {
+              "market": "1x2",
+              "outcome": "home",
+              "edge": 0.0868,
+              "price": 3.1,
+              "state": "lost"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Europa League",
+      "home": "Lillestrøm",
+      "away": "Sociedad",
+      "source": "baseline",
+      "status": "finished",
+      "stage": "Finished",
+      "hg": 0,
+      "ag": 6,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.4,
+          "state": "lost",
+          "price": 6.5
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.8,
+          "state": "won",
+          "price": 1.12
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.639,
+          "state": "won",
+          "price": 1.42
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.62,
+          "state": "lost",
+          "price": 1.91
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.55,
+          "state": "lost",
+          "price": 1.62
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "1x2",
+              "outcome": "home",
+              "edge": 0.2515,
+              "price": 6.5,
+              "state": "lost"
+            },
+            {
+              "market": "ou35",
+              "outcome": "under",
+              "edge": 0.0952,
+              "price": 1.91,
+              "state": "lost"
+            },
+            {
+              "market": "1x2",
+              "outcome": "draw",
+              "edge": 0.0752,
+              "price": 5.25,
+              "state": "lost"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Europa League",
+      "home": "Olympiakos",
+      "away": "Sparta Prague",
+      "source": "baseline",
+      "status": "finished",
+      "stage": "Finished",
+      "hg": 1,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.4,
+          "state": "won",
+          "price": 1.5
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.8,
+          "state": "lost",
+          "price": 1.25
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.639,
+          "state": "lost",
+          "price": 1.73
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.62,
+          "state": "won",
+          "price": 1.44
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.55,
+          "state": "lost",
+          "price": 1.95
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "1x2",
+              "outcome": "away",
+              "edge": 0.194,
+              "price": 7.0,
+              "state": "lost"
+            },
+            {
+              "market": "ou25",
+              "outcome": "over",
+              "edge": 0.096,
+              "price": 1.73,
+              "state": "lost"
+            },
+            {
+              "market": "btts",
+              "outcome": "yes",
+              "edge": 0.0654,
+              "price": 1.95,
+              "state": "lost"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Europa League",
+      "home": "Omonia",
+      "away": "Benfica",
+      "source": "baseline",
+      "status": "finished",
+      "stage": "Finished",
+      "hg": 1,
+      "ag": 4,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.4,
+          "state": "lost",
+          "price": 8.75
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.8,
+          "state": "won",
+          "price": 1.14
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.639,
+          "state": "won",
+          "price": 1.5
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.62,
+          "state": "lost",
+          "price": 1.67
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.55,
+          "state": "won",
+          "price": 1.83
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "1x2",
+              "outcome": "home",
+              "edge": 0.2905,
+              "price": 8.75,
+              "state": "lost"
+            },
+            {
+              "market": "1x2",
+              "outcome": "draw",
+              "edge": 0.0956,
+              "price": 6.0,
+              "state": "lost"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Europa League",
+      "home": "Viktoria Plzeň",
+      "away": "Levski Sofia",
+      "source": "baseline",
+      "status": "finished",
+      "stage": "Finished",
+      "hg": 1,
+      "ag": 2,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.4,
+          "state": "lost",
+          "price": 1.73
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.8,
+          "state": "won",
+          "price": 1.25
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.639,
+          "state": "won",
+          "price": 1.8
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.62,
+          "state": "won",
+          "price": 1.37
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.55,
+          "state": "won",
+          "price": 1.8
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "1x2",
+              "outcome": "away",
+              "edge": 0.1376,
+              "price": 4.75,
+              "state": "won"
+            },
+            {
+              "market": "ou25",
+              "outcome": "over",
+              "edge": 0.1123,
+              "price": 1.8,
+              "state": "won"
+            },
+            {
+              "market": "ou35",
+              "outcome": "over",
+              "edge": 0.0693,
+              "price": 3.2,
+              "state": "lost"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "La Liga",
+      "home": "Alaves",
+      "away": "Malaga",
+      "source": "model",
+      "status": "finished",
+      "stage": "Finished",
+      "hg": 1,
+      "ag": 1,
+      "markets": {
+        "1x2": {
+          "pick": "away",
+          "prob": 0.4035,
+          "state": "lost",
+          "price": 5.5
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.866,
+          "state": "won",
+          "price": 1.33
+        },
+        "ou25": {
+          "pick": "under",
+          "prob": 0.6577,
+          "state": "won",
+          "price": 1.73
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.9128,
+          "state": "won",
+          "price": 1.29
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.7115,
+          "state": "won",
+          "price": 1.95
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "btts",
+              "outcome": "yes",
+              "edge": 0.2337,
+              "price": 1.95,
+              "state": "won"
+            },
+            {
+              "market": "1x2",
+              "outcome": "away",
+              "edge": 0.2254,
+              "price": 5.5,
+              "state": "lost"
+            },
+            {
+              "market": "ou35",
+              "outcome": "under",
+              "edge": 0.1739,
+              "price": 1.29,
+              "state": "won"
+            },
+            {
+              "market": "ou15",
+              "outcome": "over",
+              "edge": 0.1559,
+              "price": 1.33,
+              "state": "won"
+            },
+            {
+              "market": "ou25",
+              "outcome": "under",
+              "edge": 0.114,
+              "price": 1.73,
+              "state": "won"
+            },
+            {
+              "market": "1x2",
+              "outcome": "draw",
+              "edge": 0.0507,
+              "price": 3.6,
+              "state": "won"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Ligue 1",
+      "home": "Brest",
+      "away": "Nice",
+      "source": "model",
+      "status": "finished",
+      "stage": "Finished",
+      "hg": 1,
+      "ag": 2,
+      "markets": {
+        "1x2": {
+          "pick": "away",
+          "prob": 0.4517,
+          "state": "won",
+          "price": 3.2
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.9505,
+          "state": "won",
+          "price": 1.22
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.7319,
+          "state": "won",
+          "price": 1.73
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.8285,
+          "state": "won",
+          "price": 1.44
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.9474,
+          "state": "won",
+          "price": 1.57
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "btts",
+              "outcome": "yes",
+              "edge": 0.3568,
+              "price": 1.57,
+              "state": "won"
+            },
+            {
+              "market": "ou25",
+              "outcome": "over",
+              "edge": 0.1785,
+              "price": 1.73,
+              "state": "won"
+            },
+            {
+              "market": "ou35",
+              "outcome": "under",
+              "edge": 0.1756,
+              "price": 1.44,
+              "state": "won"
+            },
+            {
+              "market": "ou15",
+              "outcome": "over",
+              "edge": 0.1715,
+              "price": 1.22,
+              "state": "won"
+            },
+            {
+              "market": "1x2",
+              "outcome": "away",
+              "edge": 0.1506,
+              "price": 3.2,
+              "state": "won"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "home": "Ipswich",
+      "away": "Nott'm Forest",
+      "source": "model",
+      "status": "finished",
+      "stage": "Finished",
+      "hg": 1,
+      "ag": 1,
+      "markets": {
+        "1x2": {
+          "pick": "draw",
+          "prob": 0.4567,
+          "state": "won",
+          "price": 3.6
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.8304,
+          "state": "won",
+          "price": 1.22
+        },
+        "ou25": {
+          "pick": "under",
+          "prob": 0.5731,
+          "state": "won",
+          "price": 2.1
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.917,
+          "state": "won",
+          "price": 1.44
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.8239,
+          "state": "won",
+          "price": 1.6
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "ou35",
+              "outcome": "under",
+              "edge": 0.2547,
+              "price": 1.44,
+              "state": "won"
+            },
+            {
+              "market": "btts",
+              "outcome": "yes",
+              "edge": 0.2427,
+              "price": 1.6,
+              "state": "won"
+            },
+            {
+              "market": "1x2",
+              "outcome": "draw",
+              "edge": 0.1838,
+              "price": 3.6,
+              "state": "won"
+            },
+            {
+              "market": "ou25",
+              "outcome": "under",
+              "edge": 0.1168,
+              "price": 2.1,
+              "state": "won"
+            },
+            {
+              "market": "ou15",
+              "outcome": "over",
+              "edge": 0.0571,
+              "price": 1.22,
+              "state": "won"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "home": "Torino",
+      "away": "Monza",
+      "source": "model",
+      "status": "finished",
+      "stage": "Finished",
+      "hg": 3,
+      "ag": 2,
+      "markets": {
+        "1x2": {
+          "pick": "away",
+          "prob": 0.6086,
+          "state": "lost",
+          "price": 3.5
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.947,
+          "state": "won",
+          "price": 1.29
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.6522,
+          "state": "won",
+          "price": 1.98
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.9143,
+          "state": "lost",
+          "price": 1.33
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.5267,
+          "state": "won",
+          "price": 1.75
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "1x2",
+              "outcome": "away",
+              "edge": 0.3339,
+              "price": 3.5,
+              "state": "lost"
+            },
+            {
+              "market": "ou15",
+              "outcome": "over",
+              "edge": 0.2117,
+              "price": 1.29,
+              "state": "won"
+            },
+            {
+              "market": "ou35",
+              "outcome": "under",
+              "edge": 0.1977,
+              "price": 1.33,
+              "state": "lost"
+            },
+            {
+              "market": "ou25",
+              "outcome": "over",
+              "edge": 0.1654,
+              "price": 1.98,
+              "state": "won"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "home": "Augsburg",
+      "away": "Union Berlin",
+      "source": "model",
+      "status": "scheduled",
+      "stage": "Scheduled",
+      "hg": 0,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.7543,
+          "state": "pending",
+          "price": 1.87
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.9883,
+          "state": "pending",
+          "price": 1.14
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.7551,
+          "state": "pending",
+          "price": 1.5
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.7211,
+          "state": "pending",
+          "price": 1.67
+        },
+        "btts": {
+          "pick": "no",
+          "prob": 0.6061,
+          "state": "pending",
+          "price": 2.63
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "1x2",
+              "outcome": "home",
+              "edge": 0.2422,
+              "price": 1.87,
+              "state": "pending"
+            },
+            {
+              "market": "btts",
+              "outcome": "no",
+              "edge": 0.2417,
+              "price": 2.63,
+              "state": "pending"
+            },
+            {
+              "market": "ou15",
+              "outcome": "over",
+              "edge": 0.1634,
+              "price": 1.14,
+              "state": "pending"
+            },
+            {
+              "market": "ou35",
+              "outcome": "under",
+              "edge": 0.1458,
+              "price": 1.67,
+              "state": "pending"
+            },
+            {
+              "market": "ou25",
+              "outcome": "over",
+              "edge": 0.1258,
+              "price": 1.5,
+              "state": "pending"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "home": "Dortmund",
+      "away": "Ein Frankfurt",
+      "source": "model",
+      "status": "scheduled",
+      "stage": "Scheduled",
+      "hg": 0,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "away",
+          "prob": 0.6914,
+          "state": "pending",
+          "price": 6.0
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.9342,
+          "state": "pending",
+          "price": 1.1
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.7846,
+          "state": "pending",
+          "price": 1.33
+        },
+        "ou35": {
+          "pick": "over",
+          "prob": 0.7985,
+          "state": "pending",
+          "price": 1.91
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.7287,
+          "state": "pending",
+          "price": 1.46
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "1x2",
+              "outcome": "away",
+              "edge": 0.5272,
+              "price": 6.0,
+              "state": "pending"
+            },
+            {
+              "market": "ou35",
+              "outcome": "over",
+              "edge": 0.2945,
+              "price": 1.91,
+              "state": "pending"
+            },
+            {
+              "market": "btts",
+              "outcome": "yes",
+              "edge": 0.0876,
+              "price": 1.46,
+              "state": "pending"
+            },
+            {
+              "market": "ou25",
+              "outcome": "over",
+              "edge": 0.0746,
+              "price": 1.33,
+              "state": "pending"
+            },
+            {
+              "market": "ou15",
+              "outcome": "over",
+              "edge": 0.0669,
+              "price": 1.1,
+              "state": "pending"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "home": "FC Koln",
+      "away": "Schalke 04",
+      "source": "model",
+      "status": "scheduled",
+      "stage": "Scheduled",
+      "hg": 0,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.5866,
+          "state": "pending",
+          "price": 2.1
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.6835,
+          "state": "pending",
+          "price": 1.2
+        },
+        "ou25": {
+          "pick": "under",
+          "prob": 0.6334,
+          "state": "pending",
+          "price": 2.3
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.8317,
+          "state": "pending",
+          "price": 1.53
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.5895,
+          "state": "pending",
+          "price": 1.53
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "ou25",
+              "outcome": "under",
+              "edge": 0.2254,
+              "price": 2.3,
+              "state": "pending"
+            },
+            {
+              "market": "ou35",
+              "outcome": "under",
+              "edge": 0.2186,
+              "price": 1.53,
+              "state": "pending"
+            },
+            {
+              "market": "1x2",
+              "outcome": "home",
+              "edge": 0.1293,
+              "price": 2.1,
+              "state": "pending"
+            },
+            {
+              "market": "ou15",
+              "outcome": "under",
+              "edge": 0.1139,
+              "price": 4.8,
+              "state": "pending"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "home": "Mainz",
+      "away": "Werder Bremen",
+      "source": "model",
+      "status": "scheduled",
+      "stage": "Scheduled",
+      "hg": 0,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.4416,
+          "state": "pending",
+          "price": 1.73
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.8869,
+          "state": "pending",
+          "price": 1.17
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.6104,
+          "state": "pending",
+          "price": 1.57
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.6229,
+          "state": "pending",
+          "price": 1.62
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.848,
+          "state": "pending",
+          "price": 1.53
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "btts",
+              "outcome": "yes",
+              "edge": 0.24,
+              "price": 1.53,
+              "state": "pending"
+            },
+            {
+              "market": "ou15",
+              "outcome": "over",
+              "edge": 0.0716,
+              "price": 1.17,
+              "state": "pending"
+            },
+            {
+              "market": "1x2",
+              "outcome": "draw",
+              "edge": 0.0541,
+              "price": 4.1,
+              "state": "pending"
+            },
+            {
+              "market": "1x2",
+              "outcome": "away",
+              "edge": 0.0533,
+              "price": 4.5,
+              "state": "pending"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "home": "Paderborn",
+      "away": "Hamburg",
+      "source": "model",
+      "status": "scheduled",
+      "stage": "Scheduled",
+      "hg": 0,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.6185,
+          "state": "pending",
+          "price": 2.3
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.9554,
+          "state": "pending",
+          "price": 1.17
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.745,
+          "state": "pending",
+          "price": 1.57
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.789,
+          "state": "pending",
+          "price": 1.57
+        },
+        "btts": {
+          "pick": "no",
+          "prob": 0.5404,
+          "state": "pending",
+          "price": 2.5
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "1x2",
+              "outcome": "home",
+              "edge": 0.1946,
+              "price": 2.3,
+              "state": "pending"
+            },
+            {
+              "market": "ou35",
+              "outcome": "under",
+              "edge": 0.1831,
+              "price": 1.57,
+              "state": "pending"
+            },
+            {
+              "market": "btts",
+              "outcome": "no",
+              "edge": 0.1654,
+              "price": 2.5,
+              "state": "pending"
+            },
+            {
+              "market": "ou15",
+              "outcome": "over",
+              "edge": 0.1476,
+              "price": 1.17,
+              "state": "pending"
+            },
+            {
+              "market": "ou25",
+              "outcome": "over",
+              "edge": 0.1451,
+              "price": 1.57,
+              "state": "pending"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Bundesliga",
+      "home": "RB Leipzig",
+      "away": "Elversberg",
+      "source": "model",
+      "status": "scheduled",
+      "stage": "Scheduled",
+      "hg": 0,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.6549,
+          "state": "pending",
+          "price": 1.44
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.9167,
+          "state": "pending",
+          "price": 1.08
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.582,
+          "state": "pending",
+          "price": 1.29
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.7649,
+          "state": "pending",
+          "price": 2.1
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.5693,
+          "state": "pending",
+          "price": 1.41
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "ou35",
+              "outcome": "under",
+              "edge": 0.3138,
+              "price": 2.1,
+              "state": "pending"
+            },
+            {
+              "market": "ou25",
+              "outcome": "under",
+              "edge": 0.1576,
+              "price": 3.75,
+              "state": "pending"
+            },
+            {
+              "market": "btts",
+              "outcome": "no",
+              "edge": 0.0905,
+              "price": 2.75,
+              "state": "pending"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "La Liga",
+      "home": "Valencia",
+      "away": "Villarreal",
+      "source": "model",
+      "status": "scheduled",
+      "stage": "Scheduled",
+      "hg": 0,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "away",
+          "prob": 0.3894,
+          "state": "pending",
+          "price": 2.15
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.6419,
+          "state": "pending",
+          "price": 1.22
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.52,
+          "state": "pending",
+          "price": 1.73
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.9786,
+          "state": "pending",
+          "price": 1.44
+        },
+        "btts": {
+          "pick": "no",
+          "prob": 0.6453,
+          "state": "pending",
+          "price": 2.25
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "ou35",
+              "outcome": "under",
+              "edge": 0.322,
+              "price": 1.44,
+              "state": "pending"
+            },
+            {
+              "market": "btts",
+              "outcome": "no",
+              "edge": 0.2308,
+              "price": 2.25,
+              "state": "pending"
+            },
+            {
+              "market": "ou15",
+              "outcome": "under",
+              "edge": 0.1343,
+              "price": 4.33,
+              "state": "pending"
+            },
+            {
+              "market": "1x2",
+              "outcome": "home",
+              "edge": 0.0862,
+              "price": 3.3,
+              "state": "pending"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "La Liga",
+      "home": "Vallecano",
+      "away": "Elche",
+      "source": "model",
+      "status": "scheduled",
+      "stage": "Scheduled",
+      "hg": 0,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.6935,
+          "state": "pending",
+          "price": 1.77
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.8839,
+          "state": "pending",
+          "price": 1.25
+        },
+        "ou25": {
+          "pick": "under",
+          "prob": 0.5159,
+          "state": "pending",
+          "price": 2.0
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.7529,
+          "state": "pending",
+          "price": 1.36
+        },
+        "btts": {
+          "pick": "no",
+          "prob": 0.7247,
+          "state": "pending",
+          "price": 2.0
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "btts",
+              "outcome": "no",
+              "edge": 0.2563,
+              "price": 2.0,
+              "state": "pending"
+            },
+            {
+              "market": "1x2",
+              "outcome": "home",
+              "edge": 0.1562,
+              "price": 1.77,
+              "state": "pending"
+            },
+            {
+              "market": "ou15",
+              "outcome": "over",
+              "edge": 0.1284,
+              "price": 1.25,
+              "state": "pending"
+            },
+            {
+              "market": "ou35",
+              "outcome": "under",
+              "edge": 0.059,
+              "price": 1.36,
+              "state": "pending"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Ligue 1",
+      "home": "Lens",
+      "away": "Paris FC",
+      "source": "model",
+      "status": "scheduled",
+      "stage": "Scheduled",
+      "hg": 0,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.6591,
+          "state": "pending",
+          "price": 2.38
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.969,
+          "state": "pending",
+          "price": 1.2
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.761,
+          "state": "pending",
+          "price": 1.67
+        },
+        "ou35": {
+          "pick": "over",
+          "prob": 0.5417,
+          "state": "pending",
+          "price": 2.63
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.6267,
+          "state": "pending",
+          "price": 1.53
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "1x2",
+              "outcome": "home",
+              "edge": 0.2561,
+              "price": 2.38,
+              "state": "pending"
+            },
+            {
+              "market": "ou25",
+              "outcome": "over",
+              "edge": 0.1873,
+              "price": 1.67,
+              "state": "pending"
+            },
+            {
+              "market": "ou15",
+              "outcome": "over",
+              "edge": 0.1781,
+              "price": 1.2,
+              "state": "pending"
+            },
+            {
+              "market": "ou35",
+              "outcome": "over",
+              "edge": 0.1749,
+              "price": 2.63,
+              "state": "pending"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "home": "Arsenal",
+      "away": "Everton",
+      "source": "model",
+      "status": "scheduled",
+      "stage": "Scheduled",
+      "hg": 0,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "away",
+          "prob": 0.5587,
+          "state": "pending",
+          "price": 8.0
+        },
+        "ou15": {
+          "pick": "under",
+          "prob": 0.5855,
+          "state": "pending",
+          "price": 3.75
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.5749,
+          "state": "pending",
+          "price": 1.85
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.7691,
+          "state": "pending",
+          "price": 1.36
+        },
+        "btts": {
+          "pick": "no",
+          "prob": 0.8694,
+          "state": "pending",
+          "price": 1.7
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "1x2",
+              "outcome": "away",
+              "edge": 0.4362,
+              "price": 8.0,
+              "state": "pending"
+            },
+            {
+              "market": "ou15",
+              "outcome": "under",
+              "edge": 0.3333,
+              "price": 3.75,
+              "state": "pending"
+            },
+            {
+              "market": "btts",
+              "outcome": "no",
+              "edge": 0.3213,
+              "price": 1.7,
+              "state": "pending"
+            },
+            {
+              "market": "1x2",
+              "outcome": "draw",
+              "edge": 0.1511,
+              "price": 5.0,
+              "state": "pending"
+            },
+            {
+              "market": "ou35",
+              "outcome": "under",
+              "edge": 0.0752,
+              "price": 1.36,
+              "state": "pending"
+            },
+            {
+              "market": "ou25",
+              "outcome": "over",
+              "edge": 0.0543,
+              "price": 1.85,
+              "state": "pending"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "home": "Aston Villa",
+      "away": "Man City",
+      "source": "model",
+      "status": "scheduled",
+      "stage": "Scheduled",
+      "hg": 0,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.4728,
+          "state": "pending",
+          "price": 5.25
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.8454,
+          "state": "pending",
+          "price": 1.17
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.6667,
+          "state": "pending",
+          "price": 1.53
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.9205,
+          "state": "pending",
+          "price": 1.62
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.5441,
+          "state": "pending",
+          "price": 1.57
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "ou35",
+              "outcome": "under",
+              "edge": 0.3334,
+              "price": 1.62,
+              "state": "pending"
+            },
+            {
+              "market": "1x2",
+              "outcome": "home",
+              "edge": 0.2736,
+              "price": 5.25,
+              "state": "pending"
+            },
+            {
+              "market": "1x2",
+              "outcome": "draw",
+              "edge": 0.078,
+              "price": 4.2,
+              "state": "pending"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "home": "Chelsea",
+      "away": "Tottenham",
+      "source": "model",
+      "status": "scheduled",
+      "stage": "Scheduled",
+      "hg": 0,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.705,
+          "state": "pending",
+          "price": 1.71
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.9883,
+          "state": "pending",
+          "price": 1.15
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.7307,
+          "state": "pending",
+          "price": 1.51
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.8379,
+          "state": "pending",
+          "price": 1.67
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.5566,
+          "state": "pending",
+          "price": 1.55
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "ou35",
+              "outcome": "under",
+              "edge": 0.2549,
+              "price": 1.67,
+              "state": "pending"
+            },
+            {
+              "market": "ou15",
+              "outcome": "over",
+              "edge": 0.1677,
+              "price": 1.15,
+              "state": "pending"
+            },
+            {
+              "market": "1x2",
+              "outcome": "home",
+              "edge": 0.1435,
+              "price": 1.71,
+              "state": "pending"
+            },
+            {
+              "market": "ou25",
+              "outcome": "over",
+              "edge": 0.1054,
+              "price": 1.51,
+              "state": "pending"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "home": "Coventry",
+      "away": "Fulham",
+      "source": "model",
+      "status": "scheduled",
+      "stage": "Scheduled",
+      "hg": 0,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.569,
+          "state": "pending",
+          "price": 3.2
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.986,
+          "state": "pending",
+          "price": 1.22
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.7626,
+          "state": "pending",
+          "price": 1.73
+        },
+        "ou35": {
+          "pick": "over",
+          "prob": 0.8499,
+          "state": "pending",
+          "price": 2.75
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.9352,
+          "state": "pending",
+          "price": 1.58
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "ou35",
+              "outcome": "over",
+              "edge": 0.5094,
+              "price": 2.75,
+              "state": "pending"
+            },
+            {
+              "market": "btts",
+              "outcome": "yes",
+              "edge": 0.3497,
+              "price": 1.58,
+              "state": "pending"
+            },
+            {
+              "market": "1x2",
+              "outcome": "home",
+              "edge": 0.2706,
+              "price": 3.2,
+              "state": "pending"
+            },
+            {
+              "market": "ou25",
+              "outcome": "over",
+              "edge": 0.2152,
+              "price": 1.73,
+              "state": "pending"
+            },
+            {
+              "market": "ou15",
+              "outcome": "over",
+              "edge": 0.2098,
+              "price": 1.22,
+              "state": "pending"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Premier League",
+      "home": "Sunderland",
+      "away": "Leeds",
+      "source": "model",
+      "status": "scheduled",
+      "stage": "Scheduled",
+      "hg": 0,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "away",
+          "prob": 0.5445,
+          "state": "pending",
+          "price": 2.4
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.899,
+          "state": "pending",
+          "price": 1.36
+        },
+        "ou25": {
+          "pick": "under",
+          "prob": 0.628,
+          "state": "pending",
+          "price": 1.73
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.9493,
+          "state": "pending",
+          "price": 1.29
+        },
+        "btts": {
+          "pick": "no",
+          "prob": 0.5653,
+          "state": "pending",
+          "price": 1.95
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "ou35",
+              "outcome": "under",
+              "edge": 0.2035,
+              "price": 1.29,
+              "state": "pending"
+            },
+            {
+              "market": "ou15",
+              "outcome": "over",
+              "edge": 0.1983,
+              "price": 1.36,
+              "state": "pending"
+            },
+            {
+              "market": "1x2",
+              "outcome": "away",
+              "edge": 0.1475,
+              "price": 2.4,
+              "state": "pending"
+            },
+            {
+              "market": "ou25",
+              "outcome": "under",
+              "edge": 0.0805,
+              "price": 1.73,
+              "state": "pending"
+            },
+            {
+              "market": "btts",
+              "outcome": "no",
+              "edge": 0.08,
+              "price": 1.95,
+              "state": "pending"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "home": "Cagliari",
+      "away": "Bologna",
+      "source": "model",
+      "status": "scheduled",
+      "stage": "Scheduled",
+      "hg": 0,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.4537,
+          "state": "pending",
+          "price": 3.1
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.9591,
+          "state": "pending",
+          "price": 1.36
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.8117,
+          "state": "pending",
+          "price": 2.2
+        },
+        "ou35": {
+          "pick": "over",
+          "prob": 0.7814,
+          "state": "pending",
+          "price": 4.0
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.6359,
+          "state": "pending",
+          "price": 1.82
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "ou35",
+              "outcome": "over",
+              "edge": 0.5401,
+              "price": 4.0,
+              "state": "pending"
+            },
+            {
+              "market": "ou25",
+              "outcome": "over",
+              "edge": 0.3759,
+              "price": 2.2,
+              "state": "pending"
+            },
+            {
+              "market": "ou15",
+              "outcome": "over",
+              "edge": 0.2652,
+              "price": 1.36,
+              "state": "pending"
+            },
+            {
+              "market": "1x2",
+              "outcome": "home",
+              "edge": 0.1488,
+              "price": 3.1,
+              "state": "pending"
+            },
+            {
+              "market": "btts",
+              "outcome": "yes",
+              "edge": 0.1225,
+              "price": 1.82,
+              "state": "pending"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "home": "Como",
+      "away": "Sassuolo",
+      "source": "model",
+      "status": "scheduled",
+      "stage": "Scheduled",
+      "hg": 0,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "away",
+          "prob": 0.4218,
+          "state": "pending",
+          "price": 6.0
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.9562,
+          "state": "pending",
+          "price": 1.13
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.8171,
+          "state": "pending",
+          "price": 1.44
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.7178,
+          "state": "pending",
+          "price": 1.73
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.7993,
+          "state": "pending",
+          "price": 1.57
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "1x2",
+              "outcome": "away",
+              "edge": 0.2556,
+              "price": 6.0,
+              "state": "pending"
+            },
+            {
+              "market": "btts",
+              "outcome": "yes",
+              "edge": 0.2045,
+              "price": 1.57,
+              "state": "pending"
+            },
+            {
+              "market": "ou25",
+              "outcome": "over",
+              "edge": 0.1672,
+              "price": 1.44,
+              "state": "pending"
+            },
+            {
+              "market": "ou35",
+              "outcome": "under",
+              "edge": 0.1644,
+              "price": 1.73,
+              "state": "pending"
+            },
+            {
+              "market": "ou15",
+              "outcome": "over",
+              "edge": 0.117,
+              "price": 1.13,
+              "state": "pending"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "home": "Lazio",
+      "away": "Parma",
+      "source": "model",
+      "status": "scheduled",
+      "stage": "Scheduled",
+      "hg": 0,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.5553,
+          "state": "pending",
+          "price": 1.41
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.8931,
+          "state": "pending",
+          "price": 1.29
+        },
+        "ou25": {
+          "pick": "over",
+          "prob": 0.6514,
+          "state": "pending",
+          "price": 1.88
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.7559,
+          "state": "pending",
+          "price": 1.36
+        },
+        "btts": {
+          "pick": "yes",
+          "prob": 0.5305,
+          "state": "pending",
+          "price": 2.1
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "ou15",
+              "outcome": "over",
+              "edge": 0.1507,
+              "price": 1.29,
+              "state": "pending"
+            },
+            {
+              "market": "ou25",
+              "outcome": "over",
+              "edge": 0.1409,
+              "price": 1.88,
+              "state": "pending"
+            },
+            {
+              "market": "btts",
+              "outcome": "yes",
+              "edge": 0.0891,
+              "price": 2.1,
+              "state": "pending"
+            },
+            {
+              "market": "1x2",
+              "outcome": "draw",
+              "edge": 0.0871,
+              "price": 5.0,
+              "state": "pending"
+            },
+            {
+              "market": "ou35",
+              "outcome": "under",
+              "edge": 0.0552,
+              "price": 1.36,
+              "state": "pending"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "league": "Serie A",
+      "home": "Napoli",
+      "away": "Roma",
+      "source": "model",
+      "status": "scheduled",
+      "stage": "Scheduled",
+      "hg": 0,
+      "ag": 0,
+      "markets": {
+        "1x2": {
+          "pick": "home",
+          "prob": 0.606,
+          "state": "pending",
+          "price": 2.88
+        },
+        "ou15": {
+          "pick": "over",
+          "prob": 0.671,
+          "state": "pending",
+          "price": 1.29
+        },
+        "ou25": {
+          "pick": "under",
+          "prob": 0.518,
+          "state": "pending",
+          "price": 1.95
+        },
+        "ou35": {
+          "pick": "under",
+          "prob": 0.8846,
+          "state": "pending",
+          "price": 1.36
+        },
+        "btts": {
+          "pick": "no",
+          "prob": 0.909,
+          "state": "pending",
+          "price": 2.1
+        },
+        "value": {
+          "picks": [
+            {
+              "market": "btts",
+              "outcome": "no",
+              "edge": 0.4638,
+              "price": 2.1,
+              "state": "pending"
+            },
+            {
+              "market": "1x2",
+              "outcome": "home",
+              "edge": 0.2703,
+              "price": 2.88,
+              "state": "pending"
+            },
+            {
+              "market": "ou35",
+              "outcome": "under",
+              "edge": 0.1839,
+              "price": 1.36,
+              "state": "pending"
+            },
+            {
+              "market": "ou15",
+              "outcome": "under",
+              "edge": 0.0714,
+              "price": 3.75,
+              "state": "pending"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "live_count": 0
+}

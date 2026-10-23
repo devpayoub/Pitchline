@@ -1,0 +1,4978 @@
+{
+  "generated": "2026-10-22 19:39",
+  "matches": {
+    "Ararat-Armenia vs AZ Alkmaar": {
+      "flashscore": {
+        "home": "Ararat-Armenia",
+        "away": "AZ Alkmaar",
+        "competition": "Europa League - League phase",
+        "id": "tnaEdiXQ",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.12266862741337878,
+            "away": 0.6784156709013817,
+            "draw": 0.1989157016852396
+          },
+          "price": {
+            "home": 8.0,
+            "away": 1.4,
+            "draw": 4.8
+          },
+          "books": 2
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7869469870327994,
+            "under": 0.21305301296720058
+          },
+          "price": {
+            "over": 1.2,
+            "under": 4.5
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.57851323553294,
+            "under": 0.42148676446706007
+          },
+          "price": {
+            "over": 1.62,
+            "under": 2.3
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.3636429507345438,
+            "under": 0.6363570492654562
+          },
+          "price": {
+            "over": 2.63,
+            "under": 1.5
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.49523160762942775,
+            "no": 0.5047683923705722
+          },
+          "price": {
+            "yes": 1.91,
+            "no": 1.91
+          },
+          "books": 2
+        }
+      }
+    },
+    "Ferencváros vs Torreense": {
+      "flashscore": {
+        "home": "Ferencvaros",
+        "away": "Torreense",
+        "competition": "Europa League - League phase",
+        "id": "lrN7FKed",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.6624568314505516,
+            "away": 0.12932412404278432,
+            "draw": 0.20821904450666406
+          },
+          "price": {
+            "home": 1.44,
+            "away": 8.0,
+            "draw": 4.6
+          },
+          "books": 2
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7869469870327994,
+            "under": 0.21305301296720058
+          },
+          "price": {
+            "over": 1.2,
+            "under": 4.5
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5686292604897256,
+            "under": 0.4313707395102744
+          },
+          "price": {
+            "over": 1.67,
+            "under": 2.2
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.3636429507345438,
+            "under": 0.6363570492654562
+          },
+          "price": {
+            "over": 2.63,
+            "under": 1.5
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5086413043478261,
+            "no": 0.491358695652174
+          },
+          "price": {
+            "yes": 1.85,
+            "no": 1.95
+          },
+          "books": 2
+        }
+      }
+    },
+    "Dinamo Zagreb vs Nijmegen": {
+      "flashscore": {
+        "home": "Din. Zagreb",
+        "away": "Nijmegen",
+        "competition": "Europa League - League phase",
+        "id": "nZCopW0m",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.6139066289156915,
+            "away": 0.17188645446153145,
+            "draw": 0.21420691662277716
+          },
+          "price": {
+            "home": 1.55,
+            "away": 5.5,
+            "draw": 4.5
+          },
+          "books": 2
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8078709494958285,
+            "under": 0.1921290505041715
+          },
+          "price": {
+            "over": 1.17,
+            "under": 5.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5962023984851672,
+            "under": 0.40379760151483274
+          },
+          "price": {
+            "over": 1.62,
+            "under": 2.35
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.39589912566879815,
+            "under": 0.6041008743312019
+          },
+          "price": {
+            "over": 2.38,
+            "under": 1.57
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5547949123095512,
+            "no": 0.44520508769044875
+          },
+          "price": {
+            "yes": 1.67,
+            "no": 2.1
+          },
+          "books": 2
+        }
+      }
+    },
+    "Juventus vs Rennes": {
+      "flashscore": {
+        "home": "Juventus",
+        "away": "Rennes",
+        "competition": "Europa League - League phase",
+        "id": "6FP4Yk94",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.6529706084278897,
+            "away": 0.13948459390099216,
+            "draw": 0.20754479767111816
+          },
+          "price": {
+            "home": 1.45,
+            "away": 7.0,
+            "draw": 4.75
+          },
+          "books": 2
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7926607175377891,
+            "under": 0.2073392824622109
+          },
+          "price": {
+            "over": 1.2,
+            "under": 4.6
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5787403438992383,
+            "under": 0.4212596561007617
+          },
+          "price": {
+            "over": 1.67,
+            "under": 2.25
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.37147148067551417,
+            "under": 0.6285285193244858
+          },
+          "price": {
+            "over": 2.63,
+            "under": 1.5
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5208108108108108,
+            "no": 0.47918918918918924
+          },
+          "price": {
+            "yes": 1.8,
+            "no": 1.95
+          },
+          "books": 2
+        }
+      }
+    },
+    "Lech Poznań vs Sunderland": {
+      "flashscore": {
+        "home": "Lech Poznan",
+        "away": "Sunderland",
+        "competition": "Europa League - League phase",
+        "id": "OUUlST4L",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.2398331359010401,
+            "away": 0.5107430953269017,
+            "draw": 0.24942376877205824
+          },
+          "price": {
+            "home": 4.0,
+            "away": 1.88,
+            "draw": 3.9
+          },
+          "books": 2
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7836257309941521,
+            "under": 0.21637426900584794
+          },
+          "price": {
+            "over": 1.2,
+            "under": 4.5
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5590366537121322,
+            "under": 0.44096334628786776
+          },
+          "price": {
+            "over": 1.68,
+            "under": 2.2
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.35684316099321084,
+            "under": 0.6431568390067891
+          },
+          "price": {
+            "over": 2.65,
+            "under": 1.5
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5644188441785654,
+            "no": 0.43558115582143464
+          },
+          "price": {
+            "yes": 1.67,
+            "no": 2.15
+          },
+          "books": 2
+        }
+      }
+    },
+    "OFI vs Leverkusen": {
+      "flashscore": {
+        "home": "OFI Crete",
+        "away": "Bayer Leverkusen",
+        "competition": "Europa League - League phase",
+        "id": "MP8dqSvK",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.08595988538681948,
+            "away": 0.7879656160458453,
+            "draw": 0.12607449856733524
+          },
+          "price": {
+            "home": 11.0,
+            "away": 1.2,
+            "draw": 7.5
+          },
+          "books": 2
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8547012241510478,
+            "under": 0.14529877584895226
+          },
+          "price": {
+            "over": 1.11,
+            "under": 6.5
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.6939004487964097,
+            "under": 0.3060995512035904
+          },
+          "price": {
+            "over": 1.36,
+            "under": 3.2
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.4932432432432432,
+            "under": 0.5067567567567568
+          },
+          "price": {
+            "over": 1.91,
+            "under": 1.91
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.49184782608695654,
+            "no": 0.5081521739130435
+          },
+          "price": {
+            "yes": 1.91,
+            "no": 1.91
+          },
+          "books": 2
+        }
+      }
+    },
+    "St. Gilloise vs Hapoel Be'er Sheva": {
+      "flashscore": {
+        "home": "Royale Union SG",
+        "away": "H. Beer Sheva",
+        "competition": "Europa League - League phase",
+        "id": "r5IEVWof",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.6553341730019584,
+            "away": 0.15096854031458096,
+            "draw": 0.19369728668346062
+          },
+          "price": {
+            "home": 1.46,
+            "away": 6.25,
+            "draw": 5.0
+          },
+          "books": 2
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8078709494958285,
+            "under": 0.1921290505041715
+          },
+          "price": {
+            "over": 1.17,
+            "under": 5.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.6130087488168632,
+            "under": 0.3869912511831368
+          },
+          "price": {
+            "over": 1.53,
+            "under": 2.5
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.4063715564554804,
+            "under": 0.5936284435445196
+          },
+          "price": {
+            "over": 2.3,
+            "under": 1.62
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5409009009009009,
+            "no": 0.4590990990990991
+          },
+          "price": {
+            "yes": 1.72,
+            "no": 2.05
+          },
+          "books": 2
+        }
+      }
+    },
+    "Sturm Graz vs Marseille": {
+      "flashscore": {
+        "home": "Sturm Graz",
+        "away": "Marseille",
+        "competition": "Europa League - League phase",
+        "id": "OKaB8iRE",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.3197727392968203,
+            "away": 0.41454797693297984,
+            "draw": 0.2656792837701998
+          },
+          "price": {
+            "home": 3.0,
+            "away": 2.3,
+            "draw": 3.6
+          },
+          "books": 2
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8078709494958285,
+            "under": 0.1921290505041715
+          },
+          "price": {
+            "over": 1.17,
+            "under": 5.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5999671214861089,
+            "under": 0.4000328785138912
+          },
+          "price": {
+            "over": 1.57,
+            "under": 2.38
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.40379760151483274,
+            "under": 0.5962023984851672
+          },
+          "price": {
+            "over": 2.35,
+            "under": 1.62
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.6273614609571788,
+            "no": 0.3726385390428212
+          },
+          "price": {
+            "yes": 1.5,
+            "no": 2.5
+          },
+          "books": 2
+        }
+      }
+    },
+    "Bournemouth vs Milan": {
+      "flashscore": {
+        "home": "Bournemouth",
+        "away": "AC Milan",
+        "competition": "Europa League - League phase",
+        "id": "OWgU2DyA",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.5105913160128946,
+            "away": 0.24235440142647818,
+            "draw": 0.24705428256062711
+          },
+          "price": {
+            "home": 1.85,
+            "away": 4.0,
+            "draw": 3.9
+          },
+          "books": 2
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7808008722370899,
+            "under": 0.21919912776291012
+          },
+          "price": {
+            "over": 1.21,
+            "under": 4.5
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5590366537121322,
+            "under": 0.44096334628786776
+          },
+          "price": {
+            "over": 1.68,
+            "under": 2.2
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.3539281600413738,
+            "under": 0.6460718399586263
+          },
+          "price": {
+            "over": 2.7,
+            "under": 1.5
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5600159293419902,
+            "no": 0.4399840706580098
+          },
+          "price": {
+            "yes": 1.67,
+            "no": 2.1
+          },
+          "books": 2
+        }
+      }
+    },
+    "Besiktas vs Crystal Palace": {
+      "flashscore": {
+        "home": "Besiktas",
+        "away": "Crystal Palace",
+        "competition": "Europa League - League phase",
+        "id": "WpNi9biD",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.4395166491802417,
+            "away": 0.2977934624028291,
+            "draw": 0.26268988841692914
+          },
+          "price": {
+            "home": 2.15,
+            "away": 3.25,
+            "draw": 3.7
+          },
+          "books": 2
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8070476378524986,
+            "under": 0.19295236214750155
+          },
+          "price": {
+            "over": 1.17,
+            "under": 5.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5999671214861089,
+            "under": 0.4000328785138912
+          },
+          "price": {
+            "over": 1.57,
+            "under": 2.38
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.3941069278578634,
+            "under": 0.6058930721421366
+          },
+          "price": {
+            "over": 2.38,
+            "under": 1.57
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.6209832904884318,
+            "no": 0.37901670951156813
+          },
+          "price": {
+            "yes": 1.5,
+            "no": 2.5
+          },
+          "books": 2
+        }
+      }
+    },
+    "Celtic vs Celta": {
+      "flashscore": {
+        "home": "Celtic",
+        "away": "Celta Vigo",
+        "competition": "Europa League - League phase",
+        "id": "4CbZfmF5",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.40215141743273813,
+            "away": 0.33422407523276276,
+            "draw": 0.26362450733449916
+          },
+          "price": {
+            "home": 2.37,
+            "away": 2.88,
+            "draw": 3.6
+          },
+          "books": 2
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7869469870327994,
+            "under": 0.21305301296720058
+          },
+          "price": {
+            "over": 1.2,
+            "under": 4.5
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5686292604897256,
+            "under": 0.4313707395102744
+          },
+          "price": {
+            "over": 1.67,
+            "under": 2.2
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.3718711905100772,
+            "under": 0.6281288094899228
+          },
+          "price": {
+            "over": 2.55,
+            "under": 1.53
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.6079653971463881,
+            "no": 0.39203460285361197
+          },
+          "price": {
+            "yes": 1.53,
+            "no": 2.38
+          },
+          "books": 2
+        }
+      }
+    },
+    "Viktoria Plzeň vs Levski Sofia": {
+      "flashscore": {
+        "home": "Plzen",
+        "away": "Levski Sofia",
+        "competition": "Europa League - League phase",
+        "id": "65YtHXW0",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.5501034529106817,
+            "away": 0.20243296246061143,
+            "draw": 0.24746358462870677
+          },
+          "price": {
+            "home": 1.73,
+            "away": 4.75,
+            "draw": 3.9
+          },
+          "books": 2
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7586859793619237,
+            "under": 0.2413140206380763
+          },
+          "price": {
+            "over": 1.25,
+            "under": 4.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5266714082503556,
+            "under": 0.47332859174964437
+          },
+          "price": {
+            "over": 1.8,
+            "under": 2.0
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.31067941079112876,
+            "under": 0.6893205892088713
+          },
+          "price": {
+            "over": 3.2,
+            "under": 1.37
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5222282608695652,
+            "no": 0.4777717391304348
+          },
+          "price": {
+            "yes": 1.8,
+            "no": 1.95
+          },
+          "books": 2
+        }
+      }
+    },
+    "Jagiellonia Białystok vs Anderlecht": {
+      "flashscore": {
+        "home": "Jagiellonia",
+        "away": "Anderlecht",
+        "competition": "Europa League - League phase",
+        "id": "xpZI7oG8",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.31318626935472893,
+            "away": 0.4162762986149345,
+            "draw": 0.27053743203033653
+          },
+          "price": {
+            "home": 3.1,
+            "away": 2.3,
+            "draw": 3.5
+          },
+          "books": 2
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7732318525421974,
+            "under": 0.22676814745780263
+          },
+          "price": {
+            "over": 1.22,
+            "under": 4.33
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.54224795077664,
+            "under": 0.4577520492233601
+          },
+          "price": {
+            "over": 1.73,
+            "under": 2.1
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.33770883054892603,
+            "under": 0.662291169451074
+          },
+          "price": {
+            "over": 2.8,
+            "under": 1.44
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5774317993937724,
+            "no": 0.4225682006062276
+          },
+          "price": {
+            "yes": 1.62,
+            "no": 2.2
+          },
+          "books": 2
+        }
+      }
+    },
+    "Lillestrøm vs Sociedad": {
+      "flashscore": {
+        "home": "Lillestrom",
+        "away": "Real Sociedad",
+        "competition": "Europa League - League phase",
+        "id": "EZBxzXKk",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.14853369600490046,
+            "away": 0.6666642358920882,
+            "draw": 0.18480206810301136
+          },
+          "price": {
+            "home": 6.5,
+            "away": 1.44,
+            "draw": 5.25
+          },
+          "books": 2
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8455558169649603,
+            "under": 0.15444418303503973
+          },
+          "price": {
+            "over": 1.12,
+            "under": 6.5
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.6764300185352817,
+            "under": 0.3235699814647183
+          },
+          "price": {
+            "over": 1.42,
+            "under": 3.2
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.475201072386059,
+            "under": 0.524798927613941
+          },
+          "price": {
+            "over": 2.05,
+            "under": 1.91
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5746247818499128,
+            "no": 0.4253752181500873
+          },
+          "price": {
+            "yes": 1.62,
+            "no": 2.2
+          },
+          "books": 2
+        }
+      }
+    },
+    "Celje vs Red Bull Salzburg": {
+      "flashscore": {
+        "home": "Celje",
+        "away": "Salzburg",
+        "competition": "Europa League - League phase",
+        "id": "Y9H9vSUO",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.1622694153101063,
+            "away": 0.6289744119996599,
+            "draw": 0.20875617269023394
+          },
+          "price": {
+            "home": 6.25,
+            "away": 1.52,
+            "draw": 4.6
+          },
+          "books": 2
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8206606915466745,
+            "under": 0.1793393084533255
+          },
+          "price": {
+            "over": 1.15,
+            "under": 5.5
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.6293156426297613,
+            "under": 0.3706843573702388
+          },
+          "price": {
+            "over": 1.5,
+            "under": 2.63
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.4247569828965178,
+            "under": 0.5752430171034822
+          },
+          "price": {
+            "over": 2.2,
+            "under": 1.67
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5636604774535809,
+            "no": 0.4363395225464191
+          },
+          "price": {
+            "yes": 1.67,
+            "no": 2.15
+          },
+          "books": 2
+        }
+      }
+    },
+    "Olympiakos vs Sparta Prague": {
+      "flashscore": {
+        "home": "Olympiacos Piraeus",
+        "away": "Sparta Prague",
+        "competition": "Europa League - League phase",
+        "id": "SMqu0QwJ",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.6420010700909577,
+            "away": 0.14598715890850722,
+            "draw": 0.21201177100053503
+          },
+          "price": {
+            "home": 1.5,
+            "away": 7.0,
+            "draw": 4.5
+          },
+          "books": 2
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7618117559523809,
+            "under": 0.23818824404761907
+          },
+          "price": {
+            "over": 1.25,
+            "under": 4.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5429686403324069,
+            "under": 0.4570313596675931
+          },
+          "price": {
+            "over": 1.73,
+            "under": 2.1
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.33770883054892603,
+            "under": 0.662291169451074
+          },
+          "price": {
+            "over": 2.8,
+            "under": 1.44
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.48456521739130437,
+            "no": 0.5154347826086957
+          },
+          "price": {
+            "yes": 1.95,
+            "no": 1.8
+          },
+          "books": 2
+        }
+      }
+    },
+    "Omonia vs Benfica": {
+      "flashscore": {
+        "home": "Omonia",
+        "away": "Benfica",
+        "competition": "Europa League - League phase",
+        "id": "YRSnvFtJ",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.10947233945207849,
+            "away": 0.7260957598025133,
+            "draw": 0.16443190074540825
+          },
+          "price": {
+            "home": 8.75,
+            "away": 1.3,
+            "draw": 6.0
+          },
+          "books": 2
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8249547485717518,
+            "under": 0.1750452514282482
+          },
+          "price": {
+            "over": 1.14,
+            "under": 5.5
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.6332633980031837,
+            "under": 0.36673660199681635
+          },
+          "price": {
+            "over": 1.5,
+            "under": 2.63
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.42628858969128247,
+            "under": 0.5737114103087175
+          },
+          "price": {
+            "over": 2.2,
+            "under": 1.67
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.511358695652174,
+            "no": 0.4886413043478261
+          },
+          "price": {
+            "yes": 1.83,
+            "no": 1.95
+          },
+          "books": 2
+        }
+      }
+    },
+    "Hoffenheim vs Lyon": {
+      "flashscore": {
+        "home": "Hoffenheim",
+        "away": "Lyon",
+        "competition": "Europa League - League phase",
+        "id": "0lLMoF1B",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.4784250904595988,
+            "away": 0.2864650160786893,
+            "draw": 0.23510989346171196
+          },
+          "price": {
+            "home": 2.0,
+            "away": 3.4,
+            "draw": 4.1
+          },
+          "books": 2
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8199676828716775,
+            "under": 0.18003231712832246
+          },
+          "price": {
+            "over": 1.17,
+            "under": 5.5
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.6363570492654562,
+            "under": 0.3636429507345438
+          },
+          "price": {
+            "over": 1.5,
+            "under": 2.63
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.42148676446706007,
+            "under": 0.57851323553294
+          },
+          "price": {
+            "over": 2.3,
+            "under": 1.62
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.6304551122194514,
+            "no": 0.36954488778054867
+          },
+          "price": {
+            "yes": 1.5,
+            "no": 2.55
+          },
+          "books": 2
+        }
+      }
+    },
+    "Ipswich vs Nott'm Forest": {
+      "flashscore": {
+        "home": "Ipswich",
+        "away": "Nottingham",
+        "competition": "Premier League",
+        "id": "lEkBjWFD",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.30051830707585553,
+            "away": 0.426565012809208,
+            "draw": 0.27291668011493647
+          },
+          "price": {
+            "home": 3.25,
+            "away": 2.25,
+            "draw": 3.6
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7732318525421974,
+            "under": 0.22676814745780263
+          },
+          "price": {
+            "over": 1.22,
+            "under": 4.33
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5436932150070728,
+            "under": 0.4563067849929272
+          },
+          "price": {
+            "over": 1.73,
+            "under": 2.1
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.33770883054892603,
+            "under": 0.662291169451074
+          },
+          "price": {
+            "over": 2.8,
+            "under": 1.44
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5811692844677138,
+            "no": 0.41883071553228624
+          },
+          "price": {
+            "yes": 1.6,
+            "no": 2.25
+          },
+          "books": 2
+        }
+      }
+    },
+    "Aston Villa vs Man City": {
+      "flashscore": {
+        "home": "Aston Villa",
+        "away": "Manchester City",
+        "competition": "Premier League",
+        "id": "lEVTjuAd",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.19920718841089316,
+            "away": 0.5691542874088679,
+            "draw": 0.231638524180239
+          },
+          "price": {
+            "home": 5.25,
+            "away": 1.68,
+            "draw": 4.2
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8153426357374393,
+            "under": 0.18465736426256077
+          },
+          "price": {
+            "over": 1.17,
+            "under": 5.25
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.6203002795489525,
+            "under": 0.37969972045104755
+          },
+          "price": {
+            "over": 1.53,
+            "under": 2.5
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.41289897159908356,
+            "under": 0.5871010284009165
+          },
+          "price": {
+            "over": 2.3,
+            "under": 1.62
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5932039165023458,
+            "no": 0.4067960834976542
+          },
+          "price": {
+            "yes": 1.57,
+            "no": 2.3
+          },
+          "books": 2
+        }
+      }
+    },
+    "Arsenal vs Everton": {
+      "flashscore": {
+        "home": "Arsenal",
+        "away": "Everton",
+        "competition": "Premier League",
+        "id": "G0XLh1up",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.6754433026773771,
+            "away": 0.12252086213142863,
+            "draw": 0.2020358351911943
+          },
+          "price": {
+            "home": 1.43,
+            "away": 8.0,
+            "draw": 5.0
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7477753125298215,
+            "under": 0.2522246874701785
+          },
+          "price": {
+            "over": 1.29,
+            "under": 3.75
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5205510705510705,
+            "under": 0.4794489294489295
+          },
+          "price": {
+            "over": 1.85,
+            "under": 2.0
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.3060995512035904,
+            "under": 0.6939004487964097
+          },
+          "price": {
+            "over": 3.2,
+            "under": 1.36
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.45186773905272565,
+            "no": 0.5481322609472743
+          },
+          "price": {
+            "yes": 2.05,
+            "no": 1.7
+          },
+          "books": 2
+        }
+      }
+    },
+    "Coventry vs Fulham": {
+      "flashscore": {
+        "home": "Coventry",
+        "away": "Fulham",
+        "competition": "Premier League",
+        "id": "OpRNCMWF",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.29843819162209845,
+            "away": 0.4262898782537572,
+            "draw": 0.27527193012414436
+          },
+          "price": {
+            "home": 3.2,
+            "away": 2.25,
+            "draw": 3.5
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7761541202219169,
+            "under": 0.22384587977808318
+          },
+          "price": {
+            "over": 1.22,
+            "under": 4.33
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.547484769364665,
+            "under": 0.45251523063533505
+          },
+          "price": {
+            "over": 1.73,
+            "under": 2.1
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.34051240762572965,
+            "under": 0.6594875923742705
+          },
+          "price": {
+            "over": 2.75,
+            "under": 1.44
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5855079088063381,
+            "no": 0.41449209119366187
+          },
+          "price": {
+            "yes": 1.58,
+            "no": 2.25
+          },
+          "books": 2
+        }
+      }
+    },
+    "Chelsea vs Tottenham": {
+      "flashscore": {
+        "home": "Chelsea",
+        "away": "Tottenham",
+        "competition": "Premier League",
+        "id": "GKNFEr23",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.5614862577847975,
+            "away": 0.2103171686896161,
+            "draw": 0.2281965735255863
+          },
+          "price": {
+            "home": 1.71,
+            "away": 4.75,
+            "draw": 4.2
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8206606915466745,
+            "under": 0.1793393084533255
+          },
+          "price": {
+            "over": 1.15,
+            "under": 5.5
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.6253073078899947,
+            "under": 0.3746926921100054
+          },
+          "price": {
+            "over": 1.51,
+            "under": 2.63
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.4170609752005101,
+            "under": 0.5829390247994899
+          },
+          "price": {
+            "over": 2.3,
+            "under": 1.67
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.6004004576659039,
+            "no": 0.3995995423340961
+          },
+          "price": {
+            "yes": 1.55,
+            "no": 2.38
+          },
+          "books": 2
+        }
+      }
+    },
+    "Liverpool vs Brighton": {
+      "flashscore": {
+        "home": "Liverpool",
+        "away": "Brighton",
+        "competition": "Premier League",
+        "id": "t8xcEZ7K",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.44552593175941074,
+            "away": 0.2994642894504544,
+            "draw": 0.25500977879013487
+          },
+          "price": {
+            "home": 2.15,
+            "away": 3.25,
+            "draw": 3.8
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8070476378524986,
+            "under": 0.19295236214750155
+          },
+          "price": {
+            "over": 1.17,
+            "under": 5.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.6088749959717701,
+            "under": 0.39112500402822986
+          },
+          "price": {
+            "over": 1.55,
+            "under": 2.5
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.40200540370389803,
+            "under": 0.597994596296102
+          },
+          "price": {
+            "over": 2.37,
+            "under": 1.62
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.631579113584255,
+            "no": 0.36842088641574505
+          },
+          "price": {
+            "yes": 1.49,
+            "no": 2.63
+          },
+          "books": 2
+        }
+      }
+    },
+    "Crystal Palace vs Newcastle": {
+      "flashscore": {
+        "home": "Crystal Palace",
+        "away": "Newcastle",
+        "competition": "Premier League",
+        "id": "fXmefEGl",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.33228321726052296,
+            "away": 0.40622039779259517,
+            "draw": 0.2614963849468818
+          },
+          "price": {
+            "home": 2.9,
+            "away": 2.35,
+            "draw": 3.7
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8031102611699652,
+            "under": 0.19688973883003485
+          },
+          "price": {
+            "over": 1.18,
+            "under": 5.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5907395069953365,
+            "under": 0.40926049300466355
+          },
+          "price": {
+            "over": 1.6,
+            "under": 2.38
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.38387271625801106,
+            "under": 0.6161272837419889
+          },
+          "price": {
+            "over": 2.5,
+            "under": 1.57
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.6169041450777202,
+            "no": 0.3830958549222798
+          },
+          "price": {
+            "yes": 1.51,
+            "no": 2.5
+          },
+          "books": 2
+        }
+      }
+    },
+    "Man United vs Bournemouth": {
+      "flashscore": {
+        "home": "Manchester Utd",
+        "away": "Bournemouth",
+        "competition": "Premier League",
+        "id": "CjTS8DVs",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.47822017681853596,
+            "away": 0.26513176087546814,
+            "draw": 0.25664806230599596
+          },
+          "price": {
+            "home": 2.0,
+            "away": 3.7,
+            "draw": 3.75
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7933503603028368,
+            "under": 0.20664963969716316
+          },
+          "price": {
+            "over": 1.2,
+            "under": 4.6
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5871010284009165,
+            "under": 0.41289897159908356
+          },
+          "price": {
+            "over": 1.62,
+            "under": 2.3
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.37969972045104755,
+            "under": 0.6203002795489525
+          },
+          "price": {
+            "over": 2.5,
+            "under": 1.53
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.6071828776333483,
+            "no": 0.3928171223666517
+          },
+          "price": {
+            "yes": 1.53,
+            "no": 2.38
+          },
+          "books": 2
+        }
+      }
+    },
+    "Hull vs Brentford": {
+      "flashscore": {
+        "home": "Hull",
+        "away": "Brentford",
+        "competition": "Premier League",
+        "id": "tln3hho1",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.19876701961012655,
+            "away": 0.560337296784853,
+            "draw": 0.24089568360502045
+          },
+          "price": {
+            "home": 5.0,
+            "away": 1.72,
+            "draw": 4.0
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7869469870327994,
+            "under": 0.21305301296720058
+          },
+          "price": {
+            "over": 1.2,
+            "under": 4.5
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5686292604897256,
+            "under": 0.4313707395102744
+          },
+          "price": {
+            "over": 1.67,
+            "under": 2.2
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.3598158847361734,
+            "under": 0.6401841152638266
+          },
+          "price": {
+            "over": 2.63,
+            "under": 1.5
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5585145888594165,
+            "no": 0.4414854111405836
+          },
+          "price": {
+            "yes": 1.67,
+            "no": 2.1
+          },
+          "books": 2
+        }
+      }
+    },
+    "Sunderland vs Leeds": {
+      "flashscore": {
+        "home": "Sunderland",
+        "away": "Leeds",
+        "competition": "Premier League",
+        "id": "ImWz7i0f",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.3071330753323016,
+            "away": 0.39699772549386503,
+            "draw": 0.29586919917383336
+          },
+          "price": {
+            "home": 3.2,
+            "away": 2.4,
+            "draw": 3.3
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7007643261653004,
+            "under": 0.2992356738346996
+          },
+          "price": {
+            "over": 1.36,
+            "under": 3.2
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.45251523063533505,
+            "under": 0.547484769364665
+          },
+          "price": {
+            "over": 2.1,
+            "under": 1.73
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.2542388167388167,
+            "under": 0.7457611832611832
+          },
+          "price": {
+            "over": 3.75,
+            "under": 1.29
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5147683923705723,
+            "no": 0.4852316076294278
+          },
+          "price": {
+            "yes": 1.8,
+            "no": 1.95
+          },
+          "books": 2
+        }
+      }
+    },
+    "Torino vs Monza": {
+      "flashscore": {
+        "home": "Torino",
+        "away": "Monza",
+        "competition": "Serie A",
+        "id": "0lVsxwHO",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.44218570372502297,
+            "away": 0.27478469726459537,
+            "draw": 0.28302959901038166
+          },
+          "price": {
+            "home": 2.15,
+            "away": 3.5,
+            "draw": 3.4
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7352716727716728,
+            "under": 0.26472832722832723
+          },
+          "price": {
+            "over": 1.29,
+            "under": 3.75
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.4867665593054194,
+            "under": 0.5132334406945807
+          },
+          "price": {
+            "over": 1.98,
+            "under": 1.88
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.2834491090305044,
+            "under": 0.7165508909694955
+          },
+          "price": {
+            "over": 3.4,
+            "under": 1.33
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5342342342342342,
+            "no": 0.4657657657657658
+          },
+          "price": {
+            "yes": 1.75,
+            "no": 2.0
+          },
+          "books": 2
+        }
+      }
+    },
+    "Cagliari vs Bologna": {
+      "flashscore": {
+        "home": "Cagliari",
+        "away": "Bologna",
+        "competition": "Serie A",
+        "id": "OnWnTsYg",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.304861385264024,
+            "away": 0.39008778388488025,
+            "draw": 0.3050508308510958
+          },
+          "price": {
+            "home": 3.1,
+            "away": 2.45,
+            "draw": 3.2
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.6939004487964097,
+            "under": 0.3060995512035904
+          },
+          "price": {
+            "over": 1.36,
+            "under": 3.2
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.43576227390180877,
+            "under": 0.5642377260981912
+          },
+          "price": {
+            "over": 2.2,
+            "under": 1.67
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.2413140206380763,
+            "under": 0.7586859793619237
+          },
+          "price": {
+            "over": 4.0,
+            "under": 1.25
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5133875338753388,
+            "no": 0.48661246612466125
+          },
+          "price": {
+            "yes": 1.82,
+            "no": 1.95
+          },
+          "books": 2
+        }
+      }
+    },
+    "Como vs Sassuolo": {
+      "flashscore": {
+        "home": "Como",
+        "away": "Sassuolo",
+        "competition": "Serie A",
+        "id": "d0UfRL26",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.6299347292551977,
+            "away": 0.166273811544195,
+            "draw": 0.20379145920060734
+          },
+          "price": {
+            "home": 1.53,
+            "away": 6.0,
+            "draw": 4.75
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8392435350151379,
+            "under": 0.16075646498486212
+          },
+          "price": {
+            "over": 1.13,
+            "under": 6.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.6499444693872729,
+            "under": 0.35005553061272715
+          },
+          "price": {
+            "over": 1.44,
+            "under": 2.75
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.44659324481973217,
+            "under": 0.5534067551802678
+          },
+          "price": {
+            "over": 2.1,
+            "under": 1.73
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5947637144067912,
+            "no": 0.40523628559320873
+          },
+          "price": {
+            "yes": 1.57,
+            "no": 2.3
+          },
+          "books": 2
+        }
+      }
+    },
+    "Napoli vs Roma": {
+      "flashscore": {
+        "home": "Napoli",
+        "away": "AS Roma",
+        "competition": "Serie A",
+        "id": "SzXZwanC",
+        "swapped": false
+      },
+      "similarity": 0.9,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.3357739153510881,
+            "away": 0.37501153545644367,
+            "draw": 0.28921454919246825
+          },
+          "price": {
+            "home": 2.88,
+            "away": 2.6,
+            "draw": 3.4
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7423941798941799,
+            "under": 0.25760582010582017
+          },
+          "price": {
+            "over": 1.29,
+            "under": 3.75
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.505949455949456,
+            "under": 0.49405054405054405
+          },
+          "price": {
+            "over": 1.9,
+            "under": 1.95
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.2992356738346996,
+            "under": 0.7007643261653004
+          },
+          "price": {
+            "over": 3.2,
+            "under": 1.36
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5547949123095512,
+            "no": 0.44520508769044875
+          },
+          "price": {
+            "yes": 1.67,
+            "no": 2.1
+          },
+          "books": 2
+        }
+      }
+    },
+    "Lazio vs Parma": {
+      "flashscore": {
+        "home": "Lazio",
+        "away": "Parma",
+        "competition": "Serie A",
+        "id": "CpQJssmm",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.689727839770588,
+            "away": 0.11382466067510898,
+            "draw": 0.19644749955430293
+          },
+          "price": {
+            "home": 1.41,
+            "away": 9.0,
+            "draw": 5.0
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7423941798941799,
+            "under": 0.25760582010582017
+          },
+          "price": {
+            "over": 1.29,
+            "under": 3.75
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5105307379918779,
+            "under": 0.48946926200812213
+          },
+          "price": {
+            "over": 1.88,
+            "under": 1.98
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.2992356738346996,
+            "under": 0.7007643261653004
+          },
+          "price": {
+            "over": 3.2,
+            "under": 1.36
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.4414854111405836,
+            "no": 0.5585145888594165
+          },
+          "price": {
+            "yes": 2.1,
+            "no": 1.67
+          },
+          "books": 2
+        }
+      }
+    },
+    "Inter vs Fiorentina": {
+      "flashscore": {
+        "home": "Inter",
+        "away": "Fiorentina",
+        "competition": "Serie A",
+        "id": "GEvlm3PP",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.7065747480775001,
+            "away": 0.11626960128100468,
+            "draw": 0.17715565064149522
+          },
+          "price": {
+            "home": 1.37,
+            "away": 9.0,
+            "draw": 5.5
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8426982915238991,
+            "under": 0.15730170847610087
+          },
+          "price": {
+            "over": 1.13,
+            "under": 6.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.6566294444541226,
+            "under": 0.34337055554587737
+          },
+          "price": {
+            "over": 1.44,
+            "under": 2.75
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.4673003262874167,
+            "under": 0.5326996737125833
+          },
+          "price": {
+            "over": 2.0,
+            "under": 1.8
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5600159293419902,
+            "no": 0.4399840706580098
+          },
+          "price": {
+            "yes": 1.67,
+            "no": 2.1
+          },
+          "books": 2
+        }
+      }
+    },
+    "Atalanta vs Frosinone": {
+      "flashscore": {
+        "home": "Atalanta",
+        "away": "Frosinone",
+        "competition": "Serie A",
+        "id": "GMSvV33s",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.5344181923928077,
+            "away": 0.23564817355468654,
+            "draw": 0.2299336340525058
+          },
+          "price": {
+            "home": 1.77,
+            "away": 4.33,
+            "draw": 4.2
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8516620365080272,
+            "under": 0.1483379634919728
+          },
+          "price": {
+            "over": 1.11,
+            "under": 6.5
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.6750379691907138,
+            "under": 0.32496203080928615
+          },
+          "price": {
+            "over": 1.4,
+            "under": 3.0
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.47332859174964437,
+            "under": 0.5266714082503556
+          },
+          "price": {
+            "over": 2.0,
+            "under": 1.8
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.6568781267576449,
+            "no": 0.34312187324235516
+          },
+          "price": {
+            "yes": 1.42,
+            "no": 2.75
+          },
+          "books": 2
+        }
+      }
+    },
+    "Genoa vs Venezia": {
+      "flashscore": {
+        "home": "Genoa",
+        "away": "Venezia",
+        "competition": "Serie A",
+        "id": "4QX2PaXI",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.449456130610902,
+            "away": 0.26719305821150247,
+            "draw": 0.2833508111775955
+          },
+          "price": {
+            "home": 2.1,
+            "away": 3.6,
+            "draw": 3.4
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7278311965811965,
+            "under": 0.27216880341880345
+          },
+          "price": {
+            "over": 1.3,
+            "under": 3.5
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.48620568620568627,
+            "under": 0.5137943137943138
+          },
+          "price": {
+            "over": 2.0,
+            "under": 1.85
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.2858247821378848,
+            "under": 0.7141752178621151
+          },
+          "price": {
+            "over": 3.4,
+            "under": 1.33
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5335130278526505,
+            "no": 0.4664869721473495
+          },
+          "price": {
+            "yes": 1.75,
+            "no": 2.0
+          },
+          "books": 2
+        }
+      }
+    },
+    "Lecce vs Juventus": {
+      "flashscore": {
+        "home": "Lecce",
+        "away": "Juventus",
+        "competition": "Serie A",
+        "id": "KATRuLHa",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.1251316961614921,
+            "away": 0.657641467253941,
+            "draw": 0.21722683658456693
+          },
+          "price": {
+            "home": 8.0,
+            "away": 1.46,
+            "draw": 4.4
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7513227513227513,
+            "under": 0.2486772486772487
+          },
+          "price": {
+            "over": 1.26,
+            "under": 4.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5137943137943138,
+            "under": 0.48620568620568627
+          },
+          "price": {
+            "over": 1.85,
+            "under": 2.0
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.2992356738346996,
+            "under": 0.7007643261653004
+          },
+          "price": {
+            "over": 3.2,
+            "under": 1.36
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.46306306306306305,
+            "no": 0.5369369369369369
+          },
+          "price": {
+            "yes": 2.0,
+            "no": 1.75
+          },
+          "books": 2
+        }
+      }
+    },
+    "Udinese vs Milan": {
+      "flashscore": {
+        "home": "Udinese",
+        "away": "AC Milan",
+        "competition": "Serie A",
+        "id": "U35idt2t",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.1773413802149726,
+            "away": 0.5734741560822422,
+            "draw": 0.24918446370278535
+          },
+          "price": {
+            "home": 5.5,
+            "away": 1.65,
+            "draw": 3.9
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7513227513227513,
+            "under": 0.2486772486772487
+          },
+          "price": {
+            "over": 1.26,
+            "under": 4.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5137943137943138,
+            "under": 0.48620568620568627
+          },
+          "price": {
+            "over": 1.85,
+            "under": 2.0
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.3000237079184448,
+            "under": 0.6999762920815552
+          },
+          "price": {
+            "over": 3.2,
+            "under": 1.36
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5120435967302452,
+            "no": 0.48795640326975476
+          },
+          "price": {
+            "yes": 1.82,
+            "no": 1.95
+          },
+          "books": 2
+        }
+      }
+    },
+    "Sassuolo vs Lazio": {
+      "flashscore": {
+        "home": "Sassuolo",
+        "away": "Lazio",
+        "competition": "Serie A",
+        "id": "QgHKnTUq",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.3411487662537115,
+            "away": 0.3829220845704924,
+            "draw": 0.2759291491757961
+          },
+          "price": {
+            "home": 2.75,
+            "away": 2.45,
+            "draw": 3.4
+          },
+          "books": 1
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7801801801801802,
+            "under": 0.21981981981981982
+          },
+          "price": {
+            "over": 1.22,
+            "under": 4.33
+          },
+          "books": 1
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5483028720626633,
+            "under": 0.4516971279373368
+          },
+          "price": {
+            "over": 1.73,
+            "under": 2.1
+          },
+          "books": 1
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.3436754176610979,
+            "under": 0.6563245823389022
+          },
+          "price": {
+            "over": 2.75,
+            "under": 1.44
+          },
+          "books": 1
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5759162303664922,
+            "no": 0.42408376963350786
+          },
+          "price": {
+            "yes": 1.62,
+            "no": 2.2
+          },
+          "books": 1
+        }
+      }
+    },
+    "Roma vs Cagliari": {
+      "flashscore": {
+        "home": "AS Roma",
+        "away": "Cagliari",
+        "competition": "Serie A",
+        "id": "UNVlhk7M",
+        "swapped": false
+      },
+      "similarity": 0.9,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.6956875508543532,
+            "away": 0.10512611879576893,
+            "draw": 0.19918633034987795
+          },
+          "price": {
+            "home": 1.36,
+            "away": 9.0,
+            "draw": 4.75
+          },
+          "books": 1
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7801801801801802,
+            "under": 0.21981981981981982
+          },
+          "price": {
+            "over": 1.22,
+            "under": 4.33
+          },
+          "books": 1
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5483028720626633,
+            "under": 0.4516971279373368
+          },
+          "price": {
+            "over": 1.73,
+            "under": 2.1
+          },
+          "books": 1
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.3436754176610979,
+            "under": 0.6563245823389022
+          },
+          "price": {
+            "over": 2.75,
+            "under": 1.44
+          },
+          "books": 1
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.4666666666666667,
+            "no": 0.5333333333333333
+          },
+          "price": {
+            "yes": 2.0,
+            "no": 1.75
+          },
+          "books": 1
+        }
+      }
+    },
+    "Torino vs Como": {
+      "flashscore": {
+        "home": "Torino",
+        "away": "Como",
+        "competition": "Serie A",
+        "id": "bLURp7ad",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.2074074074074074,
+            "away": 0.5333333333333333,
+            "draw": 0.2592592592592593
+          },
+          "price": {
+            "home": 4.5,
+            "away": 1.75,
+            "draw": 3.6
+          },
+          "books": 1
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7801801801801802,
+            "under": 0.21981981981981982
+          },
+          "price": {
+            "over": 1.22,
+            "under": 4.33
+          },
+          "books": 1
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5483028720626633,
+            "under": 0.4516971279373368
+          },
+          "price": {
+            "over": 1.73,
+            "under": 2.1
+          },
+          "books": 1
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.3436754176610979,
+            "under": 0.6563245823389022
+          },
+          "price": {
+            "over": 2.75,
+            "under": 1.44
+          },
+          "books": 1
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5466666666666666,
+            "no": 0.4533333333333333
+          },
+          "price": {
+            "yes": 1.7,
+            "no": 2.05
+          },
+          "books": 1
+        }
+      }
+    },
+    "Milan vs Bologna": {
+      "flashscore": {
+        "home": "AC Milan",
+        "away": "Bologna",
+        "competition": "Serie A",
+        "id": "MwxmYTFj",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.5841252096143097,
+            "away": 0.169927333705981,
+            "draw": 0.24594745667970933
+          },
+          "price": {
+            "home": 1.6,
+            "away": 5.5,
+            "draw": 3.8
+          },
+          "books": 1
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7619047619047619,
+            "under": 0.23809523809523808
+          },
+          "price": {
+            "over": 1.25,
+            "under": 4.0
+          },
+          "books": 1
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5259067357512953,
+            "under": 0.47409326424870474
+          },
+          "price": {
+            "over": 1.83,
+            "under": 2.03
+          },
+          "books": 1
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.3181818181818182,
+            "under": 0.6818181818181819
+          },
+          "price": {
+            "over": 3.0,
+            "under": 1.4
+          },
+          "books": 1
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.52,
+            "no": 0.48000000000000004
+          },
+          "price": {
+            "yes": 1.8,
+            "no": 1.95
+          },
+          "books": 1
+        }
+      }
+    },
+    "Venezia vs Inter": {
+      "flashscore": {
+        "home": "Venezia",
+        "away": "Inter",
+        "competition": "Serie A",
+        "id": "QRMD8Ai3",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.10999917293854934,
+            "away": 0.7030022330659168,
+            "draw": 0.1869985939955339
+          },
+          "price": {
+            "home": 8.5,
+            "away": 1.33,
+            "draw": 5.0
+          },
+          "books": 1
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8641975308641975,
+            "under": 0.13580246913580246
+          },
+          "price": {
+            "over": 1.1,
+            "under": 7.0
+          },
+          "books": 1
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.7188160676532769,
+            "under": 0.28118393234672306
+          },
+          "price": {
+            "over": 1.33,
+            "under": 3.4
+          },
+          "books": 1
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.5263157894736842,
+            "under": 0.47368421052631576
+          },
+          "price": {
+            "over": 1.8,
+            "under": 2.0
+          },
+          "books": 1
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5890052356020943,
+            "no": 0.4109947643979058
+          },
+          "price": {
+            "yes": 1.57,
+            "no": 2.25
+          },
+          "books": 1
+        }
+      }
+    },
+    "Parma vs Udinese": {
+      "flashscore": {
+        "home": "Parma",
+        "away": "Udinese",
+        "competition": "Serie A",
+        "id": "McStfBxA",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.3137254901960784,
+            "away": 0.39215686274509803,
+            "draw": 0.29411764705882354
+          },
+          "price": {
+            "home": 3.0,
+            "away": 2.4,
+            "draw": 3.2
+          },
+          "books": 1
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7017543859649122,
+            "under": 0.2982456140350877
+          },
+          "price": {
+            "over": 1.36,
+            "under": 3.2
+          },
+          "books": 1
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.43152454780361754,
+            "under": 0.5684754521963824
+          },
+          "price": {
+            "over": 2.2,
+            "under": 1.67
+          },
+          "books": 1
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.23809523809523808,
+            "under": 0.7619047619047619
+          },
+          "price": {
+            "over": 4.0,
+            "under": 1.25
+          },
+          "books": 1
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5,
+            "no": 0.5
+          },
+          "price": {
+            "yes": 1.91,
+            "no": 1.91
+          },
+          "books": 1
+        }
+      }
+    },
+    "Genoa vs Juventus": {
+      "flashscore": {
+        "home": "Genoa",
+        "away": "Juventus",
+        "competition": "Serie A",
+        "id": "I7AFjxWH",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.17061611374407581,
+            "away": 0.5687203791469194,
+            "draw": 0.2606635071090047
+          },
+          "price": {
+            "home": 5.5,
+            "away": 1.65,
+            "draw": 3.6
+          },
+          "books": 1
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7188160676532769,
+            "under": 0.28118393234672306
+          },
+          "price": {
+            "over": 1.33,
+            "under": 3.4
+          },
+          "books": 1
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.4675324675324676,
+            "under": 0.5324675324675325
+          },
+          "price": {
+            "over": 2.05,
+            "under": 1.8
+          },
+          "books": 1
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.27083333333333337,
+            "under": 0.7291666666666667
+          },
+          "price": {
+            "over": 3.5,
+            "under": 1.3
+          },
+          "books": 1
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.4666666666666667,
+            "no": 0.5333333333333333
+          },
+          "price": {
+            "yes": 2.0,
+            "no": 1.75
+          },
+          "books": 1
+        }
+      }
+    },
+    "Monza vs Napoli": {
+      "flashscore": {
+        "home": "Monza",
+        "away": "Napoli",
+        "competition": "Serie A",
+        "id": "EXOYeX7c",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.23539823008849559,
+            "away": 0.49557522123893805,
+            "draw": 0.26902654867256637
+          },
+          "price": {
+            "home": 4.0,
+            "away": 1.9,
+            "draw": 3.5
+          },
+          "books": 1
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7801801801801802,
+            "under": 0.21981981981981982
+          },
+          "price": {
+            "over": 1.22,
+            "under": 4.33
+          },
+          "books": 1
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5483028720626633,
+            "under": 0.4516971279373368
+          },
+          "price": {
+            "over": 1.73,
+            "under": 2.1
+          },
+          "books": 1
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.3436754176610979,
+            "under": 0.6563245823389022
+          },
+          "price": {
+            "over": 2.75,
+            "under": 1.44
+          },
+          "books": 1
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5759162303664922,
+            "no": 0.42408376963350786
+          },
+          "price": {
+            "yes": 1.62,
+            "no": 2.2
+          },
+          "books": 1
+        }
+      }
+    },
+    "Stuttgart vs M'gladbach": {
+      "flashscore": {
+        "home": "Stuttgart",
+        "away": "B. Monchengladbach",
+        "competition": "Bundesliga",
+        "id": "4EFr4JFd",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.6881974702788415,
+            "away": 0.13446953998166958,
+            "draw": 0.17733298973948902
+          },
+          "price": {
+            "home": 1.38,
+            "away": 7.5,
+            "draw": 5.5
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8831252008848386,
+            "under": 0.11687479911516138
+          },
+          "price": {
+            "over": 1.08,
+            "under": 8.25
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.73145964360587,
+            "under": 0.26854035639413
+          },
+          "price": {
+            "over": 1.3,
+            "under": 3.5
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.5489503636452726,
+            "under": 0.4510496363547274
+          },
+          "price": {
+            "over": 1.73,
+            "under": 2.1
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.6410509353152745,
+            "no": 0.35894906468472554
+          },
+          "price": {
+            "yes": 1.46,
+            "no": 2.63
+          },
+          "books": 2
+        }
+      }
+    },
+    "Mainz vs Werder Bremen": {
+      "flashscore": {
+        "home": "Mainz",
+        "away": "Werder Bremen",
+        "competition": "Bundesliga",
+        "id": "rsnE2Rek",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.5489221855172715,
+            "away": 0.21931634079346152,
+            "draw": 0.23176147368926706
+          },
+          "price": {
+            "home": 1.73,
+            "away": 4.5,
+            "draw": 4.1
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8153426357374393,
+            "under": 0.18465736426256077
+          },
+          "price": {
+            "over": 1.17,
+            "under": 5.25
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.6089581304771179,
+            "under": 0.3910418695228822
+          },
+          "price": {
+            "over": 1.57,
+            "under": 2.4
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.4121300352601774,
+            "under": 0.5878699647398227
+          },
+          "price": {
+            "over": 2.3,
+            "under": 1.62
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.6079653971463881,
+            "no": 0.39203460285361197
+          },
+          "price": {
+            "yes": 1.53,
+            "no": 2.38
+          },
+          "books": 2
+        }
+      }
+    },
+    "FC Koln vs Schalke 04": {
+      "flashscore": {
+        "home": "FC Koln",
+        "away": "Schalke",
+        "competition": "Bundesliga",
+        "id": "GfpM05Q1",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.4572892523583369,
+            "away": 0.2939524315072027,
+            "draw": 0.2487583161344604
+          },
+          "price": {
+            "home": 2.1,
+            "away": 3.3,
+            "draw": 3.9
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7974214058636524,
+            "under": 0.20257859413634757
+          },
+          "price": {
+            "over": 1.2,
+            "under": 4.8
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5920686456400742,
+            "under": 0.40793135435992584
+          },
+          "price": {
+            "over": 1.62,
+            "under": 2.3
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.3869912511831368,
+            "under": 0.6130087488168632
+          },
+          "price": {
+            "over": 2.5,
+            "under": 1.53
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.6152615316707128,
+            "no": 0.38473846832928715
+          },
+          "price": {
+            "yes": 1.53,
+            "no": 2.45
+          },
+          "books": 2
+        }
+      }
+    },
+    "RB Leipzig vs Elversberg": {
+      "flashscore": {
+        "home": "RB Leipzig",
+        "away": "Elversberg",
+        "competition": "Bundesliga",
+        "id": "dlCz6uop",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.6661006565667925,
+            "away": 0.15106748719617566,
+            "draw": 0.18283185623703183
+          },
+          "price": {
+            "home": 1.44,
+            "away": 6.5,
+            "draw": 5.5
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8850893038173004,
+            "under": 0.11491069618269958
+          },
+          "price": {
+            "over": 1.08,
+            "under": 8.5
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.739670868347339,
+            "under": 0.260329131652661
+          },
+          "price": {
+            "over": 1.29,
+            "under": 3.75
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.5489503636452726,
+            "under": 0.4510496363547274
+          },
+          "price": {
+            "over": 1.73,
+            "under": 2.1
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.6597924544894909,
+            "no": 0.34020754551050914
+          },
+          "price": {
+            "yes": 1.41,
+            "no": 2.75
+          },
+          "books": 2
+        }
+      }
+    },
+    "Paderborn vs Hamburg": {
+      "flashscore": {
+        "home": "Paderborn",
+        "away": "Hamburger SV",
+        "competition": "Bundesliga",
+        "id": "82n7O8I8",
+        "swapped": false
+      },
+      "similarity": 0.889,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.4239288507769596,
+            "away": 0.3190733588906316,
+            "draw": 0.25699779033240894
+          },
+          "price": {
+            "home": 2.3,
+            "away": 3.0,
+            "draw": 3.75
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8078709494958285,
+            "under": 0.1921290505041715
+          },
+          "price": {
+            "over": 1.17,
+            "under": 5.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5999671214861089,
+            "under": 0.4000328785138912
+          },
+          "price": {
+            "over": 1.57,
+            "under": 2.38
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.3941069278578634,
+            "under": 0.6058930721421366
+          },
+          "price": {
+            "over": 2.38,
+            "under": 1.57
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.625,
+            "no": 0.375
+          },
+          "price": {
+            "yes": 1.5,
+            "no": 2.5
+          },
+          "books": 2
+        }
+      }
+    },
+    "Augsburg vs Union Berlin": {
+      "flashscore": {
+        "home": "Augsburg",
+        "away": "Union Berlin",
+        "competition": "Bundesliga",
+        "id": "Cber8mYR",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.5120830651484608,
+            "away": 0.24789263325283936,
+            "draw": 0.24002430159869995
+          },
+          "price": {
+            "home": 1.87,
+            "away": 4.1,
+            "draw": 4.0
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8249547485717518,
+            "under": 0.1750452514282482
+          },
+          "price": {
+            "over": 1.14,
+            "under": 5.5
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.6293156426297613,
+            "under": 0.3706843573702388
+          },
+          "price": {
+            "over": 1.5,
+            "under": 2.63
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.4247569828965178,
+            "under": 0.5752430171034822
+          },
+          "price": {
+            "over": 2.2,
+            "under": 1.67
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.6355958230958232,
+            "no": 0.3644041769041769
+          },
+          "price": {
+            "yes": 1.47,
+            "no": 2.63
+          },
+          "books": 2
+        }
+      }
+    },
+    "Dortmund vs Ein Frankfurt": {
+      "flashscore": {
+        "home": "Dortmund",
+        "away": "Eintracht Frankfurt",
+        "competition": "Bundesliga",
+        "id": "0IQ4B1NM",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.6507031227445147,
+            "away": 0.16423108245503573,
+            "draw": 0.18506579480044966
+          },
+          "price": {
+            "home": 1.49,
+            "away": 6.0,
+            "draw": 5.3
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8672728350599499,
+            "under": 0.1327271649400501
+          },
+          "price": {
+            "over": 1.1,
+            "under": 7.25
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.7100867668583126,
+            "under": 0.2899132331416873
+          },
+          "price": {
+            "over": 1.33,
+            "under": 3.4
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.5040540540540541,
+            "under": 0.495945945945946
+          },
+          "price": {
+            "over": 1.91,
+            "under": 1.91
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.6410509353152745,
+            "no": 0.35894906468472554
+          },
+          "price": {
+            "yes": 1.46,
+            "no": 2.63
+          },
+          "books": 2
+        }
+      }
+    },
+    "Hoffenheim vs Leverkusen": {
+      "flashscore": {
+        "home": "Hoffenheim",
+        "away": "Bayer Leverkusen",
+        "competition": "Bundesliga",
+        "id": "WKgSBVY2",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.34723889752532894,
+            "away": 0.4110235422874047,
+            "draw": 0.24173756018726644
+          },
+          "price": {
+            "home": 2.88,
+            "away": 2.3,
+            "draw": 4.1
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8570059509361634,
+            "under": 0.14299404906383656
+          },
+          "price": {
+            "over": 1.11,
+            "under": 6.75
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.6812846777635511,
+            "under": 0.318715322236449
+          },
+          "price": {
+            "over": 1.4,
+            "under": 3.0
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.4932432432432432,
+            "under": 0.5067567567567568
+          },
+          "price": {
+            "over": 1.91,
+            "under": 1.91
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.7004256132654498,
+            "no": 0.29957438673455017
+          },
+          "price": {
+            "yes": 1.34,
+            "no": 3.25
+          },
+          "books": 2
+        }
+      }
+    },
+    "Freiburg vs Bayern Munich": {
+      "flashscore": {
+        "home": "Freiburg",
+        "away": "Bayern Munich",
+        "competition": "Bundesliga",
+        "id": "4YizA93F",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.1456479884566956,
+            "away": 0.6932140788904704,
+            "draw": 0.16113793265283402
+          },
+          "price": {
+            "home": 7.0,
+            "away": 1.39,
+            "draw": 6.0
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.9006731644517253,
+            "under": 0.09932683554827475
+          },
+          "price": {
+            "over": 1.06,
+            "under": 10.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.7618117559523809,
+            "under": 0.23818824404761907
+          },
+          "price": {
+            "over": 1.25,
+            "under": 4.0
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.5828410311493019,
+            "under": 0.4171589688506982
+          },
+          "price": {
+            "over": 1.62,
+            "under": 2.3
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.6576799810077749,
+            "no": 0.3423200189922251
+          },
+          "price": {
+            "yes": 1.41,
+            "no": 2.75
+          },
+          "books": 2
+        }
+      }
+    },
+    "Alaves vs Malaga": {
+      "flashscore": {
+        "home": "Alaves",
+        "away": "Malaga",
+        "competition": "LaLiga",
+        "id": "25iiasdS",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.5576495396286633,
+            "away": 0.17810478156859635,
+            "draw": 0.26424567880274036
+          },
+          "price": {
+            "home": 1.71,
+            "away": 5.5,
+            "draw": 3.6
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7100867668583126,
+            "under": 0.2899132331416873
+          },
+          "price": {
+            "over": 1.33,
+            "under": 3.4
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.4563067849929272,
+            "under": 0.5436932150070728
+          },
+          "price": {
+            "over": 2.1,
+            "under": 1.73
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.2610998802036538,
+            "under": 0.7389001197963462
+          },
+          "price": {
+            "over": 3.75,
+            "under": 1.29
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.4777717391304348,
+            "no": 0.5222282608695652
+          },
+          "price": {
+            "yes": 1.95,
+            "no": 1.8
+          },
+          "books": 2
+        }
+      }
+    },
+    "Vallecano vs Elche": {
+      "flashscore": {
+        "home": "Rayo Vallecano",
+        "away": "Elche",
+        "competition": "LaLiga",
+        "id": "AVz26b3e",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.537279289271241,
+            "away": 0.21116129998314773,
+            "draw": 0.25155941074561133
+          },
+          "price": {
+            "home": 1.77,
+            "away": 4.75,
+            "draw": 3.8
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.755446308077887,
+            "under": 0.24455369192211293
+          },
+          "price": {
+            "over": 1.25,
+            "under": 4.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.519914651493599,
+            "under": 0.4800853485064011
+          },
+          "price": {
+            "over": 1.8,
+            "under": 2.0
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.3060995512035904,
+            "under": 0.6939004487964097
+          },
+          "price": {
+            "over": 3.2,
+            "under": 1.36
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5316123188405797,
+            "no": 0.4683876811594203
+          },
+          "price": {
+            "yes": 1.75,
+            "no": 2.0
+          },
+          "books": 2
+        }
+      }
+    },
+    "Valencia vs Villarreal": {
+      "flashscore": {
+        "home": "Valencia",
+        "away": "Villarreal",
+        "competition": "LaLiga",
+        "id": "ELhT9X9m",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.2889905921530045,
+            "away": 0.4448060424045481,
+            "draw": 0.26620336544244744
+          },
+          "price": {
+            "home": 3.3,
+            "away": 2.15,
+            "draw": 3.7
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7761541202219169,
+            "under": 0.22384587977808318
+          },
+          "price": {
+            "over": 1.22,
+            "under": 4.33
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5489503636452726,
+            "under": 0.4510496363547274
+          },
+          "price": {
+            "over": 1.73,
+            "under": 2.1
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.34337055554587737,
+            "under": 0.6566294444541226
+          },
+          "price": {
+            "over": 2.75,
+            "under": 1.44
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5855079088063381,
+            "no": 0.41449209119366187
+          },
+          "price": {
+            "yes": 1.58,
+            "no": 2.25
+          },
+          "books": 2
+        }
+      }
+    },
+    "Ath Bilbao vs Getafe": {
+      "flashscore": {
+        "home": "Ath Bilbao",
+        "away": "Getafe",
+        "competition": "LaLiga",
+        "id": "YmrNgLJk",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.5889700949945764,
+            "away": 0.16407098216566643,
+            "draw": 0.2469589228397572
+          },
+          "price": {
+            "home": 1.63,
+            "away": 5.8,
+            "draw": 3.9
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.6594875923742705,
+            "under": 0.34051240762572965
+          },
+          "price": {
+            "over": 1.44,
+            "under": 2.75
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.41289897159908356,
+            "under": 0.5871010284009165
+          },
+          "price": {
+            "over": 2.3,
+            "under": 1.62
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.221021021021021,
+            "under": 0.7789789789789789
+          },
+          "price": {
+            "over": 4.33,
+            "under": 1.22
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.41449209119366187,
+            "no": 0.5855079088063381
+          },
+          "price": {
+            "yes": 2.25,
+            "no": 1.58
+          },
+          "books": 2
+        }
+      }
+    },
+    "Celta vs Betis": {
+      "flashscore": {
+        "home": "Celta Vigo",
+        "away": "Betis",
+        "competition": "LaLiga",
+        "id": "b9rGF2t9",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.3227970632811245,
+            "away": 0.396938500305224,
+            "draw": 0.2802644364136515
+          },
+          "price": {
+            "home": 3.0,
+            "away": 2.4,
+            "draw": 3.4
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.755446308077887,
+            "under": 0.24455369192211293
+          },
+          "price": {
+            "over": 1.25,
+            "under": 4.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5164970164970165,
+            "under": 0.4835029835029835
+          },
+          "price": {
+            "over": 1.85,
+            "under": 2.0
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.3160676532769556,
+            "under": 0.6839323467230444
+          },
+          "price": {
+            "over": 3.0,
+            "under": 1.4
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5694594556658198,
+            "no": 0.4305405443341802
+          },
+          "price": {
+            "yes": 1.63,
+            "no": 2.2
+          },
+          "books": 2
+        }
+      }
+    },
+    "Sociedad vs Levante": {
+      "flashscore": {
+        "home": "Real Sociedad",
+        "away": "Levante",
+        "competition": "LaLiga",
+        "id": "GSwA4xY7",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.5692454372537686,
+            "away": 0.19741343233318817,
+            "draw": 0.2333411304130432
+          },
+          "price": {
+            "home": 1.72,
+            "away": 5.25,
+            "draw": 4.1
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8063688181698717,
+            "under": 0.19363118183012834
+          },
+          "price": {
+            "over": 1.17,
+            "under": 5.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5878699647398227,
+            "under": 0.4121300352601774
+          },
+          "price": {
+            "over": 1.62,
+            "under": 2.3
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.3918288063712001,
+            "under": 0.6081711936287999
+          },
+          "price": {
+            "over": 2.4,
+            "under": 1.57
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5797353035121586,
+            "no": 0.4202646964878415
+          },
+          "price": {
+            "yes": 1.62,
+            "no": 2.2
+          },
+          "books": 2
+        }
+      }
+    },
+    "Barcelona vs Real Madrid": {
+      "flashscore": {
+        "home": "Barcelona",
+        "away": "Real Madrid",
+        "competition": "LaLiga",
+        "id": "6ZoODtBL",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.5892054800970278,
+            "away": 0.23751158290468585,
+            "draw": 0.17328293699828642
+          },
+          "price": {
+            "home": 1.62,
+            "away": 4.2,
+            "draw": 5.75
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.9132421664989455,
+            "under": 0.0867578335010546
+          },
+          "price": {
+            "over": 1.05,
+            "under": 11.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.7926607175377891,
+            "under": 0.2073392824622109
+          },
+          "price": {
+            "over": 1.2,
+            "under": 4.6
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.6332633980031837,
+            "under": 0.36673660199681635
+          },
+          "price": {
+            "over": 1.5,
+            "under": 2.63
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.7364784882594753,
+            "no": 0.26352151174052474
+          },
+          "price": {
+            "yes": 1.29,
+            "no": 3.6
+          },
+          "books": 2
+        }
+      }
+    },
+    "Sevilla vs Osasuna": {
+      "flashscore": {
+        "home": "Sevilla",
+        "away": "Osasuna",
+        "competition": "LaLiga",
+        "id": "8MQeSuQE",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.4909449230881819,
+            "away": 0.23055982591042548,
+            "draw": 0.27849525100139266
+          },
+          "price": {
+            "home": 1.95,
+            "away": 4.2,
+            "draw": 3.4
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.6939004487964097,
+            "under": 0.3060995512035904
+          },
+          "price": {
+            "over": 1.36,
+            "under": 3.2
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.4458485639686684,
+            "under": 0.5541514360313317
+          },
+          "price": {
+            "over": 2.1,
+            "under": 1.73
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.2413140206380763,
+            "under": 0.7586859793619237
+          },
+          "price": {
+            "over": 4.0,
+            "under": 1.25
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.48184782608695653,
+            "no": 0.5181521739130435
+          },
+          "price": {
+            "yes": 1.95,
+            "no": 1.8
+          },
+          "books": 2
+        }
+      }
+    },
+    "Brest vs Nice": {
+      "flashscore": {
+        "home": "Brest",
+        "away": "Nice",
+        "competition": "Ligue 1",
+        "id": "bXIA0PLG",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.43195220393098716,
+            "away": 0.30114022135778895,
+            "draw": 0.26690757471122395
+          },
+          "price": {
+            "home": 2.2,
+            "away": 3.2,
+            "draw": 3.6
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7789789789789789,
+            "under": 0.221021021021021
+          },
+          "price": {
+            "over": 1.22,
+            "under": 4.33
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5534067551802678,
+            "under": 0.44659324481973217
+          },
+          "price": {
+            "over": 1.73,
+            "under": 2.1
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.3470828068697646,
+            "under": 0.6529171931302353
+          },
+          "price": {
+            "over": 2.75,
+            "under": 1.44
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5905552493799945,
+            "no": 0.40944475062000557
+          },
+          "price": {
+            "yes": 1.57,
+            "no": 2.25
+          },
+          "books": 2
+        }
+      }
+    },
+    "Lens vs Paris FC": {
+      "flashscore": {
+        "home": "Lens",
+        "away": "Paris FC",
+        "competition": "Ligue 1",
+        "id": "UJurrH5k",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.40300887824478276,
+            "away": 0.33209555975320754,
+            "draw": 0.26489556200200964
+          },
+          "price": {
+            "home": 2.38,
+            "away": 2.88,
+            "draw": 3.7
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7908636026686435,
+            "under": 0.20913639733135653
+          },
+          "price": {
+            "over": 1.2,
+            "under": 4.5
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5737114103087175,
+            "under": 0.42628858969128247
+          },
+          "price": {
+            "over": 1.67,
+            "under": 2.2
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.36673660199681635,
+            "under": 0.6332633980031837
+          },
+          "price": {
+            "over": 2.63,
+            "under": 1.5
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.6087519711646767,
+            "no": 0.3912480288353233
+          },
+          "price": {
+            "yes": 1.53,
+            "no": 2.38
+          },
+          "books": 2
+        }
+      }
+    },
+    "Monaco vs Lille": {
+      "flashscore": {
+        "home": "Monaco",
+        "away": "Lille",
+        "competition": "Ligue 1",
+        "id": "2Nzx4bS8",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.45913697323506925,
+            "away": 0.26927776830340544,
+            "draw": 0.27158525846152537
+          },
+          "price": {
+            "home": 2.05,
+            "away": 3.7,
+            "draw": 3.5
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7567038839583929,
+            "under": 0.243296116041607
+          },
+          "price": {
+            "over": 1.25,
+            "under": 4.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.51984807645185,
+            "under": 0.48015192354815006
+          },
+          "price": {
+            "over": 1.85,
+            "under": 2.0
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.30689542882728865,
+            "under": 0.6931045711727114
+          },
+          "price": {
+            "over": 3.2,
+            "under": 1.36
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5533333333333333,
+            "no": 0.44666666666666666
+          },
+          "price": {
+            "yes": 1.7,
+            "no": 2.1
+          },
+          "books": 2
+        }
+      }
+    },
+    "Marseille vs Le Havre": {
+      "flashscore": {
+        "home": "Marseille",
+        "away": "Le Havre",
+        "competition": "Ligue 1",
+        "id": "xpqjtez2",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.6172741125727328,
+            "away": 0.17541275908387416,
+            "draw": 0.20731312834339313
+          },
+          "price": {
+            "home": 1.58,
+            "away": 5.5,
+            "draw": 4.75
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.811030541581595,
+            "under": 0.18896945841840493
+          },
+          "price": {
+            "over": 1.17,
+            "under": 5.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.6130087488168632,
+            "under": 0.3869912511831368
+          },
+          "price": {
+            "over": 1.53,
+            "under": 2.5
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.4000328785138912,
+            "under": 0.5999671214861089
+          },
+          "price": {
+            "over": 2.38,
+            "under": 1.57
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5644188441785654,
+            "no": 0.43558115582143464
+          },
+          "price": {
+            "yes": 1.67,
+            "no": 2.15
+          },
+          "books": 2
+        }
+      }
+    },
+    "Rennes vs Strasbourg": {
+      "flashscore": {
+        "home": "Rennes",
+        "away": "Strasbourg",
+        "competition": "Ligue 1",
+        "id": "6JPFdGKr",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.5518097980431197,
+            "away": 0.23199487218256265,
+            "draw": 0.21619532977431766
+          },
+          "price": {
+            "home": 1.75,
+            "away": 4.1,
+            "draw": 4.5
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8426982915238991,
+            "under": 0.15730170847610087
+          },
+          "price": {
+            "over": 1.13,
+            "under": 6.0
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.6693762441937625,
+            "under": 0.33062375580623754
+          },
+          "price": {
+            "over": 1.41,
+            "under": 3.0
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.4673003262874167,
+            "under": 0.5326996737125833
+          },
+          "price": {
+            "over": 2.0,
+            "under": 1.8
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.6456764682571134,
+            "no": 0.35432353174288655
+          },
+          "price": {
+            "yes": 1.44,
+            "no": 2.63
+          },
+          "books": 2
+        }
+      }
+    },
+    "Angers vs Lorient": {
+      "flashscore": {
+        "home": "Angers",
+        "away": "Lorient",
+        "competition": "Ligue 1",
+        "id": "Iu2e47Mi",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.32174608167225927,
+            "away": 0.3954676121641676,
+            "draw": 0.2827863061635732
+          },
+          "price": {
+            "home": 3.1,
+            "away": 2.4,
+            "draw": 3.4
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7165508909694955,
+            "under": 0.2834491090305044
+          },
+          "price": {
+            "over": 1.33,
+            "under": 3.4
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.46882058159232076,
+            "under": 0.5311794184076792
+          },
+          "price": {
+            "over": 2.05,
+            "under": 1.8
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.27216880341880345,
+            "under": 0.7278311965811965
+          },
+          "price": {
+            "over": 3.5,
+            "under": 1.3
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.524945652173913,
+            "no": 0.47505434782608696
+          },
+          "price": {
+            "yes": 1.8,
+            "no": 1.95
+          },
+          "books": 2
+        }
+      }
+    },
+    "Toulouse vs Troyes": {
+      "flashscore": {
+        "home": "Toulouse",
+        "away": "Troyes",
+        "competition": "Ligue 1",
+        "id": "EqTNffke",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.5876689258115794,
+            "away": 0.18568699002428263,
+            "draw": 0.22664408416413806
+          },
+          "price": {
+            "home": 1.63,
+            "away": 5.75,
+            "draw": 4.2
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7933503603028368,
+            "under": 0.20664963969716316
+          },
+          "price": {
+            "over": 1.2,
+            "under": 4.6
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5871010284009165,
+            "under": 0.41289897159908356
+          },
+          "price": {
+            "over": 1.62,
+            "under": 2.3
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.3789125971457722,
+            "under": 0.6210874028542278
+          },
+          "price": {
+            "over": 2.5,
+            "under": 1.53
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5600159293419902,
+            "no": 0.4399840706580098
+          },
+          "price": {
+            "yes": 1.67,
+            "no": 2.1
+          },
+          "books": 2
+        }
+      }
+    },
+    "Auxerre vs Le Mans": {
+      "flashscore": {
+        "home": "Auxerre",
+        "away": "Le Mans",
+        "competition": "Ligue 1",
+        "id": "j7F22oi4",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.44835390166645195,
+            "away": 0.28740122060527634,
+            "draw": 0.26424487772827177
+          },
+          "price": {
+            "home": 2.15,
+            "away": 3.7,
+            "draw": 3.7
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.7836257309941521,
+            "under": 0.21637426900584794
+          },
+          "price": {
+            "over": 1.2,
+            "under": 4.5
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.5534067551802678,
+            "under": 0.44659324481973217
+          },
+          "price": {
+            "over": 1.73,
+            "under": 2.1
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.35684316099321084,
+            "under": 0.6431568390067891
+          },
+          "price": {
+            "over": 2.65,
+            "under": 1.5
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.5890052356020943,
+            "no": 0.4109947643979058
+          },
+          "price": {
+            "yes": 1.57,
+            "no": 2.25
+          },
+          "books": 2
+        }
+      }
+    },
+    "Paris SG vs Lyon": {
+      "flashscore": {
+        "home": "PSG",
+        "away": "Lyon",
+        "competition": "Ligue 1",
+        "id": "zyZq2xcL",
+        "swapped": false
+      },
+      "similarity": 1.0,
+      "markets": {
+        "1x2": {
+          "prob": {
+            "home": 0.6586541477376279,
+            "away": 0.15250288766500225,
+            "draw": 0.18884296459736996
+          },
+          "price": {
+            "home": 1.46,
+            "away": 6.5,
+            "draw": 5.2
+          },
+          "books": 3
+        },
+        "ou15": {
+          "prob": {
+            "over": 0.8547012241510478,
+            "under": 0.14529877584895226
+          },
+          "price": {
+            "over": 1.11,
+            "under": 6.5
+          },
+          "books": 2
+        },
+        "ou25": {
+          "prob": {
+            "over": 0.679352487135506,
+            "under": 0.320647512864494
+          },
+          "price": {
+            "over": 1.4,
+            "under": 3.0
+          },
+          "books": 2
+        },
+        "ou35": {
+          "prob": {
+            "over": 0.4800853485064011,
+            "under": 0.519914651493599
+          },
+          "price": {
+            "over": 2.0,
+            "under": 1.8
+          },
+          "books": 2
+        },
+        "btts": {
+          "prob": {
+            "yes": 0.6097601972209772,
+            "no": 0.3902398027790228
+          },
+          "price": {
+            "yes": 1.53,
+            "no": 2.38
+          },
+          "books": 2
+        }
+      }
+    }
+  },
+  "summary": {
+    "scanned": 5734,
+    "matched": 72,
+    "with_odds": 72
+  }
+}
